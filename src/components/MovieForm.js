@@ -154,6 +154,10 @@ class MovieForm extends React.Component {
   }
 }
 
+MovieForm.defaultProps = {
+  movie: PropTypes.object,
+}
+
 MovieForm.propTypes = {
   movie: PropTypes.shape({
     title: PropTypes.string.isRequired,

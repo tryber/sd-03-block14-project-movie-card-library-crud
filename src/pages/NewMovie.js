@@ -12,8 +12,9 @@ class NewMovie extends Component {
 
   handleSubmit(newMovie) {
     movieAPI.createMovie(newMovie)
-      .then((result) =>
-        result ? <Redirect to="/" /> : console.log('Não foi possivell adicionar o filme'));
+      .then((result) => {
+        result ? <Redirect to="/" /> : console.log('Não foi possivell adicionar o filme');
+      }).catch((error) => console.log(error));
   }
 
   render() {
