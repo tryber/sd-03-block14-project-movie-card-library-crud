@@ -13,7 +13,9 @@ class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    movieAPI.getMovie().then((movie) => this.setState({ movie }));
+    movieAPI
+      .getMovie(this.props.match.params.id)
+      .then((movie) => this.setState({ movie }));
   }
 
   render() {
@@ -27,6 +29,7 @@ class MovieDetails extends Component {
       rating,
       subtitle,
     } = this.state.movie;
+
     if (!this.state.movie) return <Loading />;
 
     return (
