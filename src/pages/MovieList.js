@@ -21,7 +21,7 @@ class MovieList extends Component {
 
     // Render Loading here if the request is still happening
 
-    return movies === undefined ? (
+    return !movies ? (
       <Loading />
     ) : (
       <div data-testid="movie-list">
