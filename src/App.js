@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Switch, Route, Link } from 'react-router-dom';
 import './App.css'
-import { MovieForm } from './components/index';
+import { MovieForm, MovieCard } from './components/index';
 import MovieList from './components/MovieList';
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={MovieList} />
+        <Route path="/movies/:id" componet={MovieCard} />
         <Route path="/movies/new" component={MovieForm}/>
         <Route path="/movies/:id/edit" componet={MovieForm} />
       </Switch>

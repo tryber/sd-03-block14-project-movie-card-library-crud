@@ -1,17 +1,14 @@
 import React from 'react';
-import { getMovies } from '../services/movieAPI';
-import { Loading } from './index';
+// import { getMovies } from '../services/movieAPI';
+import { Loading, MovieCard } from './index';
 
-class MovieList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
+class MovieList extends React.Component { 
   render() {
-    return(
-        <div>
+    return (
+      <div>
         <Loading />
-        </div>
+        <MovieCard />
+      </div>
     );
   }
 }
