@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import MovieCard from '../components/MovieCard';
 import Loading from '../components/Loading';
-import { Link } from 'react-router-dom';
 
 import * as movieAPI from '../services/movieAPI';
 
@@ -11,12 +11,12 @@ class MovieList extends Component {
     this.state = {
       isLoading: false,
       movies: null,
-    }
+    };
     this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   componentDidMount() {
-    movieAPI.getMovies().then(movies => this.setState({
+    movieAPI.getMovies().then((movies) => this.setState({
       isLoading: true,
       movies,
     }));
@@ -25,7 +25,7 @@ class MovieList extends Component {
   render() {
     const { movies, isLoading } = this.state;
 
-    if(!isLoading) return <Loading />
+    if (!isLoading) return <Loading />;
     return (
       <div data-testid="movie-list">
         {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
