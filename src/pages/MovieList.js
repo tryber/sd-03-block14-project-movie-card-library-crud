@@ -8,7 +8,7 @@ class MovieList extends Component {
     super(props);
 
     this.state = {
-      movies: [],
+      movies: undefined,
     };
   }
 
@@ -21,10 +21,8 @@ class MovieList extends Component {
 
     // Render Loading here if the request is still happening
 
-    return movies === [] ? (
-      <div>
-        <Loading />
-      </div>
+    return movies === undefined ? (
+      <Loading />
     ) : (
       <div data-testid="movie-list">
         {movies.map((movie) => (
