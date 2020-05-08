@@ -16,10 +16,10 @@ class MovieDetails extends Component {
   }
   render() {
     if (this.state.movies === []) return <Loading />;
-    const { title, storyline, imagePath, genre, rating, subtitle } = movie;
+    const { storyline, imagePath, genre, rating, subtitle } = movie;
 
     return (
-      <>
+      <div>
         <div data-testid="movie-details">
           <img alt="Movie Cover" src={`../${imagePath}`} />
           <p>{`Subtitle: ${subtitle}`}</p>
@@ -29,7 +29,7 @@ class MovieDetails extends Component {
         </div>
         <Link to='/movies/:id/edit'>EDITAR</Link>
         <Link to='/'>VOLTAR</Link>
-      </>
+      </div>
     );
   }
 }
