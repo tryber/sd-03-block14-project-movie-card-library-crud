@@ -21,7 +21,7 @@ class MovieList extends Component {
     const { movies } = this.state;
     if (!movies) return <Loading />;
     return (
-      <div>
+      <div data-testid="movie-list">
         <div style={{ textAlign: 'center' }}>
           <Link to="/movies/new" className="card-action">ADICIONAR CARTÃO</Link>
         </div>

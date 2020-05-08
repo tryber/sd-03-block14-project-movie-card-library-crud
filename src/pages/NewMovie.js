@@ -23,7 +23,9 @@ class NewMovie extends Component {
       );
     }
     return (
-      <MovieForm onSubmit={this.handleSubmit} />
+      <div data-testid="new-movie">
+        <MovieForm onSubmit={this.handleSubmit} />
+      </div>
     );
   }
 }

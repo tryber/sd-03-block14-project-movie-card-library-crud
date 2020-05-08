@@ -39,7 +39,7 @@ class MovieDetails extends Component {
     if (!movie) return <Loading />;
 
     return (
-      <div className="row">
+      <div className="row" data-testid="movie-details">
         <div className="col s12 m7">
           <div className="card">
             <div className="card-image">

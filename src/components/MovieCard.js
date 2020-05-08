@@ -9,7 +9,7 @@ class MovieCard extends React.Component {
       title, storyline, imagePath, id,
     } = movie;
     return (
-      <div className="row">
+      <div className="row" data-testid="movie-card">
         <div className="col s12 m7">
           <div className="card movie-card">
             <div className="card-image">
