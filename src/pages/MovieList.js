@@ -19,16 +19,14 @@ class MovieList extends Component {
         <div>
           <Loading />
         </div>
-        );
-      }
-    // Render Loading here if the request is still happening
-    else {
-      return (
-        <div data-testid="movie-list">
-          {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
-        </div>
       );
-    }  
+    }
+    // Render Loading here if the request is still happening
+    return (
+      <div data-testid="movie-list">
+        {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
+      </div>
+    );
   }
 }
 
