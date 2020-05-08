@@ -5,12 +5,12 @@ import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
 class MovieList extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       movies: [],
       loading: true,
-    }
+    };
   }
 
   componentDidMount() {
@@ -26,7 +26,7 @@ class MovieList extends Component {
     if (loading) return <Loading />;
 
     return (
-      <div data-testid="movie-list">
+      <div data-testid="movie-list" className="movie-list">
         {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
       </div>
     );

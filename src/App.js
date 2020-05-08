@@ -6,10 +6,10 @@ import MovieList from './pages/MovieList';
 function App() {
   return (
     <Router>
-      <div>Movie Card Library CRUD</div>
-      
-    <Route exact path="/" component={MovieList} />
-
+      <div className="movie-card-header">
+        <h1 className="page-title">Movie Card Library CRUD</h1>
+      </div>
+      <Route exact path="/" component={MovieList} />
     </Router>
   );
 }
