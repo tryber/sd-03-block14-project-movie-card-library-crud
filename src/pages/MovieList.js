@@ -20,8 +20,8 @@ class MovieList extends Component {
 
   render() {
     const { movies } = this.state;
-
-    if (movies) return <Loading />
+    
+    if (!movies.length) return <Loading />;
 
     return (
       <div data-testid="movie-list">
