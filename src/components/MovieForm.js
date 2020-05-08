@@ -100,15 +100,17 @@ class MovieForm extends React.Component {
 
     return (
       <div className="row col">
-        <label htmlFor="movie_genre">Genre Select</label>
+        <label htmlFor="movie_genre" className="active" >Gênero</label>
         <select
           className="browser-default"
           value={genre}
           onChange={(event) => this.updateMovie('genre', event.target.value)}
+          id="movie_genre"
         >
           <option value="action">Ação</option>
           <option value="comedy">Comédia</option>
           <option value="thriller">Suspense</option>
+          <option value="fantasy">Fantasia</option>
         </select>
       </div>
     );
