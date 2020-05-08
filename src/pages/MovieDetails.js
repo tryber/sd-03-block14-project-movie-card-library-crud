@@ -14,11 +14,10 @@ class MovieDetails extends Component {
   componentDidMount() {
     movieAPI.getMovie(this.props.match.params.id)
       .then((response) => this.setState({ movie: response }))
-      .catch(error => console.log(error));
+      .catch((error) => console.log(error));
   }
 
   render() {
-    console.log(this.props.match.params.id)
     if (!Object.keys(this.state.movie).length) return <Loading />;
 
     const { title, storyline, imagePath, genre, rating, subtitle } = this.state.movie;
