@@ -3,7 +3,7 @@ import { getMovies } from '../services/movieAPI';
 import { Loading, MovieCard } from './index';
 
 class MovieList extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       movies: [],
@@ -12,9 +12,11 @@ class MovieList extends React.Component {
 
   componentDidMount() {
     getMovies()
-    .then(resolve => this.setState(()=>(
-      { movies:[...JSON.parse(localStorage.getItem('movies'))] }
-    )));
+    .then(
+      this.setState(()=>(
+        { movies:[...JSON.parse(localStorage.getItem( 'movies' ))] }
+      ))
+    );
   }
 
   render() {
