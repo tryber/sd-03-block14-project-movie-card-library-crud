@@ -163,7 +163,7 @@ MovieForm.propTypes = {
     imagePath: PropTypes.string.isRequired,
     bookmarked: PropTypes.bool.isRequired,
     genre: PropTypes.string.isRequired,
-  }).isRequired,
+  }),
   onSubmit: PropTypes.func.isRequired,
 };
 
