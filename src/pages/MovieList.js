@@ -8,8 +8,8 @@ class MovieList extends Component {
     super(props);
     this.state = {
       movies: [],
-      isLoading: false
-    }
+      isLoading: false,
+    };
   }
 
   componentDidMount() {
