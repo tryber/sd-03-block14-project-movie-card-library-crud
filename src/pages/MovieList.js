@@ -4,16 +4,20 @@ import Loading from '../components/Loading';
 import * as movieAPI from '../services/movieAPI';
 
 class MovieList extends Component {
-  render() {
-    const { movies } = this.state;
-    
-    getMovies() {
-      fetch()
+  constructor(props) {
+    super(props);
+    this.state = {
+      movies: [],
     }
-    
-    // Render Loading here if the request is still happening
-    <Loading/>
-    
+  }
+  
+  componentDidMount() {
+    movieAPI.getMovies().then((movie) => this.setState({ movies: movie }));
+  }
+
+  render() {
+    if(this.state.movies === []) return <Loading />;
+    const { movies } = this.state;
     return (
       <div data-testid="movie-list">
         {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}

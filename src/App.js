@@ -1,12 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import MovieCard from './components/MovieCard';
+import MovieList from './pages/MovieList';
 
 function App() {
   return (
-    <Route>
-      <div>Movie Card Library Crud</div>
-    </Route>
+    <>
+      <BrowserRouter>
+        <MovieList />
+      </BrowserRouter>
+    </>
   );
 }
+
 
 export default App;

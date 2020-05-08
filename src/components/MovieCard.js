@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Route, Link, Switch } from 'react-router-dom';
 
-class MovieCard extends React.Component {
+class MovieCard extends Component {
   render() {
     return (
-      <div data-testid="movie-card">
-        Movie Card
-      </div>
+      <>
+        <Link to='movies/:id'>VER DETALHES</Link>
+        <Route path='movies/:id'/>
+        <div data-testid="movie-card">
+          Movie Card
+        </div>
+      </>
     );
   }
 }
