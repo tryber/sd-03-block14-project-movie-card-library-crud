@@ -9,7 +9,7 @@ class EditMovie extends Component {
     this.state = {};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  
   handleSubmit(updatedMovie) {
   }
 
