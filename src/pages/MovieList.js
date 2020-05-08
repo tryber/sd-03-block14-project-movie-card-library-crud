@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import MovieCard from '../components/MovieCard';
-
 import * as movieAPI from '../services/movieAPI';
 
 class MovieList extends Component {
@@ -8,6 +7,11 @@ class MovieList extends Component {
     const { movies } = this.state;
 
     // Render Loading here if the request is still happening
+    this.componentDidMount(){
+      setTimeout(() => {
+        movieAPI.getMovies();
+      }, 2000);
+    }
 
     return (
       <div data-testid="movie-list">
