@@ -2,7 +2,7 @@ import React from 'react';
 // import { getMovies } from '../services/movieAPI';
 import { Loading, MovieCard } from './index';
 
-class MovieList extends React.Component { 
+class MovieList extends React.Component {
   render() {
     return (
       <div>
