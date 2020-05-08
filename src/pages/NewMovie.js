@@ -20,7 +20,7 @@ class NewMovie extends Component {
     if (shouldRedirect) {
       return (
         <Router>
-        <Redirect to="/" />
+          <Redirect to="/" />
         </Router>
       );
     }
