@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { getMovies } from '../services/movieAPI';
 import { Loading, MovieCard } from './index';
 
@@ -15,7 +16,7 @@ class MovieList extends React.Component {
     .then(
       this.setState(() => (
         { movies: [...JSON.parse(localStorage.getItem('movies'))] }
-      ))
+      )),
     );
   }
 
@@ -27,6 +28,10 @@ class MovieList extends React.Component {
       </div>
     );
   }
+}
+
+MovieList.propTypes = {
+  movies: PropTypes.array.isRequired,
 }
 
 export default MovieList;
