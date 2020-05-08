@@ -1,8 +1,16 @@
 import React from 'react';
+import MovieList from './pages/MovieList';
+import Header from './components/Header';
+import { Switch, Router, BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <div>Movie Card Library Crud</div>
+    <div>
+      <BrowserRouter>
+        <Header />
+        <MovieList />
+      </BrowserRouter>
+    </div>
   );
 }
 

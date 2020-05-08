@@ -1,5 +1,111 @@
 body {
   background-color: whitesmoke;
   box-sizing: border-box;
+  font-size: 16px;
 }
 
+.loading {
+  font-style: italic;
+}
+
+.done {
+  display: none;
+}
+
+.movie-card-header {
+  align-items: center;
+  background-color: #343a40;
+  display: flex;
+  font-family: Costa Ptf Regular , Segoe UI , Verdana , sans-serif;
+  height: 100px;
+  justify-content: center;
+}
+
+.page-title {
+  color: #f8f9fa;
+  font-size: 35px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.application {
+  display: flex;
+}
+
+.paneLeft {
+  padding: 48px 30px;
+  width: 25%;
+}
+
+.panelRight {
+  padding: 48px 30px;
+  width: 75%;
+}
+
+.formFilter , .formRegister {
+  border: 2px solid gray;
+  margin-bottom: 3em;
+  padding: 1em 1.5em;
+  width: fit-content;
+}
+
+.movie-list {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.movie-card {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  margin: 5px;
+  overflow: hidden;
+  width: 300px;
+}
+
+.movie-card-image {
+  width: 100%;
+}
+
+.movie-card-body {
+  flex: 1 1 auto;
+  padding: 20px;
+}
+
+.movie-card-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+
+.movie-card-subtitle {
+  color: #6c757d;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 8px;
+}
+
+.movie-card-storyline {
+  font-size: 14px;
+  text-align: justify;
+}
+
+.rating {
+  background-color: #007bff;
+  border-radius: 25px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 3px 9px;
+}
+
+.movie-card-rating {
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 20px;
+}
