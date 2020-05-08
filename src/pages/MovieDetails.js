@@ -8,7 +8,7 @@ class MovieDetails extends Component {
     super(props);
     this.state = {
       movies: [],
-    }
+    };
   }
 
   componentDidMount() {
@@ -27,8 +27,8 @@ class MovieDetails extends Component {
           <p>{`Genre: ${genre}`}</p>
           <p>{`Rating: ${rating}`}</p>
         </div>
-        <Link to='/movies/:id/edit'>EDITAR</Link>
-        <Link to='/'>VOLTAR</Link>
+        <Link to="/movies/:id/edit">EDITAR</Link>
+        <Link to="/">VOLTAR</Link>
       </div>
     );
   }
