@@ -16,19 +16,19 @@ class EditMovie extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(updatedMovie) {
-    this.setState({ movie: updatedMovie, shouldRedirect: true });
-  }
-
   componentDidMount() {
     movieAPI.getMovie(this.props.match.params.id)
       .then((response) => this.setState({ movie: response, status: '' }))
       .catch((error) => console.log(error));
   }
 
+  handleSubmit(updatedMovie) {
+    this.setState({ movie: updatedMovie, shouldRedirect: true });
+  }
+
   render() {
     const { status, shouldRedirect, movie } = this.state;
-    if (shouldRedirect) return <Redirect to="/" />
+    if (shouldRedirect) return <Redirect to="/" />;
 
     if (status === 'loading') {
       // render Loading
@@ -48,6 +48,6 @@ EditMovie.propTypes = {
       id: PropTypes.number.isRequired,
     }).isRequired,
   }).isRequired,
-}
+};
 
 export default EditMovie;
