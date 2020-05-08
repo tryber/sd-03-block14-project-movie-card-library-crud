@@ -24,7 +24,6 @@ class EditMovie extends Component {
     this.setState({
       movie: updatedMovie,
     })
-    console.log('updated with', updatedMovie)
   }
 
   render() {
