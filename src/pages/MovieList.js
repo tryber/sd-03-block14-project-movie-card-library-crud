@@ -15,7 +15,7 @@ class MovieList extends Component {
   componentDidMount() {
     movieAPI.getMovies()
       .then((response) => this.setState({ movies: response }))
-      .catch((error) => console.log(error))
+      .catch((error) => console.log(error));
   }
 
   render() {
