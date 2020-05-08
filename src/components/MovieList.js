@@ -10,11 +10,11 @@ class MovieList extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     getMovies()
     .then(
-      this.setState(()=>(
-        { movies:[...JSON.parse(localStorage.getItem( 'movies' ))] }
+      this.setState(() => (
+        { movies: [...JSON.parse(localStorage.getItem('movies'))] }
       ))
     );
   }
