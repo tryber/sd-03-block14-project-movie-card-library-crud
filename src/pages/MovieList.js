@@ -6,21 +6,21 @@ import * as movieAPI from '../services/movieAPI';
 class MovieList extends Component {
   constructor(props) {
     super(props);
-    let status = movieAPI.getMovies();
+    const status = movieAPI.getMovies();
     this.state = status;
     console.log(status);
   }
-  
+
   render() {
     console.log(this);
     const { movies } = this.state;
-    if (!this.componentDidMount){
+    if (!this.componentDidMount) {
       return (
         <div>
           <Loading />
         </div>
-      )
-    }
+        );
+      }
     // Render Loading here if the request is still happening
     else {
       return (
@@ -28,7 +28,7 @@ class MovieList extends Component {
           {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
         </div>
       );
-      }  
+    }  
   }
 }
 
