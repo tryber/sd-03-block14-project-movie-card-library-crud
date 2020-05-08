@@ -8,15 +8,15 @@ class MovieList extends Component {
     super(props);
     this.state = {
       movies: [],
-    }
+    };
   }
-  
+
   componentDidMount() {
     movieAPI.getMovies().then((movie) => this.setState({ movies: movie }));
   }
 
   render() {
-    if(this.state.movies === []) return <Loading />;
+    if (this.state.movies === []) return <Loading />;
     const { movies } = this.state;
     return (
       <div data-testid="movie-list">
