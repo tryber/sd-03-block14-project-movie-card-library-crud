@@ -10,21 +10,23 @@ class MovieList extends Component {
     super(props);
     this.state = {
       movies: [],
-      requesting: false,
+      requesting: true,
     };
   }
 
   async componentDidMount() {
-    await this.setState({ requesting: true });
     const movies = await movieAPI.getMovies();
-    await this.setState({ movies });
-    this.setState({ requesting: false });
+    this.toggleRequesting(false, movies);
+  }
+
+  toggleRequesting(requesting, movies) {
+    this.setState({ requesting, movies });
   }
 
   render() {
-    const { movies } = this.state;
+    const { movies, requesting } = this.state;
 
-    if (this.state.requesting) return <Loading />;
+    if (requesting) return <Loading />;
 
     return (
       <div data-testid="movie-list">

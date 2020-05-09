@@ -16,7 +16,6 @@ class MovieDetails extends Component {
   }
 
   async componentDidMount() {
-    await this.setState({ loading: true });
     const { match: { params: { id } } } = this.props;
     const movie = await movieAPI.getMovie(id);
     this.setMovie(movie, false);
