@@ -15,6 +15,7 @@ class NewMovie extends Component {
       .then((result) => {
         if (result) return (<Redirect to="/" />);
         console.log('Não foi possivell adicionar o filme');
+        return null;
       }).catch((error) => console.log(error));
   }
 
