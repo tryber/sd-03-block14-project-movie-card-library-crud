@@ -1,0 +1,12 @@
+.header {
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  background-color: #0fa36b;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
