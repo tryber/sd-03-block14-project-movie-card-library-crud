@@ -32,7 +32,6 @@ class EditMovie extends Component {
 
   render() {
     const { status, shouldRedirect, movie } = this.state;
-    console.log(this.props);
     if (shouldRedirect) {
       return (
         <Redirect
