@@ -7,17 +7,17 @@ import * as movieAPI from '../services/movieAPI';
 
 class MovieList extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       isLoading: true,
-      movies: '',  
+      movies: '',
     };
     this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   componentDidMount() {
     movieAPI.getMovies().then((movies) => this.setState({
-      isLoading : false,
+      isLoading: false,
       movies,
     }));
   }
