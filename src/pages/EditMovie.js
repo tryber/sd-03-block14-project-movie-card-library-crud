@@ -7,15 +7,22 @@ import * as movieAPI from '../services/movieAPI';
 class EditMovie extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      status: 'loading',
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+
   async componentDidMount() {
     const { match: { params: { id } } } = this.props;
-    await this.setState({ status: 'loading' });
+    // await this.setState({ status: 'loading' });
     const movie = await movieAPI.getMovie(id);
-    await this.setState({ movie, status: 'done' });
+    this.changeState(movie, 'done');
+  }
+
+  changeState(movie, status) {
+    this.setState({ movie, status });
   }
 
 
