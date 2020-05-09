@@ -165,6 +165,6 @@ MovieForm.defaultProps = {
   subtitle: '',
   imagePath: '',
   storyline: '',
-  genre: '',
+  genre: 'fantasy',
   rating: 0,
 };

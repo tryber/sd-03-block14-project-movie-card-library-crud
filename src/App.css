@@ -30,7 +30,6 @@ body {
   border-radius: 3px;
   display: flex;
   flex-direction: column;
-  height: 450px;
   margin: 5px;
   overflow: hidden;
   width: 300px;
@@ -43,6 +42,7 @@ body {
 }
 
 .movie-card-image {
+  height: 40%;
   width: 100%;
 }
 
