@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import MovieCard from '../components/MovieCard';
-import Loading from '../components/Loading';
+import { MovieCard, Loading } from '../components/index';
 import * as movieAPI from '../services/movieAPI';
 
 class MovieList extends Component {
@@ -12,7 +11,6 @@ class MovieList extends Component {
       isLoading: false,
       movies: null,
     };
-    this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   componentDidMount() {

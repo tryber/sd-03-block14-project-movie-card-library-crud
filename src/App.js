@@ -1,17 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import * as Index from './pages/index';
+import { EditMovie, MovieDetails, MovieList, NewMovie, NotFound } from './pages/index';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Index.MovieList} />
-        <Route path="/movies/new" component={Index.NewMovie} />
-        <Route path="/movies/:id/edit" component={Index.EditMovie} />
-        <Route path="/movies/:id" component={Index.MovieDetails} />
-        <Route component={Index.NotFound} />
+        <Route exact path="/" component={MovieList} />
+        <Route path="/movies/new" component={NewMovie} />
+        <Route path="/movies/:id/edit" component={EditMovie} />
+        <Route path="/movies/:id" component={MovieDetails} />
+        <Route component={NotFound} />
       </Switch>
     </Router>
   );

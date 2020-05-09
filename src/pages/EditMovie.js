@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import Loading from '../components/Loading';
-import { MovieForm } from '../components';
+import { MovieForm, Loading } from '../components/index';
 import * as movieAPI from '../services/movieAPI';
 
 class EditMovie extends Component {
@@ -14,7 +13,6 @@ class EditMovie extends Component {
       shouldRedirect: false,
       movie: null,
     };
-    this.componentDidMount = this.componentDidMount.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
