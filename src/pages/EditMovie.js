@@ -37,7 +37,8 @@ class EditMovie extends Component {
           to={{
             pathname: '/',
             state: this.state.movie,
-          }} />
+          }}
+        />
       );
     }
 
