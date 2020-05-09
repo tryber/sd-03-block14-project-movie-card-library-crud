@@ -98,14 +98,12 @@ describe('1 - Route check', () => {
     expect.anything(getByTestId('movie-list'));
     unmount();
   })
-  test('check movie pages', () => {
+  test('check movie pages', async () => {
     for(const movie of readMovies()) {
       const { unmount, getByTestId } = renderPath('/movies/' + movie.id);
-      async () => {
-        await waitFor(() => movieAPI.getMovies());
-        expect.anything(getByTestId('movie-details'));
-        unmount();
-      }
+      await waitFor(() => movieAPI.getMovies());
+      expect.anything(getByTestId('movie-details'));
+      unmount();
     }
   })
   test('check new movie page', () => {
@@ -113,14 +111,12 @@ describe('1 - Route check', () => {
     expect.anything(getByTestId('new-movie'));
     unmount();
   })
-  test('check edit movie pages', () => {
+  test('check edit movie pages', async () => {
     for(const movie of readMovies()) {
       const { unmount, getByTestId } = renderPath('/movies/' + movie.id + '/edit');
-      async () => {
-        await waitFor(() => movieAPI.getMovies());
-        expect.anything(getByTestId('edit-movie'));
-        unmount();
-      };
+      await waitFor(() => movieAPI.getMovies());
+      expect.anything(getByTestId('edit-movie'));
+      unmount();
     }
   })
   test('check 404 error page', () => {
