@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-
-import * as movieAPI from '../services/movieAPI';
 import Loading from '../components/Loading';
 import { MovieForm } from '../components';
-
+import * as movieAPI from '../services/movieAPI';
 
 class EditMovie extends Component {
   constructor(props) {
@@ -19,7 +17,7 @@ class EditMovie extends Component {
   }
 
   componentDidMount() {
-    movieAPI.getMovie(this.match.params.id).then((movie) =>
+    movieAPI.getMovie(this.props.match.params.id).then((movie) =>
       this.setState({
         status: 'loaded',
         movie,

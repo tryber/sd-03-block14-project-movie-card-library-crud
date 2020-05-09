@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
-import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
+import * as movieAPI from '../services/movieAPI';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -12,15 +11,21 @@ class MovieDetails extends Component {
       movie: null,
     };
     this.componentDidMount = this.componentDidMount.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
-    movieAPI.getMovie(this.match.params.id).then((movie) =>
+    movieAPI.getMovie(this.props.match.params.id).then((movie) =>
       this.setState({
         isLoading: true,
         movie,
       }),
     );
+  }
+
+  handleDelete() {
+    const movieId = this.props.match.params.id;
+    movieAPI.deleteMovie(movieId);
   }
 
   render() {
@@ -40,6 +45,7 @@ class MovieDetails extends Component {
         <p>{`Rating: ${rating}`}</p>
         <Link to={`/movies/${id}/edit`}>EDITAR</Link>
         <Link to="/">VOLTAR</Link>
+        <Link to="/" onClick={this.handleDelete}>DELETAR</Link>
       </div>
     );
   }
