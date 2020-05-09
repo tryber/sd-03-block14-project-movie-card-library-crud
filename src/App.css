@@ -36,8 +36,18 @@ body {
   width: 300px;
 }
 
+.movie-details {
+  text-align: center;
+  margin: 0 auto;
+  width: 50%;
+}
+
 .movie-card-image {
   width: 100%;
+}
+
+.movie-card-image-detail {
+  width: 90%;
 }
 
 .movie-card-body {
@@ -59,7 +69,12 @@ body {
 }
 
 .movie-card-storyline {
-  font-size: 14px;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.movie-card-storyline-detail {
+  font-size: 20px;
   text-align: justify;
 }
 
