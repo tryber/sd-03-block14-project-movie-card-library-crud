@@ -86,13 +86,12 @@ class MovieForm extends React.Component {
 
   renderGenreSelection() {
     const { genre } = this.state;
-    console.log(genre);
     return (
       <div>
         <label htmlFor="movie_genre">Gênero</label>
         <select
           id="movie_genre"
-          value={'thriller'}
+          value={genre}
           onChange={(event) => this.updateMovie('genre', event.target.value)}
         >
           <option value="action">Ação</option>
@@ -159,7 +158,7 @@ MovieForm.defaultProps = {
     title: '',
     subtitle: '',
     storyline: '',
-    rating: 0,
+    rating: '0',
     imagePath: '',
     bookmarked: false,
     genre: 'action',
@@ -171,7 +170,7 @@ MovieForm.propTypes = {
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string.isRequired,
     storyline: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
+    rating: PropTypes.string.isRequired,
     imagePath: PropTypes.string.isRequired,
     bookmarked: PropTypes.bool.isRequired,
     genre: PropTypes.string.isRequired,

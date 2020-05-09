@@ -7,19 +7,21 @@ import * as movieAPI from '../services/movieAPI';
 class NewMovie extends Component {
   constructor(props) {
     super(props);
+    this.state = { shouldRedirect: false };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(newMovie) {
     movieAPI.createMovie(newMovie)
       .then((result) => {
-        if (result) return (<Redirect to="/" />);
+        if (result) this.setState({ shouldRedirect: true });
         console.log('Não foi possivell adicionar o filme');
         return null;
       }).catch((error) => console.log(error));
   }
 
   render() {
+    if (this.state.shouldRedirect) return <Redirect to="/" />;
     return (
       <div data-testid="new-movie">
         <MovieForm onSubmit={this.handleSubmit} />
