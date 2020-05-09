@@ -1,35 +1,56 @@
 import React, { Component } from 'react';
-import '../App.css';
-import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
+import * as movieAPI from '../services/movieAPI';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import '../App.css';
 
+//  Tela com os detalhes do filme
 class MovieDetails extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      movie: '',
+    };
+  }
+
+  componentDidMount() {
+    // Para obter a URL direto das props do objeto
+    movieAPI.getMovie(this.props.match.params.id)
+      .then((filme) => this.setState({ movie: filme }))
+      .catch((e) => console.log(e));
+  }
+
   render() {
-    // Change the condition to check the state
-    //if (true) return <Loading />;
 
-    const { title, storyline, imagePath, genre, rating, subtitle } = this.props.movie;
+  if (!this.state.movie) return <Loading />;
 
-    return (
-      <div data-testid="movie-details" className="movie-card-body">
-        <img alt="Movie Cover" src={`../${imagePath}`} />
-        <p>{`Subtitle: ${subtitle}`}</p>
-        <p>{`Storyline: ${storyline}`}</p>
-        <p>{`Genre: ${genre}`}</p>
-        <p>{`Rating: ${rating}`}</p>
-      </div>
+  const { id, title, storyline, imagePath, genre, rating, subtitle } = this.state.movie;
+  return (
+    <div data-testid="movie-details" className="movie-card-body">
+    <img className='movie-card-image' alt="Movie Cover" src={`../${imagePath}`} />
+    <p className='movie-card-title'>{title}</p>
+    <p className='movie-card-subtitle'>Subtitle: {subtitle}</p>
+    <p className='movie-card-storyline'>Storyline: {storyline}</p>
+    <p>Genre: {genre}</p>
+    <p className='movie-card-rating'>Rating: {rating}</p>
+    <Link className='links' to={`movies/${id}/edit`}>Editar</Link>
+    <Link className='links' to={'/'}>Voltar</Link>
+  </div>
     );
   }
 }
 
+MovieDetails.propTypes = {
+  title: PropTypes.string,
+  storyline: PropTypes.string,
+  imagePath: PropTypes.string,
+  genre: PropTypes.string,
+  details: PropTypes.string,
+};
+
 export default MovieDetails;
 
 /*
-  <div data-testid="movie-details" className="movie-card-body">
-    <img className='movie-card-image' alt="Movie Cover" src={`../${imagePath}`} />
-    <p className='movie-card-title'>{title}</p>
-    <p className='movie-card-subtitle'>{subtitle}</p>
-    <p className='movie-card-storyline'>{storyline}</p>
-    <Link to={`movies/${id}`}>Ver detalhes</Link>
-  </div>
+
 */

@@ -4,20 +4,11 @@ body {
   font-size: 16px;
 }
 
-.loading {
-  font-style: italic;
-}
-
-.done {
-  display: none;
-}
-
 .movie-card-header {
-  align-items: center;
   background-color: #343a40;
   display: flex;
   font-family: Costa Ptf Regular , Segoe UI , Verdana , sans-serif;
-  height: 100px;
+  height: auto;
   justify-content: center;
 }
 
@@ -28,18 +19,14 @@ body {
   text-align: center;
 }
 
-.application {
-  display: flex;
+.loading {
+  left: 50%;
+  position: absolute;
+  top: 30%;
 }
 
-.paneLeft {
-  padding: 48px 30px;
-  width: 25%;
-}
-
-.panelRight {
-  padding: 48px 30px;
-  width: 75%;
+.links {
+  margin: 0.5em;
 }
 
 .formFilter , .formRegister {
@@ -52,6 +39,7 @@ body {
 .movie-list {
   display: flex;
   flex-flow: row wrap;
+  justify-content: flex-start;
 }
 
 .movie-card {
@@ -61,13 +49,23 @@ body {
   display: flex;
   flex-direction: column;
   height: 450px;
-  margin: 5px;
+  margin: 25px;
   overflow: hidden;
   width: 300px;
 }
 
+.movie-detail {
+  background-color: lightcyan;
+  border: 2px solid rgba(0, 0, 0, 0.125);
+  height: 70%;
+  margin: 25px;
+  width: 85%;
+}
+
 .movie-card-image {
-  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .movie-card-body {
