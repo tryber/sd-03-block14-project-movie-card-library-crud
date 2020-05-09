@@ -12,7 +12,7 @@ function App() {
       </div>
       <Switch>
         <Route exact path="/" component={MovieList} />
-        <Route path="/movies/:id" render={ ({ match }) => <MovieDetails match={match} /> } />
+        <Route path="/movies/:id" render={({ match }) => <MovieDetails match={match} />}/>
       </Switch>
     </Router>
   );

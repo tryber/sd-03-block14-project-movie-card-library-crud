@@ -46,3 +46,11 @@ class MovieDetails extends Component {
 }
 
 export default MovieDetails;
+
+MovieDetails.propTypes = {
+  match: PropTypes.oneOfType([PropTypes.object]).isRequired,
+}
+
+MovieDetails.defaultProps = {
+  match: {},
+}
