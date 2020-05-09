@@ -7,6 +7,8 @@ import EditMovie from './pages/EditMovie';
 import NewMovie from './pages/NewMovie';
 import NotFound from './pages/NotFound';
 
+import { MovieForm } from './components';
+
 import './App.css';
 
 function App() {
@@ -15,11 +17,11 @@ function App() {
       <div>Movie Card Library Crud</div>
       <Link to="/movies/new">ADICIONAR CARTÃO</Link>
       <Switch>
-        <Route exact path="/movies/new" component={NewMovie} />
-        <Route exact path="/movies/:id" render={(props) => <MovieDetail {...props} />} />
-        <Route path="/movies/:id/edit" render={(props) => <EditMovie {...props} />} />
         <Route exact path="/" component={MovieList} />
-        <Route path="/" component={NotFound} />
+        <Route exact path="/movies/new" component={NewMovie} />
+        <Route path="/movies/:id/edit" render={(props) => <EditMovie {...props} />} />
+        <Route exact path="/movies/:id" render={(props) => <MovieDetail {...props} />} />
+        <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
