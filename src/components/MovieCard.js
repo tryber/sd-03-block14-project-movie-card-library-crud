@@ -1,11 +1,11 @@
 import React from 'react';
-import '../App.css';
 import {
   BrowserRouter,
   Route,
   Link,
 } from 'react-router-dom';
 import MovieDetails from '../pages/MovieDetails';
+import '../App.css';
 
 class MovieCard extends React.Component {
   render() {
@@ -15,13 +15,15 @@ class MovieCard extends React.Component {
         <img src={imagePath} />
         <h2>{title}</h2>
         <p>{storyline}</p>
-        <BrowserRouter>
-          <Link to={`movies/${id}`}>Ver detalhes</Link>
-          <Route path={`movies/${id}`} render={(props) => <MovieDetails {...props} movieId={id} />} />
-        </BrowserRouter>
+        <Link to={`/movies/${id}`}>Ver detalhes</Link>
       </div>
     );
   }
 }
 
 export default MovieCard;
+
+/* MovieCard.propTypes = {
+  movie: PropTypes.object,
+}
+ */
