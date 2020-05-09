@@ -18,7 +18,7 @@ class NewMovie extends Component {
       shouldRedirect: true,
     }));
   }
-  
+
   render() {
     const { shouldRedirect } = this.state;
     if (shouldRedirect) return <Router><Redirect to="/" /></Router>;
@@ -29,4 +29,5 @@ class NewMovie extends Component {
     );
   }
 }
+
 export default NewMovie;
