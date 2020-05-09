@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <Switch>
-          <Route path="/" component={MovieList} />
+        <Route path="/" component={MovieList} />
       </Switch>
     </Router>
   );
