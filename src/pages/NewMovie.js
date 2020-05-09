@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
@@ -23,4 +24,9 @@ class NewMovie extends Component {
     );
   }
 }
+NewMovie.propTypes = {
+  history: PropTypes.objectOf(PropTypes
+    .oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]))
+    .isRequired,
+};
 export default NewMovie;

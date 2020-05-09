@@ -9,7 +9,7 @@ class MovieDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: false,
+      loading: true,
       movie: {},
     };
     this.deleteMovie = this.deleteMovie.bind(this);
@@ -19,7 +19,11 @@ class MovieDetails extends Component {
     await this.setState({ loading: true });
     const { match: { params: { id } } } = this.props;
     const movie = await movieAPI.getMovie(id);
-    this.setState({ movie, loading: false });
+    this.setMovie(movie, false);
+  }
+
+  setMovie(movie, loading) {
+    this.setState({ movie, loading });
   }
 
   async deleteMovie(e) {
@@ -38,7 +42,6 @@ class MovieDetails extends Component {
     const {
       title, storyline, imagePath, genre, rating, subtitle,
     } = movie;
-    const { match: { params: { id } } } = this.props;
 
     return (
       <div data-testid="movie-details">
@@ -57,7 +60,10 @@ class MovieDetails extends Component {
 }
 
 MovieDetails.propTypes = {
-  movie: PropTypes.objectOf(PropTypes
+  history: PropTypes.objectOf(PropTypes
+    .oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]))
+    .isRequired,
+  match: PropTypes.objectOf(PropTypes
     .oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]))
     .isRequired,
 };
