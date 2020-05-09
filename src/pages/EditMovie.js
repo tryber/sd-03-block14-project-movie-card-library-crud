@@ -19,7 +19,7 @@ class EditMovie extends Component {
   componentDidMount() {
     movieAPI.getMovie(this.props.match.params.id)
       .then((response) => {
-        this.setState({ movie: response, status: '' })
+        this.setState({ movie: response, status: '' });
       })
       .catch((error) => console.log(error));
   }
