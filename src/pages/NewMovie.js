@@ -19,10 +19,10 @@ class NewMovie extends Component {
       shouldRedirect: true,
     }));
     if (shouldRedirect) return <Redirect to="/" />;
+    return true;
   }
 
   render() {
-
     return (
       <div data-testid="new-movie">
         <MovieForm onSubmit={this.handleSubmit} />
