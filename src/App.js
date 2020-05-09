@@ -9,9 +9,9 @@ import MovieList from './pages/MovieList';
 function App() {
   return (
     <Router>
-        <Switch>
+      <Switch>
           <Route path="/" component={MovieList} />
-        </Switch>
+      </Switch>
     </Router>
   );
 }
