@@ -1,8 +1,8 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { MovieForm, Loading } from '../components';
 import * as movieAPI from '../services/movieAPI';
-import PropTypes from 'prop-types';
 
 class EditMovie extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class EditMovie extends Component {
 
   render() {
     const { status, shouldRedirect, movie } = this.state;
-    console.log(this.props)
+    console.log(this.props);
     if (shouldRedirect) {
       return (
         <Redirect
