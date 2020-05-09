@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
@@ -20,6 +21,7 @@ class NewMovie extends Component {
 
   render() {
     const { redirect, history } = this.props;
+    console.log(this.props);
     if (redirect) return history.push('/');
     return (
       <div data-testid="new-movie">
@@ -31,3 +33,14 @@ class NewMovie extends Component {
 
 export default NewMovie;
 // export default withRouter(NewMovie)
+
+NewMovie.defaultProps = {
+  redirect: false,
+};
+
+NewMovie.propTypes = {
+  redirect: PropTypes.bool,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }),
+};
