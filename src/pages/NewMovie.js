@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Redirect, BrowserRouter } from 'react-router-dom';
-
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
 
@@ -15,7 +14,7 @@ class NewMovie extends Component {
     movieAPI.createMovie(newMovie)
       .then((result) => {
         if (result) this.setState({ shouldRedirect: true });
-        console.log('Não foi possivell adicionar o filme');
+        console.log('erro');
         return null;
       }).catch((error) => console.log(error));
   }
