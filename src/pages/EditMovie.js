@@ -23,6 +23,7 @@ class EditMovie extends Component {
   }
 
   handleSubmit(updatedMovie) {
+    movieAPI.updateMovie(updatedMovie);
     this.setState({ movie: updatedMovie, shouldRedirect: true });
   }
 
