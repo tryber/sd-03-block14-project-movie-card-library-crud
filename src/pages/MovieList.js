@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import MovieCard from '../components/MovieCard';
@@ -45,3 +46,19 @@ class MovieList extends Component {
 }
 
 export default MovieList;
+
+MovieList.defaultProps = {
+  location: {
+    state: {
+      id: '',
+    },
+  },
+};
+
+MovieList.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  }),
+};
