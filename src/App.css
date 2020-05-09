@@ -20,8 +20,8 @@ img {
 }
 
 .loading {
-  height: 100vh;
   font-size: 50px;
+  height: 100vh;
   margin-top: 50vh;
   text-align: center;
 }

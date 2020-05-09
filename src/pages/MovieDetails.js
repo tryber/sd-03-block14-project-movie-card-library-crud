@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Loading } from '../components';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Loading } from '../components';
 import * as movieAPI from '../services/movieAPI';
 
 class MovieDetails extends Component {
@@ -41,8 +41,8 @@ class MovieDetails extends Component {
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
         <Link to={`/movies/${id}/edit`}>EDITAR</Link>
-        <button><Link to={"/"}>VOLTAR</Link></button>
-        <button onClick={() => this.deleteMovie()}><Link to={"/"}>DELETAR</Link></button>
+        <button><Link to={'/'}>VOLTAR</Link></button>
+        <button onClick={() => this.deleteMovie()}><Link to={'/'}>DELETAR</Link></button>
       </div>
     );
   }

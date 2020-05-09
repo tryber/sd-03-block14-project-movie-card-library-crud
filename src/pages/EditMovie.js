@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { MovieForm, Loading } from '../components';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import * as movieAPI from '../services/movieAPI';
+import { MovieForm, Loading } from '../components';
 
 class EditMovie extends Component {
   constructor(props) {
@@ -20,15 +20,15 @@ class EditMovie extends Component {
       .then((result) => this.setState({
         movie: result,
         status: 'loaded',
-      }))
-  };
+      }));
+  }
 
   handleSubmit(updatedMovie) {
     this.setState(() => ({
       shouldRedirect: true,
-    }))
+    }));
     movieAPI.updateMovie(updatedMovie);
-  };
+  }
 
   render() {
     const { status, shouldRedirect, movie } = this.state;
