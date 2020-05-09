@@ -6,8 +6,8 @@ body {
 .movie-card {
   display: flex;
   flex-direction: column;
-  width: 40%;
   margin: 20px;
+  width: 40%;
 }
 
 .movie-list {
@@ -21,16 +21,16 @@ img {
 
 .loading {
   height: 100vh;
+  font-size: 50px;
   margin-top: 50vh;
   text-align: center;
-  font-size: 50px;
 }
 
 .header {
   background-color: gray;
   color: white;
-  text-align: center;
+  font-size: 40px;
   height: 60px;
   line-height: 50px;
-  font-size: 40px;
+  text-align: center;
 }
