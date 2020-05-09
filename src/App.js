@@ -7,8 +7,6 @@ import EditMovie from './pages/EditMovie';
 import NewMovie from './pages/NewMovie';
 import NotFound from './pages/NotFound';
 
-import { MovieForm } from './components';
-
 import './App.css';
 
 function App() {

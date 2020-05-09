@@ -172,7 +172,7 @@ MovieForm.propTypes = {
     storyline: PropTypes.string.isRequired,
     rating: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.number
+      PropTypes.number,
     ]).isRequired,
     imagePath: PropTypes.string.isRequired,
     bookmarked: PropTypes.bool.isRequired,
