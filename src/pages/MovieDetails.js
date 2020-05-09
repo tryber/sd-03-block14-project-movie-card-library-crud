@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
+import PropTypes from 'prop-types';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class MovieDetails extends Component {
     const { title, storyline, imagePath, genre, rating, subtitle } = movie;
 
     if (loading || !movie) return <Loading />;
-    
+
     return (
       <div data-testid="movie-details" className="movie-list">
         <div className="movie-details">
