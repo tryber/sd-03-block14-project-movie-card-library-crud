@@ -54,7 +54,7 @@ class EditMovie extends Component {
   }
 }
 
-/* EditMovie.propTypes = {
+EditMovie.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string,
@@ -62,14 +62,6 @@ class EditMovie extends Component {
   }).isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
-  }).isRequired,
-}; */
-
-EditMovie.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string,
-    }),
   }).isRequired,
 };
 
