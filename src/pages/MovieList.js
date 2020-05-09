@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import MovieCard from '../components/MovieCard';
 import Loading from '../components/Loading';
-import { Link } from 'react-router-dom';
 import * as movieAPI from '../services/movieAPI';
 
 class MovieList extends Component {
@@ -9,26 +9,21 @@ class MovieList extends Component {
     super(props);
     this.state = {
       movies: [],
-    }
+    };
   }
 
   componentDidMount() {
-    if(this.props.location.state) {
+    if (this.props.location.state) {
       movieAPI.getMovies().then((resp) => {
-        const index = resp.findIndex((e) => e.id === this.props.location.state.id)
-        const newArrMovies = [...resp]
+        const index = resp.findIndex((e) => e.id === this.props.location.state.id);
+        const newArrMovies = [...resp];
         newArrMovies[index] = this.props.location.state;
-        this.setState({ movies: newArrMovies })
-      })
+        this.setState({ movies: newArrMovies });
+      });
     }
     movieAPI.getMovies().then((resp) => {
-      this.setState({ movies: resp })
-    })
-
-  }
-
-  componentDidUpdate() {
-    
+      this.setState({ movies: resp });
+    });
   }
 
   render() {
@@ -39,15 +34,13 @@ class MovieList extends Component {
           <Loading />
         </div>
       );
-    } else {
-      return (
-        <div data-testid="movie-list">
-          {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
-          <Link to="/movies/new">ADICIONAR CARTÃO</Link>
-        </div>
-      );
     }
-
+    return (
+      <div data-testid="movie-list">
+        {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
+        <Link to="/movies/new">ADICIONAR CARTÃO</Link>
+      </div>
+    );
   }
 }
 

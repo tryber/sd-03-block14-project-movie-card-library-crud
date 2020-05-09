@@ -20,26 +20,27 @@ class EditMovie extends Component {
         movie: resp,
         status: 'loaded',
       });
-    })
+    });
   }
 
   handleSubmit(updatedMovie) {
     movieAPI.updateMovie(updatedMovie).then(() => {
-      this.setState({ shouldRedirect: true, })
-    })
+      this.setState({ shouldRedirect: true });
+    });
   }
 
   render() {
     const { status, shouldRedirect, movie } = this.state;
     if (shouldRedirect) {
-      return <Redirect to={{
-        pathname: '/',
-        state: this.state.movie,
-      }} />
+      return <Redirect 
+        to={({
+          pathname: '/',
+          state: this.state.movie,
+        })} />;
     }
 
     if (status === 'loading') {
-      return <Loading />
+      return <Loading />;
     }
 
     return (

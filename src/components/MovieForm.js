@@ -166,5 +166,5 @@ MovieForm.defaultProps = {
     storyline: '',
     genre: '',
     rating: 0,
-  }
-}
+  },
+};
