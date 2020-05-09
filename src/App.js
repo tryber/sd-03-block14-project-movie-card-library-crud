@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import MovieList from './pages/MovieList';
 import MovieDetails from './pages/MovieDetails';
+import NotFound from './pages/NotFound';
+import NewMovie from './pages/NewMovie';
+import EditMovie from './pages/EditMovie';
 
 function App() {
   return (
@@ -13,6 +16,9 @@ function App() {
       <Switch>
         <Route exact path="/" component={MovieList} />
         <Route path="/movies/:id" render={({ match }) => <MovieDetails match={match} />} />
+        <Route path="/movies/:id/edit" render={({ match }) => <EditMovie match={match} />} />
+        <Route exact path="/movies/new" component={NewMovie} />
+        <Route component={NotFound} />
       </Switch>
     </Router>
   );
