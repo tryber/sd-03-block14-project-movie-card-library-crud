@@ -17,7 +17,8 @@ class EditMovie extends Component {
   }
 
   componentDidMount() {
-    movieAPI.getMovie(this.props.match.params.id)
+    const { match } = this.props;
+    movieAPI.getMovie(match.params.id)
       .then((res) => this.setState({
         movie: res,
         status: 'notLoading',
@@ -30,7 +31,7 @@ class EditMovie extends Component {
       .then(this.setState({
         shouldRedirect: true,
         route: history.push('/'),
-      }))
+      }));
   }
 
   render() {
@@ -53,8 +54,6 @@ class EditMovie extends Component {
   }
 }
 
-export default EditMovie;
-
 EditMovie.protoTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
@@ -65,3 +64,5 @@ EditMovie.protoTypes = {
     push: PropTypes.func.isRequired,
   }).isRequired,
 };
+
+export default EditMovie;
