@@ -20,8 +20,8 @@ class NewMovie extends Component {
 
   render() {
     const { redirect } = this.state;
-
-    if (redirect) return <Redirect to="/" />;
+    const { history } = this.props;
+    if (redirect) history.push('/');
 
     return (
       <div data-testid="new-movie">
