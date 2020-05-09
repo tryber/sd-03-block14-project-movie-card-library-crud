@@ -3,3 +3,34 @@ body {
   box-sizing: border-box;
 }
 
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 20px;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+img {
+  height: 200px;
+}
+
+.loading {
+  height: 100vh;
+  margin-top: 50vh;
+  text-align: center;
+  font-size: 50px;
+}
+
+.header {
+  background-color: gray;
+  color: white;
+  text-align: center;
+  height: 60px;
+  line-height: 50px;
+  font-size: 40px;
+}
