@@ -20,20 +20,24 @@ class EditMovie extends Component {
     movieAPI.getMovie(this.props.match.params.id)
       .then((res) => this.setState({
         movie: res,
-        status: '',
+        status: 'notLoading',
       }));
   }
 
   handleSubmit(updatedMovie) {
+    const { history } = this.props;
     movieAPI.updateMovie(updatedMovie)
-      .then(this.setState({ shouldRedirect: true }));
+      .then(this.setState({
+        shouldRedirect: true,
+        route: history.push('/'),
+      }))
   }
 
   render() {
-    const { status, shouldRedirect, movie } = this.state;
+    const { status, shouldRedirect, movie, route } = this.state;
     if (shouldRedirect) {
       // Redirect
-      return <Redirect to="/" />;
+      return <Redirect to={route} />;
     }
 
     if (status === 'loading') {
@@ -57,4 +61,7 @@ EditMovie.protoTypes = {
       id: PropTypes.string,
     }),
   }).isRequired,
-}
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
