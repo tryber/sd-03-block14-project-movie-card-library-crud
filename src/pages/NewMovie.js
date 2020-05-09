@@ -38,7 +38,7 @@ NewMovie.defaultProps = {
   redirect: false,
   history: {
     push: '/',
-  }
+  },
 };
 
 NewMovie.propTypes = {
