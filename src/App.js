@@ -8,12 +8,12 @@ import MovieList from './pages/MovieList';
 
 function App() {
   return (
-      <Router>
+    <Router>
         <Switch>
-            <Route path="/" component={MovieList} />
+          <Route path="/" component={MovieList} />
         </Switch>
-      </Router>
-    );
+    </Router>
+  );
 }
 
 export default App;
