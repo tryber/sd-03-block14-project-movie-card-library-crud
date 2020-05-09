@@ -20,7 +20,7 @@ class EditMovie extends Component {
       .then((res) => this.setState({
         movie: res,
         status: '',
-      })).then(console.log(this.props))
+      }));
   }
 
   handleSubmit(updatedMovie) {
