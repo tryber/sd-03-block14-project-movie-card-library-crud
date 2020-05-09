@@ -1,10 +1,6 @@
 import React from 'react';
-import {
-  BrowserRouter,
-  Route,
-  Link,
-} from 'react-router-dom';
-import MovieDetails from '../pages/MovieDetails';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import '../App.css';
 
 class MovieCard extends React.Component {
@@ -12,7 +8,7 @@ class MovieCard extends React.Component {
     const { imagePath, storyline, title, id } = this.props.movie;
     return (
       <div data-testid="movie-card" className="movie-card">
-        <img src={imagePath} />
+        <img src={imagePath} alt={title}/>
         <h2>{title}</h2>
         <p>{storyline}</p>
         <Link to={`/movies/${id}`}>Ver detalhes</Link>
@@ -23,7 +19,10 @@ class MovieCard extends React.Component {
 
 export default MovieCard;
 
-/* MovieCard.propTypes = {
+MovieCard.propTypes = {
   movie: PropTypes.object,
+  imagePath: PropTypes.string,
+  storyline: PropTypes.string,
+  title: PropTypes.string,
+  id: PropTypes.number
 }
- */

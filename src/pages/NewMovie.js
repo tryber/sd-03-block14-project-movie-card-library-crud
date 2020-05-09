@@ -8,8 +8,8 @@ class NewMovie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      create: false
-    }
+      create: false,
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -21,7 +21,7 @@ class NewMovie extends Component {
   render() {
     const { create } = this.state;
 
-    if (create) return <Redirect to="/" />
+    if (create) return <Redirect to="/" />;
 
     return (
       <div data-testid="new-movie">
@@ -30,4 +30,5 @@ class NewMovie extends Component {
     );
   }
 }
+
 export default NewMovie;
