@@ -7,6 +7,8 @@ import EditMovie from './pages/EditMovie';
 import NewMovie from './pages/NewMovie';
 import NotFound from './pages/NotFound';
 
+import './App.css';
+
 function App() {
   return (
     <BrowserRouter>

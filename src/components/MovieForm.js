@@ -86,13 +86,13 @@ class MovieForm extends React.Component {
 
   renderGenreSelection() {
     const { genre } = this.state;
-
+    console.log(genre);
     return (
       <div>
-        <label htmlFor="movie_genre">Genre Select</label>
+        <label htmlFor="movie_genre">Gênero</label>
         <select
           id="movie_genre"
-          value={genre}
+          value={'thriller'}
           onChange={(event) => this.updateMovie('genre', event.target.value)}
         >
           <option value="action">Ação</option>
