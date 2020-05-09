@@ -25,6 +25,7 @@ class MovieDetails extends Component {
   render() {
     // Change the condition to check the state
     const { movie, loading } = this.state;
+    const { id } = this.props.match.params;
 
     const { title, storyline, imagePath, genre, rating, subtitle } = movie;
 
@@ -39,9 +40,12 @@ class MovieDetails extends Component {
           <p className="movie-card-storyline">{`Storyline: ${storyline}`}</p>
           <p className="movie-card-storyline">{`Genre: ${genre}`}</p>
           <p className="rating">{`Rating: ${rating}`}</p>
+          <div>
+            <Link to="/">VOLTAR</Link>
+            <br/>
+            <Link to={`${id}/edit`}>EDITAR</Link>
+          </div>
         </div>
-        <Link to="/">VOLTAR</Link>
-        <Link to="/movies/:id/edit">EDITAR</Link>
       </div>
     );
   }

@@ -15,9 +15,9 @@ function App() {
       </div>
       <Switch>
         <Route exact path="/" component={MovieList} />
-        <Route path="/movies/:id" render={({ match }) => <MovieDetails match={match} />} />
-        <Route path="/movies/:id/edit" render={({ match }) => <EditMovie match={match} />} />
         <Route exact path="/movies/new" component={NewMovie} />
+        <Route exact path="/movies/:id" render={({ match }) => <MovieDetails match={match} />} />
+        <Route exact path="/movies/:id/edit" render={({ match }) => <EditMovie match={match} />} />
         <Route component={NotFound} />
       </Switch>
     </Router>
