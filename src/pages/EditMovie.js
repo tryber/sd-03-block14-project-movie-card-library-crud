@@ -26,7 +26,7 @@ class EditMovie extends Component {
   handleSubmit(updatedMovie) {
     movieAPI.updateMovie(updatedMovie).then(() => this.setState({
       shouldRedirect: true,
-    }))
+    }));
   }
 
   render() {
@@ -45,3 +45,12 @@ class EditMovie extends Component {
 }
 
 export default EditMovie;
+
+EditMovie.propTypes = {
+  match: PropTypes.oneOfType([PropTypes.object]).isRequired,
+};
+
+EditMovie.defaultProps = {
+  match: {},
+};
+

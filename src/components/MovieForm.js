@@ -166,5 +166,5 @@ MovieForm.defaultProps = {
   imagePath: '',
   storyline: '',
   genre: '',
-  rating: 0
+  rating: 0,
 };
