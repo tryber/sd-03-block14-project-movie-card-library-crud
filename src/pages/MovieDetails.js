@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
-import PropTypes from 'prop-types';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -50,8 +50,8 @@ export default MovieDetails;
 
 MovieDetails.propTypes = {
   match: PropTypes.oneOfType([PropTypes.object]).isRequired,
-}
+};
 
 MovieDetails.defaultProps = {
   match: {},
-}
+};
