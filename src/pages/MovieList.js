@@ -9,17 +9,17 @@ class MovieList extends Component {
     super(props);
     this.state = {
       movies: undefined,
-    }
+    };
   }
 
   componentDidMount() {
-    movieAPI.getMovies().then((movies) => this.setState({movies}));
+    movieAPI.getMovies().then((movies) => this.setState({ movies }))
   }
-  
+
   render() {
     const { movies } = this.state;
 
-    if (movies === undefined) return <Loading />
+    if (movies === undefined) return <Loading />;
     return (
       <div data-testid="movie-list">
         {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
