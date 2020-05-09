@@ -1,39 +1,28 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Loading } from '../components';
+
 import * as movieAPI from '../services/movieAPI';
+import { Loading } from '../components';
 
 class MovieDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: false,
-      movie: null,
+      movie: {},
     };
-    this.componentDidMount = this.componentDidMount.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
-    movieAPI.getMovie(this.props.match.params.id).then((movie) =>
-      this.setState({
-        isLoading: true,
-        movie,
-      }),
-    );
-  }
-
-  handleDelete() {
-    const movieId = this.props.match.params.id;
-    movieAPI.deleteMovie(movieId);
+    movieAPI.getMovie(this.props.match.params.id)
+      .then((response) => this.setState({ movie: response }))
+      .catch((error) => console.log(error));
   }
 
   render() {
-    const { isLoading, movie } = this.state;
+    if (!Object.keys(this.state.movie).length) return <Loading />;
 
-    if (!isLoading) return <Loading />;
-
-    const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
+    const { title, storyline, imagePath, genre, rating, subtitle, id } = this.state.movie;
 
     return (
       <div data-testid="movie-details">
@@ -45,10 +34,18 @@ class MovieDetails extends Component {
         <p>{`Rating: ${rating}`}</p>
         <Link to={`/movies/${id}/edit`}>EDITAR</Link>
         <Link to="/">VOLTAR</Link>
-        <Link to="/" onClick={this.handleDelete}>DELETAR</Link>
+        <Link to="/" onClick={() => movieAPI.deleteMovie(id)}>DELETAR</Link>
       </div>
     );
   }
 }
+
+MovieDetails.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default MovieDetails;
