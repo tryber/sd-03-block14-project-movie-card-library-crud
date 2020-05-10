@@ -19,7 +19,7 @@ class EditMovie extends Component {
     movieAPI.getMovie(this.props.match.params.id).then((movie) => {
       this.setState({
         movie,
-        status: 'loaded', 
+        status: 'loaded',
       });
     });
   }
@@ -35,7 +35,7 @@ class EditMovie extends Component {
     }
 
     if (status === 'loading') {
-      return <Loading />
+      return <Loading />;
     }
 
     return (
