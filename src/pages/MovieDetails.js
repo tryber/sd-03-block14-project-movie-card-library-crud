@@ -15,10 +15,8 @@ class MovieDetails extends Component {
   }
   componentDidMount(){
     const { id } = this.props.match.params
-   // const { fromNotifications } = this.props.location.state
     movieAPI.getMovie(id)
     .then(el=>this.setState({movie: el}))
-    //.then(e=>this.setState({inicialState: fromNotifications}))
   }
 
   render() {

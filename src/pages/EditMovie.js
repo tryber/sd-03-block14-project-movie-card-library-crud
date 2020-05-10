@@ -8,7 +8,7 @@ class EditMovie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: '',
+      movie: {},
       status: 'pending',
       shouldRedirect: false,
     };
@@ -16,14 +16,15 @@ class EditMovie extends Component {
   }
 
   componentDidMount(){
-    movieAPI.updateMovie(this.props.location.state.movie)
-    .then(el=>this.setState({movie: el}))
+    movieAPI.getMovie()
+    .then(el=>this.setState({
+      status: el
+    }))
   }
 
   handleSubmit(updatedMovie) {
-    this.setState({
-      movie: updatedMovie,
-    })
+    movieAPI.updateMovie(updatedMovie)
+    .then(this.setState({ shouldRedirect: true }))
   }
 
   render() {
