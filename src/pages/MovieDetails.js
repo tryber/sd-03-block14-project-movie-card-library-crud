@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
@@ -56,7 +57,12 @@ class MovieDetails extends Component {
   }
 }
 
-// um link com o texto "EDITAR" apontando para a rota /movies/:id/edit
-// e um link apontando para a rota raiz (/) com o texto "VOLTAR".
+MovieDetails.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default MovieDetails;
