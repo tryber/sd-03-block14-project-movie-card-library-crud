@@ -1,6 +1,6 @@
 import React from 'react';
-import * as index from './pages/index';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import * as index from './pages/index';
 
 class App extends React.Component {
   render() {

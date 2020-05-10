@@ -14,19 +14,19 @@ class MovieList extends Component {
     };
   }
 
+  async componentDidMount() {
+    const movies = await movieAPI.getMovies();
+    this.changeState(true, movies);
+  }
+
   changeState(flag, obj) {
     this.setState((state) => {
       return {
         ...state,
         hasMovies: flag,
         movies: obj,
-      }
+      };
     });
-  }
-
-  async componentDidMount() {
-    const movies = await movieAPI.getMovies();
-    this.changeState(true, movies);
   }
 
   render() {

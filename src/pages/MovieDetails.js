@@ -14,19 +14,19 @@ class MovieDetails extends Component {
     };
   }
 
+  async componentDidMount() {
+    const movie = await movieAPI.getMovie(this.props.match.params.id);
+    this.changeState(true, movie);
+  }
+
   changeState(flag, obj) {
     this.setState((state) => {
       return {
         ...state,
         hasMovies: flag,
         movie: obj,
-      }
+      };
     });
-  }
-
-  async componentDidMount() {
-    const movie = await movieAPI.getMovie(this.props.match.params.id);
-    this.changeState(true, movie);
   }
 
   render() {
