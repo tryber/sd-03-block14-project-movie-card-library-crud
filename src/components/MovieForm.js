@@ -79,6 +79,7 @@ class MovieForm extends React.Component {
         <textarea
           id="movie_storyline"
           value={storyline}
+          className="materialize-textarea"
           onChange={(event) =>
             this.updateMovie('storyline', event.target.value)
           }
@@ -97,6 +98,7 @@ class MovieForm extends React.Component {
         <select
           id="movie_genre"
           value={genre}
+          className="browser-default"
           onChange={(event) => this.updateMovie('genre', event.target.value)}
         >
           <option value="action">Ação</option>
@@ -157,10 +159,24 @@ class MovieForm extends React.Component {
               {this.renderImagePathInput()}
             </div>
           </div>
-          {this.renderStorylineInput()}
-          {this.renderGenreSelection()}
+          <div className="row">
+            <div className="input-field col s12">
+              {this.renderStorylineInput()}
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s6">
+              {this.renderGenreSelection()}
+            </div>
+          </div>
+          <div className="row">
+            <div className="col s6">
           {this.renderRatingInput()}
+            </div>
+            <div className="col s6">
           {this.renderSubmitButton()}
+            </div>
+          </div>
         </form>
       </div>
     );
