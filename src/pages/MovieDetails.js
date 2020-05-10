@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
+import PropTypes from 'prop-types';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -44,9 +44,6 @@ class MovieDetails extends Component {
 export default MovieDetails;
 
 MovieDetails.propTypes = {
-  title: React.PropTypes.string,
-  Subtitle: React.PropTypes.string,
-  Storyline: React.PropTypes.string,
-  Genre: React.PropTypes.string,
-  Rating: React.PropTypes.string,
+  match: PropTypes.checkPropTypes(PropTypes.object),
+  params: PropTypes.number,
 };

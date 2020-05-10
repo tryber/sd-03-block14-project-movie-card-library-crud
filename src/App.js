@@ -20,7 +20,7 @@ function App() {
         <Route exact path="/movies/new" component={NewMovie} />
         <Route
           exact path="/movies/:id"
-          render={(props) => <MovieDetails {...props} />} 
+          render={(props) => <MovieDetails {...props} />}
         />
         <Route exact path="/movies/:id/edit" component={EditMovie} />
         <Route component={NotFound} />
