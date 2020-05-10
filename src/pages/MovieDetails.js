@@ -23,10 +23,6 @@ class MovieDetails extends Component {
       );
   } 
 
-  editar = () =>  {
-  
-  }
-
   render() {
     // Change the condition to check the state
     if (this.state.isLoading) return <Loading />;
