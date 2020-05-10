@@ -11,7 +11,7 @@ class MovieCard extends React.Component {
         <img src={imagePath} alt={title} />
         <h2>{title}</h2>
         <p>{storyline}</p>
-        <Link to={`/movies/${id}`}>Ver detalhes</Link>
+        <Link to={`/movies/${id}`}>VER DETALHES</Link>
       </div>
     );
   }
