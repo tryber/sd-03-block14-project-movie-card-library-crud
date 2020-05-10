@@ -19,7 +19,7 @@ class EditMovie extends Component {
     movieAPI.getMovie(this.props.match.params.id).then((movie) =>
       this.setState({
         status: '',
-        shouldRedirect: '',
+        shouldRedirect: undefined,
         movie,
       }),
     );
@@ -36,15 +36,9 @@ class EditMovie extends Component {
 
   render() {
     const { status, shouldRedirect, movie } = this.state;
-    if (shouldRedirect) {
-      // Redirect
-      <Redirect to="/" />;
-    }
+    if (shouldRedirect) return <Redirect to="/" />;
 
-    if (status === 'loading') {
-      // render Loading
-      <Loading />;
-    }
+    if (status === 'loading') return <Loading />;
 
     return (
       <div data-testid="edit-movie">
