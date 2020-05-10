@@ -10,7 +10,7 @@ class MovieList extends Component {
     super(props);
     this.state = {
       isLoading: true,
-      movies: '',
+      movies: null,
     };
     this.componentDidMount = this.componentDidMount.bind(this);
   }
