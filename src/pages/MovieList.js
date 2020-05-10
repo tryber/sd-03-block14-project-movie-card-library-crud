@@ -21,9 +21,9 @@ class MovieList extends Component {
 
   changeState(flag, obj) {
     this.setState((state) => ({
-        ...state,
-        hasMovies: flag,
-        movies: obj,
+      ...state,
+      hasMovies: flag,
+      movies: obj,
     }));
   }
 
