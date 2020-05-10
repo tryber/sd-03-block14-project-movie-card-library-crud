@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { number } from 'prop-types';
 
 class MovieForm extends React.Component {
   constructor(props) {
@@ -8,11 +8,13 @@ class MovieForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // É executada ao clicar no bot de salvar.
   handleSubmit() {
     const { onSubmit } = this.props;
     onSubmit(this.state);
   }
 
+  // É executada ao digitar nos campos
   updateMovie(field, newValue) {
     this.setState({ [field]: newValue });
   }
@@ -131,7 +133,7 @@ class MovieForm extends React.Component {
           type="button"
           onClick={this.handleSubmit}
         >
-          Submit
+          Salvar
         </button>
       </div>
     );
@@ -140,6 +142,7 @@ class MovieForm extends React.Component {
   render() {
     return (
       <div>
+        Editando dados de '{this.props.movie.title}':
         <form>
           {this.renderTitleInput()}
           {this.renderSubtitleInput()}
@@ -153,5 +156,14 @@ class MovieForm extends React.Component {
     );
   }
 }
+
+MovieForm.propTypes = {
+  id: PropTypes.string,
+  title: PropTypes.string,
+  storyline: PropTypes.string,
+  imagePath: PropTypes.string,
+  genre: PropTypes.string,
+  rating: number
+};
 
 export default MovieForm;

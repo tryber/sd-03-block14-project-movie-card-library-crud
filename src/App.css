@@ -12,6 +12,12 @@ body {
   justify-content: center;
 }
 
+.menii {
+  left: 2em;
+  position: absolute;
+  top: 2em;
+}
+
 .page-title {
   color: #f8f9fa;
   font-size: 35px;
@@ -26,14 +32,18 @@ body {
 }
 
 .links {
-  margin: 0.5em;
+  padding: 0.5em;
 }
 
-.formFilter , .formRegister {
+.links:hover {
+  background-color: gray;
+}
+
+.movie-edit {
   border: 2px solid gray;
-  margin-bottom: 3em;
+  margin: 3em auto;
   padding: 1em 1.5em;
-  width: fit-content;
+  width: 50%;
 }
 
 .movie-list {
@@ -44,28 +54,26 @@ body {
 
 .movie-card {
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 3px;
+  border: 2px double rgba(0, 0, 0, 0.125);
   display: flex;
   flex-direction: column;
-  height: 450px;
+  height: 400px;
   margin: 25px;
   overflow: hidden;
   width: 300px;
 }
 
-.movie-detail {
-  background-color: lightcyan;
+.movie-details {
+  background-color: lightgrey;
   border: 2px solid rgba(0, 0, 0, 0.125);
   height: 70%;
-  margin: 25px;
+  margin: 3em auto;
+  padding: 1.5em;
   width: 85%;
 }
 
 .movie-card-image {
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  height: 50%;
 }
 
 .movie-card-body {
@@ -80,7 +88,7 @@ body {
 }
 
 .movie-card-subtitle {
-  color: #6c757d;
+  color: #343a40;
   font-size: 16px;
   font-weight: 500;
   margin: 0 0 8px;
@@ -91,19 +99,10 @@ body {
   text-align: justify;
 }
 
-.rating {
-  background-color: #007bff;
-  border-radius: 25px;
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 3px 9px;
-}
-
 .movie-card-rating {
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: burlywood;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding: 12px 20px;
 }
