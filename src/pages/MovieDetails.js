@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
+import { Link } from 'react-router-dom';
 
 
 class MovieDetails extends Component {
@@ -20,6 +21,10 @@ class MovieDetails extends Component {
         this.setState({ isLoading: false });
       },
       );
+  } 
+
+  editar = () =>  {
+  
   }
 
   render() {
@@ -35,6 +40,8 @@ class MovieDetails extends Component {
           <p>{`Storyline: ${storyline}`}</p>
           <p>{`Genre: ${genre}`}</p>
           <p>{`Rating: ${rating}`}</p>
+          <Link to="/">VOLTAR</Link>
+          <Link to={`/movies/${this.props.match.params.id}/edit`}>EDITAR</Link>
         </div>
       );
     }
