@@ -44,6 +44,9 @@ class MovieDetails extends Component {
 export default MovieDetails;
 
 MovieDetails.propTypes = {
-  match: React.PropTypes.object,
-  match: React.PropTypes.object,
+  title: React.PropTypes.string,
+  Subtitle: React.PropTypes.string,
+  Storyline: React.PropTypes.string,
+  Genre: React.PropTypes.string,
+  Rating: React.PropTypes.string,
 };

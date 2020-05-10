@@ -18,7 +18,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={MovieList} />
         <Route exact path="/movies/new" component={NewMovie} />
-        <Route 
+        <Route
           exact path="/movies/:id"
           render={(props) => <MovieDetails {...props} />} 
         />
