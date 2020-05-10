@@ -21,8 +21,9 @@ class NewMovie extends Component {
 
   render() {
     const { shouldRedirect } = this.state;
-    if (shouldRedirect === true) {
-      return (<Redirect to="/" />);
+    const { history } = this.props
+    if (shouldRedirect) {
+      history.push('/')
     }
     return (
       <div data-testid="new-movie">
