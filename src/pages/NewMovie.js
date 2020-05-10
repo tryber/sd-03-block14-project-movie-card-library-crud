@@ -35,6 +35,6 @@ class NewMovie extends Component {
 
 NewMovie.propTypes = {
   history: PropTypes.string.isRequired,
-}
+};
 
 export default NewMovie;
