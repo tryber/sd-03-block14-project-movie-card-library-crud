@@ -44,9 +44,20 @@ class MovieDetails extends Component {
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
-        <Link to={`/movies/${id}/edit`}>EDITAR</Link>
-        <Link to="/">VOLTAR</Link>
-        <Link to="/" onClick={this.deleteHandler}>
+        <Link
+          to={`/movies/${id}/edit`}
+          className="waves-effect waves-light btn-small"
+        >
+          EDITAR
+        </Link>
+        <Link to="/" className="waves-effect waves-light btn-small">
+          VOLTAR
+        </Link>
+        <Link
+          to="/"
+          onClick={this.deleteHandler}
+          className="waves-effect waves-light btn-small"
+        >
           DELETAR
         </Link>
       </div>

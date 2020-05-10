@@ -62,7 +62,9 @@ class MovieForm extends React.Component {
           id="movie_image"
           type="text"
           value={imagePath}
-          onChange={(event) => this.updateMovie('imagePath', event.target.value)}
+          onChange={(event) =>
+            this.updateMovie('imagePath', event.target.value)
+          }
         />
         <label htmlFor="movie_image">Imagem</label>
       </div>
@@ -77,7 +79,9 @@ class MovieForm extends React.Component {
         <textarea
           id="movie_storyline"
           value={storyline}
-          onChange={(event) => this.updateMovie('storyline', event.target.value)}
+          onChange={(event) =>
+            this.updateMovie('storyline', event.target.value)
+          }
         />
         <label htmlFor="movie_storyline">Sinopse</label>
       </div>
@@ -130,6 +134,7 @@ class MovieForm extends React.Component {
         <button
           type="button"
           onClick={this.handleSubmit}
+          className="btn waves-effect waves-light"
         >
           Submit
         </button>
@@ -139,11 +144,19 @@ class MovieForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <form>
-          {this.renderTitleInput()}
-          {this.renderSubtitleInput()}
-          {this.renderImagePathInput()}
+      <div className="row">
+        <form className="col s12">
+          <div className="row">
+            <div className="input-field col s6">{this.renderTitleInput()}</div>
+            <div className="input-field col s6">
+              {this.renderSubtitleInput()}
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s6">
+              {this.renderImagePathInput()}
+            </div>
+          </div>
           {this.renderStorylineInput()}
           {this.renderGenreSelection()}
           {this.renderRatingInput()}

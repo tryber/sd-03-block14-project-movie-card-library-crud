@@ -14,14 +14,27 @@ class MovieCard extends React.Component {
       id,
     } = this.props.movie;
     return (
-      <div data-testid="movie-card">
-        <img alt={`${title} Cover`} src={imagePath} />
-        <h4>{title}</h4>
-        <h5>{subtitle}</h5>
-        <h6>{genre}</h6>
-        <p>{storyline}</p>
-        <Link to={`movies/${id}`}>VER DETALHES</Link>
-        <span>{rating}</span>
+      <div className="card" data-testid="movie-card">
+        <div className="card-image">
+          <img alt={`${title} Cover`} src={imagePath} />
+          <span>{title}</span>
+        </div>
+        <div className="card-content">
+          <h5>{subtitle}</h5>
+          <h6>{genre}</h6>
+          <p>{storyline}</p>
+        </div>
+        <div className="card-action">
+          <Link
+            to={`movies/${id}`}
+            className="waves-effect waves-light btn-small"
+          >
+            VER DETALHES
+          </Link>
+        </div>
+        <div className="card-content">
+          <span>{rating}</span>
+        </div>
       </div>
     );
   }
