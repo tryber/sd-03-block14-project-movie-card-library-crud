@@ -1,23 +1,22 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
-import { Link } from 'react-router-dom';
+
 
 class MovieDetails extends Component {
-  constructor (props) {
-    super (props);
+  constructor(props) {
+    super(props);
 
     this.state = {
-      movie : {},
-    }
+      movie: {},
+    };
   }
 
-  componentDidMount () {
+  componentDidMount() {
     movieAPI.getMovie(this.props.match.params.id).then((movie) => this.setState({ movie }));
   }
   render() {
-    
     if (!Object.keys(this.state.movie).length) return <Loading />;
 
     const { movie } = this.state;
