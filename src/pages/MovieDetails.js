@@ -12,6 +12,7 @@ class MovieDetails extends Component {
       movie: [],
       loading: true,
     };
+    this.deleteMovie = this.deleteMovie.bind(this);
   }
 
   componentDidMount() {
@@ -20,7 +21,7 @@ class MovieDetails extends Component {
       .then((movie) => this.setState({ movie, loading: false }));
   }
 
-  deleteMovie = () => {
+  deleteMovie() {
     const { match } = this.props;
     movieAPI.deleteMovie(match.params.id);
   }
