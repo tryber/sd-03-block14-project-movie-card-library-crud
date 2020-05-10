@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
 
@@ -21,7 +21,7 @@ class NewMovie extends Component {
   render() {
     const { redirect } = this.state;
     const { history } = this.props;
-    if (redirect) history.push('/');
+    if (redirect) return history.push('/');
 
     return (
       <div data-testid="new-movie">
@@ -32,3 +32,9 @@ class NewMovie extends Component {
 }
 
 export default NewMovie;
+
+NewMovie.propTypes = {
+  history: PropTypes.objectOf(PropTypes
+    .oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]))
+    .isRequired,
+};
