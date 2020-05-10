@@ -21,8 +21,8 @@ class NewMovie extends Component {
   render() {
     const { redirect } = this.state;
     const { history } = this.props;
-    if (redirect) return history.push('/');
-
+    if (redirect) history.push('/');
+    console.log(this.props);
     return (
       <div data-testid="new-movie">
         <MovieForm onSubmit={this.handleSubmit} />
