@@ -6,15 +6,14 @@ import { Loading } from '../components';
 
 class MovieDetails extends Component {
   constructor(props) {
-    super(props)
-  
+    super(props);
     this.state = {
       isLoading: false,
       movie: null,
     }
     this.componentDidMount = this.componentDidMount.bind(this);
-  }
-  
+  };
+
   componentDidMount() {
     movieAPI.getMovie(this.props.match.params.id).then((movie) =>
       this.setState({
@@ -25,7 +24,7 @@ class MovieDetails extends Component {
   }
 
   render() {
-    const { isLoading, movie} = this.state;
+    const { isLoading, movie } = this.state;
     if (!isLoading) return <Loading />;
 
     const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
