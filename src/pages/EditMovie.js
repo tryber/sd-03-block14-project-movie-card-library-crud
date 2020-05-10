@@ -7,20 +7,31 @@ import Loading from '../components/Loading';
 class EditMovie extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      shouldRedirect: false,
+      status: true,
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    movieAPI.getMovie(this.props.match.params.id)
+      .then((movie) => this.setState({ movie, shouldRedirect: true }));
+  }
+
   handleSubmit(updatedMovie) {
+    movieAPI.updateMovie(updatedMovie)
+      .then((movie) => this.setState({ movie, status: false }));
   }
 
   render() {
     const { status, shouldRedirect, movie } = this.state;
+    const { history } = this.props;
     if (shouldRedirect) {
-      this.handleSubmit(movie);
+      history.push('/');
     }
 
-    if (status === 'loading') {
+    if (status) {
       return (<Loading />);
     }
 

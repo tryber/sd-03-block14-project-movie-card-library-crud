@@ -1,28 +1,26 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
-import { Link } from 'react-router-dom';
 
 class MovieDetails extends Component {
   constructor(props) {
     super(props);
-    this.state = { movie: [] };
+    this.state = {
+      movie: [],
+      loading: true,
+    };
   }
 
   componentDidMount() {
-    console.log(this.props.match.params.id);
     movieAPI.getMovie(this.props.match.params.id)
-      .then((movie) => this.setState({ movie }));
+      .then((movie) => this.setState({ movie, loading: false }));
   }
 
   render() {
-    console.log(this.props.match.params.id);
-    const { movie } = this.state;
-    // Change the condition to check the state
-    if (!movie === []) return (<Loading />);
-    
+    const { movie, loading } = this.state;
+    if (loading) return <Loading />;
     const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
 
     return (
@@ -36,7 +34,7 @@ class MovieDetails extends Component {
         </div>
         <div>
           <Link to={`/movies/${id}/edit`}>EDITAR</Link>
-          <Link to="/" >VOLTAR</Link>
+          <Link to="/">VOLTAR</Link>
         </div>
       </>
     );
