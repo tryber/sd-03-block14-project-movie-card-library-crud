@@ -21,7 +21,7 @@ class MovieDetails extends Component {
       this.setState({
         isLoading: true,
         movie,
-      })
+      }),
     );
   }
 
