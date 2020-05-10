@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { MovieForm } from '../components';
-import PropTypes from 'prop-types';
 import * as movieAPI from '../services/movieAPI';
 import Loading from '../components/Loading';
 
@@ -39,7 +39,7 @@ class EditMovie extends Component {
     }
 
     if (status === 'loading') {
-      // render Loading   
+      // render Loading
       return <Loading />;
     }
 

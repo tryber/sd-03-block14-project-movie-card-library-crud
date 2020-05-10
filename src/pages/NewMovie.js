@@ -11,7 +11,7 @@ class NewMovie extends Component {
 
   handleSubmit(newMovie) {
     movieAPI.createMovie(newMovie);
-    this.props.history.push('/')
+    this.props.history.push('/');
   }
 
   render() {
@@ -26,8 +26,8 @@ export default NewMovie;
 
 NewMovie.propTypes = {
   history: PropTypes.checkPropTypes(PropTypes.object),
- };
+};
 
 NewMovie.defaultProps = {
-  history: '', 
+  history: '',
 };
