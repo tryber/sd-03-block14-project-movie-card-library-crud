@@ -10,9 +10,9 @@ class MovieDetails extends Component {
     this.state = {
       isLoading: false,
       movie: null,
-    }
+    };
     this.componentDidMount = this.componentDidMount.bind(this);
-  };
+  }
 
   componentDidMount() {
     movieAPI.getMovie(this.props.match.params.id).then((movie) =>
