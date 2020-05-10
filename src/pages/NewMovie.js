@@ -24,7 +24,7 @@ class NewMovie extends Component {
 
     return shouldRedirect ? (
       <Router>
-      <Redirect to="/" />
+        <Redirect to="/" />
       </Router>
     ) : (
       <div data-testid="new-movie">

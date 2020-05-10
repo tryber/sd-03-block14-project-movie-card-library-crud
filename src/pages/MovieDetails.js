@@ -32,7 +32,6 @@ class MovieDetails extends Component {
     if (!isLoading) return <Loading />;
 
     const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
-
     return (
       <div data-testid="movie-details">
         <div>
@@ -53,8 +52,7 @@ class MovieDetails extends Component {
           VOLTAR
         </Link>
         <Link
-          to="/"
-          onClick={this.deleteHandler}
+          to="/" onClick={this.deleteHandler}
           className="waves-effect waves-light btn-small"
         >
           DELETAR
