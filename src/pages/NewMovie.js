@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  BrowserRouter as Router, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect } from 'react-router-dom';
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
 
