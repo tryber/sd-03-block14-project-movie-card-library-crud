@@ -22,13 +22,14 @@ class MovieDetails extends Component {
 
   render() {
     const { movie, loading } = this.state;
-    if (loading) return <Loading />;
     const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
+    if (loading) return <Loading />;
 
     return (
       <div>
         <div data-testid="movie-details">
-          <img alt={`${title} Cover`} src={`../${imagePath}`} />
+          <img alt="Movie Cover" src={`../${imagePath}`} />
+          <h2>{title}</h2>
           <p>{`Subtitle: ${subtitle}`}</p>
           <p>{`Storyline: ${storyline}`}</p>
           <p>{`Genre: ${genre}`}</p>
