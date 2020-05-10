@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
@@ -10,7 +10,10 @@ class MovieDetails extends Component {
     this.state = {
       movie: {},
       isLoading: true,
+      deleted: false,
+      id: 0,
     };
+    this.deleteCard = this.deleteCard.bind(this);
   }
 
   componentDidMount() {
@@ -18,12 +21,22 @@ class MovieDetails extends Component {
       .then((movie) => this.setState({
         movie,
         isLoading: false,
+        id: this.props.match.params.id,
       }));
+  }
+
+  deleteCard() {
+    const { id } = this.state;
+    movieAPI.deleteMovie(id)
+    .then(this.setState({ deleted: true }));
   }
 
   render() {
     // Change the condition to check the state
-    const { movie, isLoading } = this.state;
+    const { movie, isLoading, deleted } = this.state;
+
+    if (deleted) return <Redirect to="/" />
+
     if (isLoading) return <Loading />;
 
     const { title, storyline, imagePath, genre, rating, subtitle } = movie;
@@ -38,6 +51,7 @@ class MovieDetails extends Component {
         <p>{`Rating: ${rating}`}</p>
         <Link to={`/movies/${this.props.match.params.id}/edit`}>EDITAR</Link>
         <Link to="/">VOLTAR</Link>
+        <a onClick={this.deleteCard}>DELETAR</a>
       </div>
     );
   }

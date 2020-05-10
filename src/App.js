@@ -11,17 +11,15 @@ import NewMovie from './pages/NewMovie';
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <div>Movie Card Library Crud</div>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={MovieList} />
-          <Route exact path="/movies/new" component={NewMovie} />
-          <Route exact path="/movies/:id" component={MovieDetails} />
-          <Route exact path="/movies/:id/edit" component={EditMovie} />
-        </Switch>
-      </BrowserRouter>
-    </div>
+      <Switch>
+        <Route exact path="/" component={MovieList} />
+        <Route exact path="/movies/new" component={NewMovie} />
+        <Route exact path="/movies/:id" component={MovieDetails} />
+        <Route exact path="/movies/:id/edit" component={EditMovie} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 

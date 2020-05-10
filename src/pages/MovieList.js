@@ -10,20 +10,24 @@ class MovieList extends Component {
     super(props);
     this.state = {
       movies: [],
+      isLoading: true,
     };
   }
 
   componentDidMount() {
     movieAPI.getMovies()
-      .then((movies) => this.setState({ movies }));
+      .then((movies) => this.setState({
+        movies,
+        isLoading: false,
+      }));
   }
 
   render() {
-    const { movies } = this.state;
+    const { movies, isLoading } = this.state;
 
     // Render Loading here if the request is still happening
 
-    if (movies.length === 0) return <Loading />;
+    if (isLoading) return <Loading />;
 
     return (
       <div data-testid="movie-list" className="movie-list">
