@@ -37,8 +37,13 @@ class MovieDetails extends Component {
         </div>
       );
     }
-    return null
+    return null;
   }
 }
 
 export default MovieDetails;
+
+MovieDetails.propTypes = {
+  match: React.PropTypes.object,
+  match: React.PropTypes.object,
+};
