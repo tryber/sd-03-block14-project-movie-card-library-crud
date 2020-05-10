@@ -16,10 +16,11 @@ function App() {
     <Router>
       <Link to="/movies/new">ADICIONAR CARTÃO</Link>
       <Switch>
-        <Route exact={true} path="/" component={MovieList} />
-        <Route exact={true} path="/movies/new" component={NewMovie} />
-        <Route exact={true} path="/movies/:id" render={(props) => <MovieDetails {...props} />} />      
-        <Route exact={true} path="/movies/:id/edit" component={EditMovie} />
+        <Route exact path="/" component={MovieList} />
+        <Route exact path="/movies/new" component={NewMovie} />
+        <Route exact path="/movies/:id"
+          render={(props) => <MovieDetails {...props} />} />
+        <Route exact path="/movies/:id/edit" component={EditMovie} />
         <Route component={NotFound} />
       </Switch>
     </Router>
