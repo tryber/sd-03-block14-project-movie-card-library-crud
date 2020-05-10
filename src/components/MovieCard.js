@@ -16,13 +16,14 @@ class MovieCard extends React.Component {
     return (
       <div className="card" data-testid="movie-card">
         <div className="card-image">
-          <img alt={`${title} Cover`} src={imagePath} />
-          <span>{title}</span>
+          <img className="responsive-image" alt={`${title} Cover`} src={imagePath} />
+          <h4>{title}</h4>
+          <h6>{subtitle}</h6>
         </div>
         <div className="card-content">
-          <h5>{subtitle}</h5>
-          <h6>{genre}</h6>
           <p>{storyline}</p>
+          <span>{genre}</span>
+          <h5>{rating}</h5>
         </div>
         <div className="card-action">
           <Link
@@ -31,9 +32,6 @@ class MovieCard extends React.Component {
           >
             VER DETALHES
           </Link>
-        </div>
-        <div className="card-content">
-          <span>{rating}</span>
         </div>
       </div>
     );

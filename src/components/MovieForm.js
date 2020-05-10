@@ -160,22 +160,16 @@ class MovieForm extends React.Component {
             </div>
           </div>
           <div className="row">
-            <div className="input-field col s12">
+            <div className="input-field col s10">
               {this.renderStorylineInput()}
             </div>
-          </div>
-          <div className="row">
-            <div className="input-field col s6">
+            <div className="input-field col s2">
               {this.renderGenreSelection()}
             </div>
           </div>
           <div className="row">
-            <div className="col s6">
-          {this.renderRatingInput()}
-            </div>
-            <div className="col s6">
-          {this.renderSubmitButton()}
-            </div>
+            <div className="col s2">{this.renderRatingInput()}</div>
+            <div className="col s2 offset-s8">{this.renderSubmitButton()}</div>
           </div>
         </form>
       </div>

@@ -29,7 +29,7 @@ class MovieList extends Component {
       <Loading />
     ) : (
       <div className="row" data-testid="movie-list">
-        <div className="col s12 m7">
+        <div className="col s6">
           {movies.map((movie) => (
             <MovieCard key={movie.title} movie={movie} />
           ))}

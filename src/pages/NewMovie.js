@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect } from 'react-router-dom';
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
 
@@ -23,7 +23,9 @@ class NewMovie extends Component {
     const { shouldRedirect } = this.state;
 
     return shouldRedirect ? (
+      <Router>
       <Redirect to="/" />
+      </Router>
     ) : (
       <div data-testid="new-movie">
         <MovieForm onSubmit={this.handleSubmit} />
