@@ -20,13 +20,11 @@ class MovieList extends Component {
   }
 
   changeState(flag, obj) {
-    this.setState((state) => {
-      return {
+    this.setState((state) => ({
         ...state,
         hasMovies: flag,
         movies: obj,
-      };
-    });
+    }));
   }
 
   render() {

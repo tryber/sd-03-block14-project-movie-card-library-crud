@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
+
+import * as movieAPI from '../services/movieAPI';
 
 
 class MovieDetails extends Component {
@@ -20,13 +21,11 @@ class MovieDetails extends Component {
   }
 
   changeState(flag, obj) {
-    this.setState((state) => {
-      return {
+    this.setState((state) => ({
         ...state,
         hasMovies: flag,
         movie: obj,
-      };
-    });
+    }));
   }
 
   render() {
