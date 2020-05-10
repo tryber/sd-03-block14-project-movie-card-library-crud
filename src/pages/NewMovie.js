@@ -17,7 +17,7 @@ class NewMovie extends Component {
     movieAPI.createMovie(newMovie).then(() =>
       this.setState({
         shouldRedirect: true,
-      })
+      }),
     );
   }
 
@@ -29,7 +29,7 @@ class NewMovie extends Component {
       history.push('/');
     }
     return (
-      <div data-testid='new-movie'>
+      <div data-testid="new-movie">
         <MovieForm onSubmit={this.handleSubmit} />
       </div>
     );

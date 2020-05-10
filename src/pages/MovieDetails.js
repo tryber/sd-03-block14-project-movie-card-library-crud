@@ -37,9 +37,9 @@ class MovieDetails extends Component {
     const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
 
     return (
-      <div data-testid='movie-details'>
+      <div data-testid="movie-details">
         <div>
-          <img alt='Movie Cover' src={`../${imagePath}`} />
+          <img alt="Movie Cover" src={`../${imagePath}`} />
           <p>{`Title: ${title}`}</p>
           <p>{`Subtitle: ${subtitle}`}</p>
           <p>{`Storyline: ${storyline}`}</p>
@@ -48,8 +48,8 @@ class MovieDetails extends Component {
         </div>
         <Link to={`/movies/${id}/edit`}>EDITAR</Link>
         <br />
-        <Link to='/'>VOLTAR</Link>
-        <Link to='/' onClick={this.handleDelete}>
+        <Link to="/">VOLTAR</Link>
+        <Link to="/" onClick={this.handleDelete}>
           DELETAR
         </Link>
       </div>
