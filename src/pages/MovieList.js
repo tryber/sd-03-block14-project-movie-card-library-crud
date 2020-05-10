@@ -22,14 +22,14 @@ class MovieList extends Component {
     const { movies } = this.state;
     if (!movies.length) return <Loading />;
     return (
-      <>
+      <div>
         <div data-testid="movie-list">
           {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
         </div>
         <div>
           <Link to="/moviesnew/">ADICIONAR CARTÃO</Link>
         </div>
-      </>
+      </div>
     );
   }
 }
