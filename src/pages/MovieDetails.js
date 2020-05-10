@@ -15,9 +15,9 @@ class MovieDetails extends Component {
   componentDidMount() {
     movieAPI.getMovie()
            .then((data) => {
-        this.setState({ movie: data});
-        this.setState({ isLoading: false } );
-      },
+             this.setState({ movie: data });
+             this.setState({ isLoading: false });
+           },
       );
   }
 
