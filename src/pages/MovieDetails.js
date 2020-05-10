@@ -35,7 +35,7 @@ class MovieDetails extends Component {
     // Change the condition to check the state
     const { movie, isLoading, deleted } = this.state;
 
-    if (deleted) return <Redirect to="/" />
+    if (deleted) return <Redirect to="/" />;
 
     if (isLoading) return <Loading />;
 
@@ -51,7 +51,7 @@ class MovieDetails extends Component {
         <p>{`Rating: ${rating}`}</p>
         <Link to={`/movies/${this.props.match.params.id}/edit`}>EDITAR</Link>
         <Link to="/">VOLTAR</Link>
-        <a onClick={this.deleteCard}>DELETAR</a>
+        <button onClick={this.deleteCard}>DELETAR</button>
       </div>
     );
   }
