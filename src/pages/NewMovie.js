@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
 
@@ -24,10 +24,10 @@ class NewMovie extends Component {
 }
 export default NewMovie;
 
-MovieDetails.propTypes = {
+NewMovie.propTypes = {
   history: PropTypes.checkPropTypes(PropTypes.object),
  };
 
-MovieDetails.defaultProps = {
+NewMovie.defaultProps = {
   history: '', 
 };

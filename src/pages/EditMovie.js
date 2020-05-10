@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { MovieForm } from '../components';
+import PropTypes from 'prop-types';
 import * as movieAPI from '../services/movieAPI';
 import Loading from '../components/Loading';
 
@@ -52,12 +53,12 @@ class EditMovie extends Component {
 
 export default EditMovie;
 
-MovieDetails.propTypes = {
+EditMovie.propTypes = {
   match: PropTypes.checkPropTypes(PropTypes.object),
   params: PropTypes.number,
 };
 
-MovieDetails.defaultProps = {
+EditMovie.defaultProps = {
   match: '',
   params: 0,
 };
