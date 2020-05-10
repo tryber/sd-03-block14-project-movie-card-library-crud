@@ -24,7 +24,7 @@ class MovieDetails extends Component {
   render() {
     // Change the condition to check the state
     if (this.state.isLoading) return <Loading />;
-    if(this.state.movie != undefined) {
+    if(this.state.movie !== undefined) {
     const { title, storyline, imagePath, genre, rating, subtitle } = this.state.movie;
     return (
       <div data-testid="movie-details">
