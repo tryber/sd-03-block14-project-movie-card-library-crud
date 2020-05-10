@@ -23,3 +23,11 @@ class NewMovie extends Component {
   }
 }
 export default NewMovie;
+
+MovieDetails.propTypes = {
+  history: PropTypes.checkPropTypes(PropTypes.object),
+ };
+
+MovieDetails.defaultProps = {
+  history: '', 
+};
