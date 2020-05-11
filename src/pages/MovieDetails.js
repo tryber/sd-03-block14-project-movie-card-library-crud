@@ -17,7 +17,7 @@ class MovieDetails extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
     movieAPI.getMovie(id)
-    .then(el => this.setState({ movie: el }));
+    .then((el) => this.setState({ movie: el }));
   }
 
   render() {
@@ -38,9 +38,9 @@ class MovieDetails extends Component {
         <Link to="/" onClick={() => movieAPI.deleteMovie(id)}>DELETAR</Link>
         <Link
           to={{
-           pathname: `/movies/${id}/edit`,
-           state: {
-             movie: this.props.location.state,
+            pathname: `/movies/${id}/edit`,
+            state: {
+              movie: this.props.location.state,
           }}
         }>EDITAR</Link>
         <Link to="/">VOLTAR</Link>
