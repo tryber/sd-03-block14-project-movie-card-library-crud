@@ -6,9 +6,10 @@ import '../App.css';
 //  Representa cada cartão na grade
 class MovieCard extends React.Component {
   render() {
-    const { id, storyline, imagePath } = this.props.movie;
+    const { id, title, storyline, imagePath } = this.props.movie;
     return (
       <div data-testid="movie-card" className="movie-card">
+        <h5>{title}</h5>
         <img className="movie-card-image" alt="Movie Cover" src={`../${imagePath}`} />
         <p>{storyline}</p>
         <Link className="links" to={`movies/${id}`}>Ver detalhes</Link>
@@ -18,9 +19,12 @@ class MovieCard extends React.Component {
 }
 
 MovieCard.propTypes = {
-  id: PropTypes.string,
-  storyline: PropTypes.string,
-  imagePath: PropTypes.string,
+  movie: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    storyline: PropTypes.string.isRequired,
+    imagePath: PropTypes.string.isRequired,
+  })
 };
 
 export default MovieCard;

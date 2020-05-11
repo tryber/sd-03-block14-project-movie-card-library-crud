@@ -4,23 +4,23 @@ import MovieDetails from './pages/MovieDetails';
 import MovieList from './pages/MovieList';
 import EditMovie from './pages/EditMovie';
 import NewMovie from './pages/NewMovie';
+import NotFound from './pages/NotFound';
 import Header from './components/Header';
 
 // render={(props) => <MovieDetails {...props} movie={this.props.movie}/>}
-//<Route path='/movies/:id' component={MovieDetails} />
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-      <Header />
-      <Switch>
-        <Route path='/movies/:id/edit' render={(props) => <EditMovie {...props} />} />
-        <Route path='/movies/:id' render={(props) => <MovieDetails {...props} />} />
-        <Route path='/movies/new' component={NewMovie} />
-        <Route path='/' component={MovieList} />
-      </Switch>
-        
+        <Header />
+        <Switch>
+          <Route exact path="/movies/:id/edit" render={(props) => <EditMovie {...props} />} />
+          <Route exact path="/movies/new" component={NewMovie} />
+          <Route exact path="/movies/:id" render={(props) => <MovieDetails {...props} />} />
+          <Route path="/" component={MovieList} />
+          <Route path="*" component={NotFound} />
+        </Switch>
       </BrowserRouter>
     </div>
   );

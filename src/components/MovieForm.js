@@ -92,7 +92,7 @@ class MovieForm extends React.Component {
     return (
       <div>
         <label htmlFor="movie_genre">Genre Select</label>
-        <select
+        <select className="browser-default"
           id="movie_genre"
           value={genre}
           onChange={(event) => this.updateMovie('genre', event.target.value)}
@@ -142,7 +142,6 @@ class MovieForm extends React.Component {
   render() {
     return (
       <div>
-        Editando dados de '{this.props.movie.title}':
         <form>
           {this.renderTitleInput()}
           {this.renderSubtitleInput()}
@@ -157,13 +156,24 @@ class MovieForm extends React.Component {
   }
 }
 
-MovieForm.propTypes = {
-  id: PropTypes.string,
-  title: PropTypes.string,
-  storyline: PropTypes.string,
-  imagePath: PropTypes.string,
-  genre: PropTypes.string,
-  rating: number
+MovieForm.defaultProps = {
+  movie: {
+    id: '',
+    title: '',
+    storyline: '',
+    imagePath: '',
+    genre: 'comedy',
+    rating: 0,
+  }
 };
+
+/*MovieForm.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  storyline: PropTypes.string.isRequired,
+  imagePath: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired
+};*/
 
 export default MovieForm;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { MovieForm, Loading } from '../components';
-import { Redirect, Route } from 'react-router-dom';
 import * as movieAPI from '../services/movieAPI';
 
 class EditMovie extends Component {
@@ -9,13 +9,13 @@ class EditMovie extends Component {
     this.state = {
       status: 'loading',
       shouldRedirect: false,
-      movie: ''
+      movie: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    // Para obter a URL direto das props do objeto (na URL)
+    // Gambiarra usada para obter a URL direto das props do objeto (passado pela URL na chamada)
     movieAPI.getMovie(this.props.match.params.id)
       .then((filme) => this.setState({ movie: filme, status: 'loaded' }))
       .catch((e) => console.log(e));
@@ -23,23 +23,24 @@ class EditMovie extends Component {
 
   handleSubmit(updatedMovie) {
     movieAPI.updateMovie(updatedMovie);
-    this.setState({movie: updatedMovie, shouldRedirect: true});
+    this.setState({ movie: updatedMovie, shouldRedirect: true });
   }
 
   render() {
     const { status, shouldRedirect, movie } = this.state;
     if (shouldRedirect) {
       return (
-        <Redirect to='/movies' />
-      )
+        <Redirect to="/movies" />
+      );
     }
 
     if (status === 'loading') {
-      return <Loading />
+      return <Loading />;
     }
 
     return (
       <div data-testid="edit-movie" className="movie-edit">
+        <p>Altere os dados do filme.</p>
         <MovieForm movie={movie} onSubmit={this.handleSubmit} />
       </div>
     );

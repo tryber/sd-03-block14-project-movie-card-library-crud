@@ -6,8 +6,8 @@ class Header extends React.Component {
     return (
       <header className="movie-card-header">
         <div className="menii">
-          <Link className="links" to='/'>Home</Link>
-          <Link className="links" to='/movies/new'>Novo Filme</Link>
+          <Link className="links" to="/">INÍCIO</Link>
+          <Link className="links" to="/movies/new">ADICIONAR CARTÃO</Link>
         </div>
         <h1 className="page-title">Movie Cards Library - CRUD</h1>
       </header>
