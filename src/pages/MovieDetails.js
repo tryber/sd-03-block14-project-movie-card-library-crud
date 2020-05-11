@@ -40,7 +40,7 @@ class MovieDetails extends Component {
           to={{
             pathname: `/movies/${id}/edit`,
             state: {
-                movie: this.props.location.state,
+              movie: this.props.location.state,
             },
           }}
         >
@@ -60,11 +60,21 @@ MovieDetails.defaultProps = {
       id: '',
     },
   },
+  location: {
+    state: {
+      id: '',
+    },
+  },
 };
 
 MovieDetails.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  }),
+  location: PropTypes.shape({
+    state: PropTypes.shape({
       id: PropTypes.string.isRequired,
     }),
   }),
