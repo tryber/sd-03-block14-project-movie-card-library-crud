@@ -38,12 +38,12 @@ class EditMovie extends Component {
 
     if (shouldRedirect) {
       // Redirect
-      return <Redirect to="/"/>
+      return <Redirect to="/" />;
     }
 
     if (status === 'loading') {
       // render Loading
-      return <Loading />
+      return <Loading />;
     }
 
     return (
