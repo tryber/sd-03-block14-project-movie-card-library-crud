@@ -24,7 +24,7 @@ class MovieDetails extends Component {
   }
 
   deleteMovie() {
-    movieAPI.deleteMovie(this.props.match.params.id);   
+    movieAPI.deleteMovie(this.props.match.params.id);
   }
 
   render() {
