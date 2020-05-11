@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
@@ -14,11 +13,10 @@ class NewMovie extends Component {
   handleSubmit(newMovie) {
     const { history } = this.props;
     movieAPI.createMovie(newMovie)
-      .then(history.push("/"));
+      .then(history.push('/'));
   }
 
   render() {
-
     return (
       <div data-testid="new-movie">
         <MovieForm onSubmit={this.handleSubmit} />
