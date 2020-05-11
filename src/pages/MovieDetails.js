@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import './movies.css'
 
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
@@ -35,8 +36,8 @@ class MovieDetails extends Component {
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
-        <Link to="/" onClick={() => movieAPI.deleteMovie(id)}>DELETAR</Link>
-        <Link
+        <Link className='botao' to="/" onClick={() => movieAPI.deleteMovie(id)}>DELETAR</Link>
+        <Link className='botao'
           to={{
             pathname: `/movies/${id}/edit`,
             state: {
@@ -46,7 +47,7 @@ class MovieDetails extends Component {
         >
             EDITAR
           </Link>
-        <Link to="/">VOLTAR</Link>
+        <Link className='botao' to="/">VOLTAR</Link>
       </div>
     );
   }

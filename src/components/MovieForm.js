@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import '../pages/movies.css'
 
 class MovieForm extends React.Component {
   constructor(props) {
@@ -75,6 +75,7 @@ class MovieForm extends React.Component {
     return (
       <div>
         <textarea
+          className="altura"
           id="movie_storyline"
           value={storyline}
           onChange={(event) => this.updateMovie('storyline', event.target.value)}
@@ -130,6 +131,7 @@ class MovieForm extends React.Component {
     return (
       <div>
         <button
+          className="botao"
           type="button"
           onClick={this.handleSubmit}
         >

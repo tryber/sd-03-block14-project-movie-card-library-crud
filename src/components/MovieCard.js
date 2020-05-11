@@ -2,15 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import '../pages/movies.css'
+
 class MovieCard extends React.Component {
   render() {
     const { movie } = this.props;
     return (
-      <div data-testid="movie-card">
-        <img src={movie.imagePath} alt={movie.title} />
+      <div data-testid="movie-card" className="card">
+        <div className="imgbx">
+          <img className="image" src={movie.imagePath} alt={movie.title} />
         <p>{movie.title}</p>
         <p>{movie.storyline}</p>
-        <Link
+        </div>
+        <Link className="botao"
           to={{
             pathname: `movies/${movie.id}`,
             state: {

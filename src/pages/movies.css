@@ -1,0 +1,57 @@
+.botao{
+  min-width: 150px;
+  padding: 15px 10px;
+  margin: 20px;
+  background: rgb(214, 214, 214);
+  border: none;
+  border-radius: 25px;
+  color: rgb(50, 207, 207);
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.botao:hover {
+  box-shadow: inset -7px -7px 20px 0 rgba(255, 255, 255, 0.7),
+    inset 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.altura{
+  height: 100px;
+}
+
+.container{
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 1100px;
+}
+
+.container .card{
+  width: 320px;
+  margin: 20px;
+  padding: 40px 30px;
+  border-radius: 40px;
+  background: rgb(214, 214, 214);
+  box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 1),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container .card:hover{
+  box-shadow: inset -7px -7px 20px 0 rgba(255, 255, 255, 1),
+              inset 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container .card .imgBx{
+  position: relative;
+  text-align: center;
+}
+
+.image{
+  width: 260px;
+}
