@@ -15,8 +15,10 @@ class MovieCard extends React.Component {
             pathname: `movies/${movie.id}`,
             state: {
               movie: this.props.movie,
-              }
-          }}>VER DETALHES</Link>
+            },
+          }}>
+            VER DETALHES
+          </Link>
       </div>
     );
   }
