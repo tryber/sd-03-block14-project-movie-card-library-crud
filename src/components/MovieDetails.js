@@ -10,10 +10,16 @@ class MovieDetails extends React.Component {
     this.state = {
       movie: {},
     };
+    this.getMovieIdByPage = this.getMovieIdByPage.bind(this);
+  }
+
+  getMovieIdByPage() {
+    const id = this.props.location.pathname;
+    return Number(id.substring(8));
   }
 
   componentWillMount() {
-    getMovie(1)
+    getMovie(this.getMovieIdByPage())
     .then((movie) =>
     this.setState(() => (
         { movie }
