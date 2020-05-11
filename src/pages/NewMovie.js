@@ -9,7 +9,7 @@ class NewMovie extends Component {
 
     this.state = {
       redirect: false,
-    }
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -22,7 +22,7 @@ class NewMovie extends Component {
   }
 
   render() {
-    return this.state.redirect? (
+    return this.state.redirect ? (
       <Router>
         <Redirect to="/" />
       </Router>
