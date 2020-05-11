@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
-import { Link } from 'react-router-dom';
-import movies from '../services/movieData';
+import { Link, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class MovieDetails extends Component {
   constructor(props){
@@ -13,6 +13,7 @@ class MovieDetails extends Component {
       movie : '',
     }
   }
+
   componentDidMount(){
     const { id } = this.props.match.params
     movieAPI.getMovie(id)
@@ -29,11 +30,12 @@ class MovieDetails extends Component {
     return (
       <div data-testid="movie-details">
         <img alt="Movie Cover" src={`../${imagePath}`} />
-        ]<p>{`title: ${title}`}</p>
+        <p>{`title: ${title}`}</p>
         <p>{`Subtitle: ${subtitle}`}</p>
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
+        <Link to="/" onClick={() => movieAPI.deleteMovie(id)}>DELETAR</Link>
         <Link to={{
           pathname:`/movies/${id}/edit`,
           state: {
@@ -45,4 +47,21 @@ class MovieDetails extends Component {
   }
 }
 
+
 export default MovieDetails;
+
+MovieDetails.defaultProps = {
+  match: {
+    params: {
+      id: '',
+    },
+  },
+};
+
+MovieDetails.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  }),
+};
