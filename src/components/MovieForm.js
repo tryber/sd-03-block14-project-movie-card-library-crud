@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 class MovieForm extends React.Component {
   constructor(props) {
@@ -89,17 +88,21 @@ class MovieForm extends React.Component {
 
     return (
       <div>
+
+        <div className="input-field col s12">
+          <select
+            className="browser-default"
+            id="movie_genre"
+            value={genre}
+            onChange={(event) => this.updateMovie('genre', event.target.value)}
+          >
+            <option value="action">Ação</option>
+            <option value="comedy">Comédia</option>
+            <option value="thriller">Suspense</option>
+            <option value="fantasy">Fantasia</option>
+          </select>
+        </div>
         <label htmlFor="movie_genre">Gênero</label>
-        <select
-          id="movie_genre"
-          value={genre}
-          onChange={(event) => this.updateMovie('genre', event.target.value)}
-        >
-          <option value="action">Ação</option>
-          <option value="comedy">Comédia</option>
-          <option value="thriller">Suspense</option>
-          <option value="fantasy">Fantasia</option>
-        </select>
       </div>
     );
   }
