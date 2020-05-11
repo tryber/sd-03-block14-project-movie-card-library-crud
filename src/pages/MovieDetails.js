@@ -37,15 +37,12 @@ class MovieDetails extends Component {
         <p>{`Rating: ${rating}`}</p>
         <Link to="/" onClick={() => movieAPI.deleteMovie(id)}>DELETAR</Link>
         <Link
-          to={
-            {
+          to={{
               pathname: `/movies/${id}/edit`,
               state: {
                 movie: this.props.location.state,
               }
-            }
-          }
-        >EDITAR</Link>
+          }}>EDITAR</Link>
         <Link to="/">VOLTAR</Link>
       </div>
     );
