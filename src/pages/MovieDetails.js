@@ -40,7 +40,7 @@ class MovieDetails extends Component {
               <span className="card-title">{`Title: ${title}`}</span>
 
             </div>
-            <div class="card-stacked">
+            <div className="card-stacked">
               <div className="card-content">
                 <p>{`Subtitle: ${subtitle}`}</p>
                 <p>{`Storyline: ${storyline}`}</p>
