@@ -133,6 +133,7 @@ class MovieForm extends React.Component {
         <button
           type="button"
           onClick={this.handleSubmit}
+          className="waves-effect grey darken-3 btn"
         >
           Submit
         </button>
@@ -142,7 +143,7 @@ class MovieForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container center-align white">
         <form>
           {this.renderTitleInput()}
           {this.renderSubtitleInput()}

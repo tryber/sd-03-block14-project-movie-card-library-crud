@@ -14,7 +14,7 @@ class MovieCard extends React.Component {
     return (
       <div data-testid="movie-card" className="row">
         <div className="col s12 m7">
-          <div className="card movie-card">
+          <div className="card movie-card large">
             <div className="card-image">
               <img alt={`${title} cover`} src={imagePath} />
               <span className="card-title">{title}</span>

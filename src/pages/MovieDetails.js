@@ -33,15 +33,28 @@ class MovieDetails extends Component {
 
     return (
       <div data-testid="movie-details">
-        <img alt="Movie Cover" src={`../${imagePath}`} />
-        <p>{`Title: ${title}`}</p>
-        <p>{`Subtitle: ${subtitle}`}</p>
-        <p>{`Storyline: ${storyline}`}</p>
-        <p>{`Genre: ${genre}`}</p>
-        <p>{`Rating: ${rating}`}</p>
-        <Link to={`/movies/${id}/edit`}>EDITAR</Link>
-        <Link to="/">VOLTAR</Link>
-        <Link to="/" onClick={() => movieAPI.deleteMovie(id)}>DELETAR</Link>
+        <div className="col s12 m6">
+          <div className="card horizontal">
+            <div className="card-image">
+              <img alt="Movie Cover" src={`../${imagePath}`} />
+              <span className="card-title">{`Title: ${title}`}</span>
+
+            </div>
+            <div class="card-stacked">
+              <div className="card-content">
+                <p>{`Subtitle: ${subtitle}`}</p>
+                <p>{`Storyline: ${storyline}`}</p>
+                <p>{`Genre: ${genre}`}</p>
+                <p>{`Rating: ${rating}`}</p>
+              </div>
+              <div className="card-action">
+                <Link className="" to={`/movies/${id}/edit`}>EDITAR</Link>
+                <Link className="" to="/">VOLTAR</Link>
+                <Link className="" to="/" onClick={() => movieAPI.deleteMovie(id)}>DELETAR</Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
