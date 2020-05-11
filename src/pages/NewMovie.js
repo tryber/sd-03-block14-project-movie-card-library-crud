@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
@@ -20,10 +21,9 @@ class NewMovie extends Component {
 
   render() {
     const { shouldRedirect } = this.state;
-    const { history } = this.props;
 
     if (shouldRedirect) {
-      return history.push('/');
+      return <Redirect to="/" />;
     }
 
     return (
@@ -34,10 +34,10 @@ class NewMovie extends Component {
   }
 }
 
-NewMovie.propTypes = {
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
-};
+// NewMovie.propTypes = {
+//   history: PropTypes.shape({
+//     push: PropTypes.func.isRequired,
+//   }).isRequired,
+// };
 
 export default NewMovie;
