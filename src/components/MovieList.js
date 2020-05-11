@@ -23,7 +23,7 @@ class MovieList extends React.Component {
   render() {
     return (
       <div>
-        <Loading />
+        { !this.state.movies.length && <Loading /> }
         { this.state.movies.map((m) => <MovieCard key={m.title} movie={m} />) }
       </div>
     );
