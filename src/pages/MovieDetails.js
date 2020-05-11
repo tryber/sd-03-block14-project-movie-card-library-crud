@@ -42,7 +42,8 @@ class MovieDetails extends Component {
             state: {
                 movie: this.props.location.state,
             },
-          }}>
+          }}
+        >
             EDITAR
           </Link>
         <Link to="/">VOLTAR</Link>

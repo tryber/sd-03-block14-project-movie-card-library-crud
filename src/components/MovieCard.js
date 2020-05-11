@@ -16,7 +16,8 @@ class MovieCard extends React.Component {
             state: {
               movie: this.props.movie,
             },
-          }}>
+          }}
+        >
             VER DETALHES
           </Link>
       </div>
