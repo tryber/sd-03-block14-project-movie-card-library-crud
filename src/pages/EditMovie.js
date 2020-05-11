@@ -27,7 +27,7 @@ class EditMovie extends Component {
   }
 
   handleSubmit(updatedMovie) {
-    movieAPI.updateMovie(this.props.match.params.id);
+    movieAPI.updateMovie(updatedMovie);
     this.setState({ shouldRedirect: true });
   }
 
