@@ -10,16 +10,12 @@ class MovieDetails extends React.Component {
     this.state = {
       movie: {},
     };
-    this.getMovieIdByPage = this.getMovieIdByPage.bind(this);
-  }
-
-  getMovieIdByPage() {
-    const id = this.props.location.pathname;
-    return Number(id.substring(8));
   }
 
   componentWillMount() {
-    getMovie(this.getMovieIdByPage())
+    const { id } = this.props.match.params;
+
+    getMovie(id)
     .then((movie) =>
     this.setState(() => (
         { movie }
@@ -57,6 +53,7 @@ class MovieDetails extends React.Component {
 }
 
 MovieDetails.propTypes = {
+  /*
   movie: PropTypes.shape({
     title: PropTypes.string,
     subtitle: PropTypes.string,
@@ -65,6 +62,8 @@ MovieDetails.propTypes = {
     imagePath: PropTypes.string,
     id: PropTypes.number,
   }).isRequired,
+  */
+  id: PropTypes.string,
 };
 
 export default MovieDetails;
