@@ -6,7 +6,7 @@
   background: rgb(214, 214, 214);
   border: none;
   border-radius: 25px;
-  box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7) , 
+  box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, 0.7) ,
     7px 7px 20px 0 rgba(0, 0, 0, 0.2);
   color: rgb(50, 207, 207);
   font-size: 15px;
@@ -18,7 +18,7 @@
 }
 
 .botao:hover {
-  box-shadow: inset -7px -7px 20px 0 rgba(255, 255, 255, 0.7) , 
+  box-shadow: inset -7px -7px 20px 0 rgba(255, 255, 255, 0.7) ,
     inset 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -34,7 +34,7 @@
 .container .card {
   background: rgb(214, 214, 214);
   border-radius: 40px;
-  box-shadow: -7px -7px 20px 0 white , 
+  box-shadow: -7px -7px 20px 0 white ,
     7px 7px 20px 0 rgba(0, 0, 0, 0.2);
   margin: 20px;
   padding: 40px 30px;
@@ -42,7 +42,7 @@
 }
 
 .container .card:hover {
-  box-shadow: inset -7px -7px 20px 0 white , 
+  box-shadow: inset -7px -7px 20px 0 white ,
     inset 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
