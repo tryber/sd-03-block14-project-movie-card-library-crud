@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
-import { Link } from 'react-router-dom';
 
 
 class MovieDetails extends Component {
@@ -41,8 +41,7 @@ class MovieDetails extends Component {
             pathname: `/movies/${id}/edit`,
             state: {
               movie: this.props.location.state,
-          }}
-        }>EDITAR</Link>
+          }}}>EDITAR</Link>
         <Link to="/">VOLTAR</Link>
       </div>
     );
