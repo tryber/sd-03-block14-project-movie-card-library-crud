@@ -6,21 +6,22 @@ import * as movieAPI from '../services/movieAPI';
 class NewMovie extends Component {
   constructor(props) {
     super(props);
-    this.state = {shouldRedirect: false}
+    this.state = { shouldRedirect: false };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(newMovie) {
     movieAPI.createMovie(newMovie);
-    this.setState({shouldRedirect: true});
+    this.setState({ shouldRedirect: true });
   }
 
   render() {
     const { shouldRedirect } = this.state;
-    if (shouldRedirect) 
+    if (shouldRedirect) {
       return (
-      <Redirect to="/movies" />
-      )
+        <Redirect to="/movies" />
+      );
+    }
     return (
       <div data-testid="new-movie" className="movie-edit">
         <p>Insira os dados do filme.</p>

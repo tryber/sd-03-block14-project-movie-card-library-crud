@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes, { number } from 'prop-types';
+// import PropTypes, { number } from 'prop-types';
 
 class MovieForm extends React.Component {
   constructor(props) {
@@ -91,8 +91,9 @@ class MovieForm extends React.Component {
 
     return (
       <div>
-        <label htmlFor="movie_genre">Genre Select</label>
-        <select className="browser-default"
+        <label htmlFor="movie_genre">Gênero</label>
+        <select
+          className="browser-default"
           id="movie_genre"
           value={genre}
           onChange={(event) => this.updateMovie('genre', event.target.value)}
@@ -164,10 +165,10 @@ MovieForm.defaultProps = {
     imagePath: '',
     genre: 'comedy',
     rating: 0,
-  }
+  },
 };
 
-/*MovieForm.propTypes = {
+/* MovieForm.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   storyline: PropTypes.string.isRequired,
