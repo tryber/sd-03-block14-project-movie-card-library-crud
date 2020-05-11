@@ -43,7 +43,7 @@ class EditMovie extends Component {
           }}
         />
       );
-    };
+    }
 
     if (status) return <Loading />;
 
@@ -52,7 +52,7 @@ class EditMovie extends Component {
         <MovieForm movie={movie} onSubmit={this.handleSubmit} />
       </div>
     );
-  };
+  }
 }
 
 
@@ -64,11 +64,11 @@ EditMovie.defaultProps = {
       id: '',
     },
   },
-}
+};
 
 EditMovie.propTypes = {
   match: PropTypes.shape({ params: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    }),
+  }),
   }),
 };

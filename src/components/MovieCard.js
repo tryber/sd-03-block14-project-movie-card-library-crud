@@ -11,13 +11,11 @@ class MovieCard extends React.Component {
         <p>{movie.title}</p>
         <p>{movie.storyline}</p>
         <Link
-          to={
-            {
+          to={ {
             pathname: `movies/${movie.id}`,
             state: {
               movie: this.props.movie,
-            }}
-          }>
+          } } }>
             VER DETALHES
           </Link>
       </div>
