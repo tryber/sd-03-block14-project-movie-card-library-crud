@@ -3,6 +3,7 @@ import {
   BrowserRouter,
   Switch,
   Route,
+  Link,
 } from 'react-router-dom';
 import MovieList from './pages/MovieList';
 import MovieDetails from './pages/MovieDetails';
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/movies/:id" component={MovieDetails} />
         <Route exact path="/movies/:id/edit" component={EditMovie} />
       </Switch>
+      <Link to="/movies/new">ADICIONAR CARTÃO</Link>
     </BrowserRouter>
   );
 }
