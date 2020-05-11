@@ -29,6 +29,12 @@ class MovieDetails extends Component {
     }));
   }
 
+  deleteMovie(id) {
+    const { history } = this.props;
+
+    movieAPI.deleteMovie(id).then(() => history.push('/'))
+  }
+
   render() {
     // Change the condition to check the state
     if (!this.state.hasMovies) return <Loading />;
@@ -46,6 +52,8 @@ class MovieDetails extends Component {
         <Link to={`/movies/${id}/edit`}>EDITAR</Link>
         <br />
         <Link to={'/'}>VOLTAR</Link>
+        <br />
+        <Link to={'/'} onClick={() => this.deleteMovie(id)}>DELETAR</Link>
       </div>
     );
   }
