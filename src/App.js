@@ -8,9 +8,9 @@ class App extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/" component={index.MovieList} />
+          <Route exact path="/movies/:id/edit" component={index.EditMovie} />
           <Route path="/movies/:id" component={index.MovieDetails} />
           <Route path="/movies/new" component={index.NewMovie} />
-          <Route path="/movies/:id/edit" component={index.EditMovie} />
           <Route component={index.NotFound} />
         </Switch>
       </Router>
