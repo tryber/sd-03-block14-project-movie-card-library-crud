@@ -23,7 +23,7 @@ class NewMovie extends Component {
     const { history } = this.props;
 
     if (shouldRedirect) {
-      return history.push("/");
+      return history.push('/');
     }
 
     return (
