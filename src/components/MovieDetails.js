@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { getMovie, getMovies } from '../services/movieAPI';
-import { Loading } from './index';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { getMovie } from '../services/movieAPI';
+import { Loading } from './index';
 
 class MovieDetails extends React.Component {
   constructor(props) {
@@ -10,13 +10,13 @@ class MovieDetails extends React.Component {
     this.state = {
       movie: {},
     };
-  }    
+  }
 
   componentWillMount() {
     getMovie(1)
     .then((movie) =>
     this.setState(() => (
-        { movie: movie }
+        { movie }
       )),
     );
   }
@@ -26,7 +26,7 @@ class MovieDetails extends React.Component {
     return (
       <div>
         <div>
-        { !this.state.movie.id && <Loading /> }
+          { !this.state.movie.id && <Loading /> }
         </div>
         {
         this.state.movie.id &&
@@ -39,9 +39,9 @@ class MovieDetails extends React.Component {
           </div>
           <p>Rating: {rating}</p>
           <div>
-          <Link to={`/movies/${id}/edit`}>EDITAR</Link>
-          <Link to="/">VOLTAR</Link>
-          <Link to="/" onClick={this.deleteMovie}>DELETAR</Link>
+            <Link to={`/movies/${id}/edit`}>EDITAR</Link>
+            <Link to="/">VOLTAR</Link>
+            <Link to="/" onClick={this.deleteMovie}>DELETAR</Link>
           </div>
         </div>
         }

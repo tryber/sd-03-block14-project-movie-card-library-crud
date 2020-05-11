@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
-import { MovieForm, MovieCard } from './components/index';
+import { MovieForm } from './components/index';
 import MovieList from './components/MovieList';
 import MovieDetails from './components/MovieDetails';
 
