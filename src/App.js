@@ -1,5 +1,5 @@
 import React from 'react';
-import M from "materialize-css";
+import M from 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { EditMovie, MovieDetails, MovieList, NewMovie, NotFound } from './pages/index';
