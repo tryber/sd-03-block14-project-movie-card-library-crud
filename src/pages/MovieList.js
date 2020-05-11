@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import MovieCard from '../components/MovieCard';
+import PropTypes from 'prop-types';
 
 import * as movieAPI from '../services/movieAPI';
 import Loading from '../components/Loading';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 class MovieList extends Component {
   constructor(props) {
@@ -23,23 +23,23 @@ class MovieList extends Component {
         newArrMovies[index] = this.props.location.state;
         this.setState({
           movies: newArrMovies,
-          stat: false
+          stat: false,
         });
       });
     }
     movieAPI.getMovies().then((resp) => {
       this.setState({
         movies: resp,
-        stat: false
+        stat: false,
       });
     });
   }
-  
+
   render() {
     const { movies, stat } = this.state;
     // Render Loading here if the request is still happening
 
-    if( stat ) return <Loading />
+    if (stat) return <Loading />;
     return (
       <div data-testid="movie-list">
         {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}

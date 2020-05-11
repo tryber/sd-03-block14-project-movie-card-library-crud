@@ -6,24 +6,24 @@ import { Link } from 'react-router-dom';
 
 
 class MovieDetails extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
-      movie : '',
-    }
+      movie: '',
+    };
   }
 
-  componentDidMount(){
-    const { id } = this.props.match.params
+  componentDidMount() {
+    const { id } = this.props.match.params;
     movieAPI.getMovie(id)
-    .then(el=>this.setState({movie: el}))
+    .then(el => this.setState({ movie: el }));
   }
 
   render() {
-    const { movie } = this.state
+    const { movie } = this.state;
     // Change the condition to check the state
-    if (movie==='') return <Loading />;
+    if (movie === '') return <Loading />;
 
     const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
 
@@ -36,32 +36,17 @@ class MovieDetails extends Component {
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
         <Link to="/" onClick={() => movieAPI.deleteMovie(id)}>DELETAR</Link>
-        <Link to={{
-          pathname:`/movies/${id}/edit`,
-          state: {
-            movie: this.props.location.state,
-          }}}>EDITAR</Link>
-        <Link to='/'>VOLTAR</Link>
+        <Link
+          to={{
+           pathname: `/movies/${id}/edit`,
+           state: {
+             movie: this.props.location.state,
+          }}
+        }>EDITAR</Link>
+        <Link to="/">VOLTAR</Link>
       </div>
     );
   }
 }
 
-
 export default MovieDetails;
-
-MovieDetails.defaultProps = {
-  match: {
-    params: {
-      id: '',
-    },
-  },
-};
-
-MovieDetails.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    }),
-  }),
-};
