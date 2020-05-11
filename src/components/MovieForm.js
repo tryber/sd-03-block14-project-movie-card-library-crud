@@ -175,6 +175,6 @@ MovieForm.defaultProps = {
     storyline: '',
     genre: '',
   },
-}
+};
 
 export default MovieForm;

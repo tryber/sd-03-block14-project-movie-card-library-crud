@@ -38,6 +38,6 @@ class NewMovie extends Component {
 
 NewMovie.propTypes = {
   history: PropTypes.instanceOf(Object).isRequired,
-}
+};
 
 export default NewMovie;
