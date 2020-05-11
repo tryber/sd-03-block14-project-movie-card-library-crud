@@ -90,7 +90,6 @@ class MovieForm extends React.Component {
     return (
       <div className="input-field col s12">
         <select
-          ref="dropdown"
           id="movie_genre"
           value={genre}
           onChange={(event) => this.updateMovie('genre', event.target.value)}
@@ -166,5 +165,16 @@ MovieForm.propTypes = {
   }),
   onSubmit: PropTypes.func.isRequired,
 };
+
+MovieForm.defaultProps = {
+  movie: {
+    rating: 0,
+    title: '',
+    subtitle: '',
+    imagePath: '',
+    storyline: '',
+    genre: '',
+  },
+}
 
 export default MovieForm;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import M from "materialize-css";
-import * as index from './pages/index';
+import M from 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
+import * as index from './pages/index';
 
 
 class App extends React.Component {

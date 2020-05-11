@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
 
@@ -34,6 +34,10 @@ class NewMovie extends Component {
       </div>
     );
   }
+}
+
+NewMovie.propTypes = {
+  history: PropTypes.instanceOf(Object).isRequired,
 }
 
 export default NewMovie;
