@@ -8,26 +8,16 @@ import * as movieAPI from '../services/movieAPI';
 class NewMovie extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      create: false,
-      route: '',
-    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(newMovie) {
     const { history } = this.props;
     movieAPI.createMovie(newMovie)
-    .then(this.setState({
-      create: true,
-      route: history.push('/'),
-    }));
+      .then(history.push("/"));
   }
 
   render() {
-    const { create, route } = this.state;
-
-    if (create) return <Redirect to={route} />;
 
     return (
       <div data-testid="new-movie">
