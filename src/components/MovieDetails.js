@@ -63,7 +63,11 @@ MovieDetails.propTypes = {
     id: PropTypes.number,
   }).isRequired,
   */
-  id: PropTypes.string,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string,
+    }),
+  }).isRequired,
 };
 
 export default MovieDetails;
