@@ -17,7 +17,8 @@
 }
 
 .botao:hover {
-  box-shadow: inset -7px -7px 20px 0 rgba(255, 255, 255, 0.7) , inset 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset -7px -7px 20px 0 rgba(255, 255, 255, 0.7) ,
+  inset 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .container {
