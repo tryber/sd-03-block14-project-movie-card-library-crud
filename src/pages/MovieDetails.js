@@ -36,8 +36,9 @@ class MovieDetails extends Component {
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
-        <Link className='botao' to="/" onClick={() => movieAPI.deleteMovie(id)}>DELETAR</Link>
-        <Link className='botao'
+        <Link className="botao" to="/" onClick={() => movieAPI.deleteMovie(id)}>DELETAR</Link>
+        <Link
+          className="botao"
           to={{
             pathname: `/movies/${id}/edit`,
             state: {
@@ -47,7 +48,7 @@ class MovieDetails extends Component {
         >
             EDITAR
           </Link>
-        <Link className='botao' to="/">VOLTAR</Link>
+        <Link className="botao" to="/">VOLTAR</Link>
       </div>
     );
   }

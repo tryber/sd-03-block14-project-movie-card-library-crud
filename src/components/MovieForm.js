@@ -1,5 +1,5 @@
 import React from 'react';
-import '../pages/movies.css'
+import '../pages/movies.css';
 
 class MovieForm extends React.Component {
   constructor(props) {

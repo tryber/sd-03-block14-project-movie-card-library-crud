@@ -5,10 +5,10 @@ class Loading extends Component {
   render() {
     return (
       <div>
-        <div className='loader'>
+        <div className="loader">
           <span></span>
         </div>
-        <span className='center'>Carregando...</span>
+        <span className="center">Carregando...</span>
       </div>
     );
   }

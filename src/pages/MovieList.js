@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import './movies.css'
+import './movies.css';
 
 import MovieCard from '../components/MovieCard';
 import * as movieAPI from '../services/movieAPI';
