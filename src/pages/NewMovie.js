@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect, BrowserRouter } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
@@ -14,14 +14,12 @@ class NewMovie extends Component {
   handleSubmit(newMovie) {
     movieAPI.createMovie(newMovie)
       .then((result) => {
-        if (result) this.setState({ shouldRedirect: true });
-        console.log('Não foi possivell adicionar o filme');
-        return null;
+        if (result) return this.setState({ shouldRedirect: true });
       }).catch((error) => console.log(error));
   }
 
   render() {
-    if (this.state.shouldRedirect) return <BrowserRouter><Redirect to="/" /></BrowserRouter>;
+    if (this.state.shouldRedirect) return <Redirect to="/" />;
     return (
       <div data-testid="new-movie">
         <MovieForm onSubmit={this.handleSubmit} />
