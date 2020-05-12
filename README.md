@@ -64,7 +64,7 @@ Você precisará adicionar um estado em `MovieList` para controlar o que será e
 
 ### 3 - `MovieCard`: deve possuir um link para a página de detalhes de um filme
 
-Todos `MovieCard` deve possuir em seu conteudo no mínimo o título de seu respectivo filme e um link com o texto "VER DETALHES" que aponta para a rota `movies/:id`, onde `:id` é o id do filme. Esta rota exibirá informações detalhadas de um filme.
+Todos `MovieCard` deve possuir em seu conteudo no mínimo título e sinopse de seu respectivo filme e um link com o texto "VER DETALHES" que aponta para a rota `movies/:id`, onde `:id` é o id do filme. Esta rota exibirá informações detalhadas de um filme.
 
 ### 4 - `MovieDetails`: deve fazer uma requisição para buscar o filme que deverá ser renderizado
 
