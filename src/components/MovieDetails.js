@@ -53,16 +53,6 @@ class MovieDetails extends React.Component {
 }
 
 MovieDetails.propTypes = {
-  /*
-  movie: PropTypes.shape({
-    title: PropTypes.string,
-    subtitle: PropTypes.string,
-    storyline: PropTypes.string,
-    rating: PropTypes.number,
-    imagePath: PropTypes.string,
-    id: PropTypes.number,
-  }).isRequired,
-  */
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string,
