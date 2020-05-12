@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import * as movieAPI from '../services/movieAPI';
-import { Loading } from '../components';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Loading } from '../components';
 
 
 class MovieDetails extends Component {
@@ -11,7 +11,7 @@ class MovieDetails extends Component {
     super(props);
     this.state = {
       movie: [],
-    }
+    };
   }
 
   componentDidMount() {
@@ -22,9 +22,8 @@ class MovieDetails extends Component {
 
   render() {
     const { movie } = this.state;
-    
     const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
-    
+
     if (!id) return <Loading />;
     return (
       <div data-testid="movie-details">
@@ -45,7 +44,7 @@ MovieDetails.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string,
-    })
+    }),
   }).isRequired,
 };
 

@@ -19,14 +19,14 @@ class EditMovie extends Component {
     const { match } = this.props;
     movieAPI.getMovie(match.params.id)
       .then((movie) => {
-        this.setState({ movie, status: false })
+        this.setState({ movie, status: false });
       });
   }
 
   handleSubmit(updatedMovie) {
     movieAPI.updateMovie(updatedMovie)
       .then((movie) => {
-        this.setState({ movie, shouldRedirect: true, })
+        this.setState({ movie, shouldRedirect: true, });
       });
   }
 
@@ -35,7 +35,7 @@ class EditMovie extends Component {
 
     if (shouldRedirect) return <Redirect to="/" />;
 
-    if (status) return <Loading />
+    if (status) return <Loading />;
 
     return (
       <div data-testid="edit-movie">
@@ -49,8 +49,8 @@ EditMovie.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string,
-    })
-  }),
-}
+    }),
+  }).isRequired,
+};
 
 export default EditMovie;
