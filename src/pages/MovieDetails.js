@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
@@ -9,33 +10,24 @@ class MovieDetails extends Component {
     super(props);
     this.state = {
       movie: {},
-      loading: true,
-      id: props.location.pathname.split('/movies/')[1],
     };
+    // this.state.loading = this.state.bind(this);
     console.log('props', props);
   }
 
   componentDidMount() {
-    const { id } = this.state;
+    const { match: { params: { id } } } = this.props;
     movieAPI
       .getMovie(id)
-      .then(this.setState({ loading: false }))
       .then((movie) => this.setState({ movie }));
   }
 
   render() {
-    // Change the condition to check the state
-    const { state } = this;
-    if (state.loading === true) return <Loading />;
+    const { movie } = this.state;
     const {
-      title,
-      storyline,
-      imagePath,
-      genre,
-      rating,
-      subtitle,
-    } = state.movie;
-
+      title, storyline, imagePath, genre, rating, subtitle, id,
+    } = movie;
+    if (!Object.keys(movie).length) { return <Loading />; }
     return (
       <div data-testid="movie-details">
         <h3>{title}</h3>
@@ -44,11 +36,16 @@ class MovieDetails extends Component {
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
-        <Link to={`/movie/${state.id}/edit`}>EDITAR</Link>
+        <Link to={`/movie/${id}/edit`}>EDITAR</Link>
         <Link to="/">VOLTAR</Link>
       </div>
     );
   }
 }
+
+MovieDetails.propTypes = {
+  match: PropTypes.isRequired,
+  id: PropTypes.string.isRequired,
+};
 
 export default MovieDetails;
