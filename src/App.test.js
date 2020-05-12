@@ -164,7 +164,7 @@ describe('3 - Movie card component', () => {
 
 describe('4 - Movie details component', () => {
 
-  only.it('each movie details page should have a loading screen', () => {
+  it('each movie details page should have a loading screen', () => {
     readMovies().forEach(async (movie) => {
       await cleanup();
       const { getByText } = renderPath('/movies/' + movie.id);

@@ -3,7 +3,9 @@ import React from 'react';
 class NotFound extends React.Component {
   render() {
     return (
-      <p>Página não Encontrada!</p>
+      <div data-testid="404-error">
+        <p>Página não Encontrada!</p>
+      </div>
     );
   }
 }

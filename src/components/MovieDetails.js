@@ -26,7 +26,7 @@ class MovieDetails extends React.Component {
   render() {
     const { title, subtitle, storyline, rating, imagePath, id } = this.state.movie;
     return (
-      <div>
+      <div data-testid="movie-details">
         <div>
           { !this.state.movie.id && <Loading /> }
         </div>
