@@ -7,31 +7,41 @@ class MovieDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: [],
+      movie: [],
     };
   }
 
+
   componentDidMount() {
-    movieAPI.getMovie().then((movie) => this.setState({ movies: movie }));
+    movieAPI.getMovie(this.props.match.params.id)
+      .then((movie) => this.setState({ movie }));
   }
+
   render() {
-    if (this.state.movies === []) return <Loading />;
-    const { storyline, imagePath, genre, rating, subtitle } = movie;
+    const { movie } = this.state;
+    const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
+    
+    if (!id) return <Loading />;
 
     return (
       <div>
         <div data-testid="movie-details">
           <img alt="Movie Cover" src={`../${imagePath}`} />
+          <p>{`Title: ${title}`}</p>
           <p>{`Subtitle: ${subtitle}`}</p>
           <p>{`Storyline: ${storyline}`}</p>
           <p>{`Genre: ${genre}`}</p>
           <p>{`Rating: ${rating}`}</p>
+          <Link to={`/movies/${id}/edit`}>EDITAR</Link>
+          <Link to="/">VOLTAR</Link>
         </div>
-        <Link to="/movies/:id/edit">EDITAR</Link>
-        <Link to="/">VOLTAR</Link>
       </div>
     );
   }
 }
 
 export default MovieDetails;
+
+// MovieDetails.protoType = {
+//   title: PropTypes.
+// }

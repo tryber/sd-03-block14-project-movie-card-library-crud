@@ -155,3 +155,7 @@ class MovieForm extends Component {
 }
 
 export default MovieForm;
+
+MovieForm.propTypes = {
+  MovieForm: PropTypes.element.isRequired,
+}
