@@ -25,28 +25,28 @@ class EditMovie extends React.Component {
     );
   }
 
-  handleSubmit(movie) {
-   updateMovie(movie)
-   .then((movie) => 
-     this.setState({ done:true })
-   );
+  handleSubmit(movieChanges) {
+    updateMovie(movieChanges)
+    .then(() =>
+      this.setState({ done: true }),
+    );
   }
 
   render() {
     return (
+      <div>
         <div>
-          <div>
-          { !this.state.movie.id && <Loading /> }
-          </div>
-          {
-          this.state.done &&
-          <Redirect to="/" />
-          }
-          {
-          this.state.movie.id &&
-          <MovieForm movie={this.state.movie} onSubmit={this.handleSubmit} />
-          }
+        { !this.state.movie.id && <Loading /> }
         </div>
+        {
+        this.state.done &&
+        <Redirect to="/" />
+        }
+        {
+        this.state.movie.id &&
+        <MovieForm movie={this.state.movie} onSubmit={this.handleSubmit} />
+        }
+      </div>
     );
   }
 }
