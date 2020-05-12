@@ -89,6 +89,7 @@ class MovieForm extends React.Component {
 
     return (
       <div>
+        <p>{genre}</p>
         <label htmlFor="movie_genre">Gênero</label>
         <select
           id="movie_genre"
@@ -155,7 +156,7 @@ class MovieForm extends React.Component {
 }
 
 MovieForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
+  movie: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default MovieForm;

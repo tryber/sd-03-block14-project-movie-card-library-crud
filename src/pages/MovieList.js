@@ -1,20 +1,43 @@
-import React, { Component } from 'react';
-import MovieCard from '../components/MovieCard';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { getMovies } from '../services/movieAPI';
+import { Loading, MovieCard } from '../components/index';
 
-import * as movieAPI from '../services/movieAPI';
+class MovieList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      movies: [],
+    };
+  }
 
-class MovieList extends Component {
+  componentWillMount() {
+    getMovies()
+    .then((movies) =>
+    this.setState(() => (
+        { movies: [...movies] }
+      )),
+    );
+  }
+
   render() {
-    const { movies } = this.state;
-
-    // Render Loading here if the request is still happening
-
     return (
-      <div data-testid="movie-list">
-        {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
+      <div>
+        <div data-testid="movie-list">
+          { !this.state.movies.length && <Loading /> }
+          { this.state.movies.map((m) => <MovieCard key={m.title} movie={m} />) }
+        </div>
+        <div>
+          <Link to="/movies/new">ADICIONAR CARTÃO</Link>
+        </div>
       </div>
     );
   }
 }
+
+MovieList.propTypes = {
+  movies: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default MovieList;
