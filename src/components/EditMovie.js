@@ -36,7 +36,7 @@ class EditMovie extends React.Component {
     return (
       <div>
         <div>
-        { !this.state.movie.id && <Loading /> }
+          { !this.state.movie.id && <Loading /> }
         </div>
         {
         this.state.done &&
