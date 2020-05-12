@@ -15,6 +15,7 @@ class NewMovie extends Component {
     movieAPI.createMovie(newMovie)
       .then((result) => {
         if (result) return this.setState({ shouldRedirect: true });
+        return null;
       }).catch((error) => console.log(error));
   }
 
