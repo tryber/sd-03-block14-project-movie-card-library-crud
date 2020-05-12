@@ -19,7 +19,7 @@ class NewMovie extends Component {
     const { shouldRedirect } = this.state;
     if (shouldRedirect) {
       return (
-        <Redirect to="/movies" />
+        <Redirect to="/" />
       );
     }
     return (
