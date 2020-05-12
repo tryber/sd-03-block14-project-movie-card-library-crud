@@ -6,15 +6,16 @@ import './App.css';
 import { MovieForm } from './components/index';
 import MovieList from './components/MovieList';
 import MovieDetails from './components/MovieDetails';
+import EditMovie from './components/EditMovie';
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/" component={MovieList} />
+        <Route path="/movies/:id/edit" component={EditMovie} />
         <Route path="/movies/:id" component={MovieDetails} />
         <Route path="/movies/new" component={MovieForm} />
-        <Route path="/movies/:id/edit" component={MovieForm} />
       </Switch>
     </Router>
   );
