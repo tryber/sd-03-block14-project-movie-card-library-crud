@@ -36,7 +36,7 @@ class MovieDetails extends Component {
         <Link
           className="movie-details-link" to={'/'} onClick={() => movieAPI.deleteMovie(id)}
         >
-          APAGAR
+          DELETAR
         </Link>
       </div>
     );
