@@ -13,13 +13,10 @@ class EditMovie extends Component {
       shouldRedirect: false,
       movie: {},
     };
-    console.log('constructing Edit movie');
-    console.log(props);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    console.log('constructed Edit movie');
     this.setMovieToState();
   }
 
@@ -29,7 +26,7 @@ class EditMovie extends Component {
   }
 
   handleSubmit(updatedMovie) {
-    movieAPI.updateMovie(updatedMovie.target.value);
+    movieAPI.updateMovie(updatedMovie);
     this.setState({ shouldRedirect: true });
   }
 
@@ -50,7 +47,9 @@ class EditMovie extends Component {
   }
 }
 EditMovie.propTypes = {
-  match: PropTypes.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({ id: PropTypes.string.isRequired }).isRequired,
+  }).isRequired,
 };
 
 export default EditMovie;
