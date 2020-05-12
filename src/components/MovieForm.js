@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 class MovieForm extends React.Component {
   constructor(props) {
@@ -89,6 +89,7 @@ class MovieForm extends React.Component {
 
     return (
       <div>
+        <p>Genero: {genre}</p>
         <label htmlFor="movie_genre">Gênero</label>
         <select
           id="movie_genre"

@@ -24,7 +24,7 @@ class MovieDetails extends React.Component {
   }
 
   render() {
-    const { title, subtitle, storyline, rating, imagePath, id } = this.state.movie;
+    const { title, subtitle, storyline, rating, imagePath, genre, id } = this.state.movie;
     return (
       <div data-testid="movie-details">
         <div>
@@ -38,6 +38,10 @@ class MovieDetails extends React.Component {
             <h4 className="movie-card-title">{title}</h4>
             <h5 className="movie-card-subtitle">{subtitle}</h5>
             <p className="movie-card-storyline">{storyline}</p>
+          </div>
+          <p>Genero: {genre}</p>
+          <div>
+
           </div>
           <p>Rating: {rating}</p>
           <div>
