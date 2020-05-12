@@ -89,7 +89,7 @@ class MovieForm extends React.Component {
 
     return (
       <div>
-        <label htmlFor="movie_genre">Genre Select</label>
+        <label htmlFor="movie_genre">Gênero</label>
         <select
           id="movie_genre"
           value={genre}
@@ -153,5 +153,17 @@ class MovieForm extends React.Component {
     );
   }
 }
+
+MovieForm.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+    storyline: PropTypes.string,
+    rating: PropTypes.number,
+    imagePath: PropTypes.string,
+    genre: PropTypes.string,
+  }).isRequired,
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default MovieForm;
