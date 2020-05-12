@@ -9,7 +9,7 @@ function App() {
 
     <Router>
       <Switch>
-        <Route path="/" exact={true}>
+        <Route path="/" exact=''>
           <MovieList />
         </Route>
       </Switch>
