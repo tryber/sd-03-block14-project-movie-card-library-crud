@@ -158,4 +158,4 @@ export default MovieForm;
 
 MovieForm.propTypes = {
   MovieForm: PropTypes.element.isRequired,
-}
+};

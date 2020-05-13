@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect, BrowserRouter } from 'react-router-dom';
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
 
@@ -8,15 +8,31 @@ class NewMovie extends Component {
     super(props);
     this.state = {
       create: false,
-    }
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // componentDidMount() {
+  //   movieAPI.getMovie(this.props.march.params.id)
+  //     .then((movie) => ({ movie }))
+  // }
+
   handleSubmit(newMovie) {
-    movieAPI.getMovie().then((create) => this.setState({ create }))
+    movieAPI.createMovie(newMovie);
+    this.setState(() => ({ create: true }));
   }
 
   render() {
+    const { create } = this.state;
+
+    if (!create) {
+      return (
+        <BrowserRouter>
+          <Redirect to="/" />
+        </BrowserRouter>
+      )
+    }
+  
     return (
       <div data-testid="new-movie">
         <MovieForm onSubmit={this.handleSubmit} />
@@ -24,4 +40,5 @@ class NewMovie extends Component {
     );
   }
 }
+
 export default NewMovie;
