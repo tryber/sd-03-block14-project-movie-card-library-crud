@@ -4,9 +4,15 @@ import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
 class MovieDetails extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      t: true,
+    };
+  }
   render() {
     // Change the condition to check the state
-    if (true) return <Loading />;
+    if (this.state === true) return <Loading />;
 
     const { title, storyline, imagePath, genre, rating, subtitle } = movie;
 
