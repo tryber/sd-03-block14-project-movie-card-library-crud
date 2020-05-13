@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { getMovie } from '../services/movieAPI';
+import { Link, Redirect } from 'react-router-dom';
+import { getMovie, deleteMovie } from '../services/movieAPI';
 import { Loading } from '../components/index';
 
 class MovieDetails extends React.Component {
@@ -9,10 +9,12 @@ class MovieDetails extends React.Component {
     super(props);
     this.state = {
       movie: {},
+      deleted: false,
     };
+    this.deleteMoviex = this.deleteMoviex.bind(this);
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const { id } = this.props.match.params;
 
     getMovie(id)
@@ -21,6 +23,12 @@ class MovieDetails extends React.Component {
         { movie }
       )),
     );
+  }
+
+  deleteMoviex() {
+   deleteMovie(this.state.movie.id);
+   this.setState({delete:true});
+   if(this.state.delete) this.componentWillUnmount()
   }
 
   render() {
@@ -48,10 +56,16 @@ class MovieDetails extends React.Component {
           <div>
             <Link to={`/movies/${id}/edit`}>EDITAR</Link>
             <Link to="/">VOLTAR</Link>
-            <Link to="/" onClick={this.deleteMovie}>DELETAR</Link>
+            <Link to="/" onClick={this.deleteMoviex}>DELETAR</Link>
           </div>
         </div>
         }
+        <div>
+        {
+        this.state.delete &&
+        <Redirect to="/" />
+        }
+        </div>
       </div>
     );
   }
