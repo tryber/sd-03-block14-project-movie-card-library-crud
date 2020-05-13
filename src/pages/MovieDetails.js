@@ -8,8 +8,8 @@ class MovieDetails extends Component {
     super(props);
     this.state = {
       loading: false,
-      movie: null, 
-    }
+      movie: null,
+    };
   }
   componentDidMount() {
     movieAPI.getMovie(this.props.match.params.id)
