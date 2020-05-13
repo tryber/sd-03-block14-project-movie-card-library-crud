@@ -14,7 +14,7 @@ class EditMovie extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  UNSAFE_componentWillMount() {
+  componentWillMount() {
     const { id } = this.props.match.params;
 
     getMovie(id)

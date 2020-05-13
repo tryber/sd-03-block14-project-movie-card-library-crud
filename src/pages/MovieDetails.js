@@ -14,7 +14,7 @@ class MovieDetails extends React.Component {
     this.deleteMoviex = this.deleteMoviex.bind(this);
   }
 
-  UNSAFE_componentWillMount() {
+  componentWillMount() {
     const { id } = this.props.match.params;
 
     getMovie(id)
@@ -26,9 +26,9 @@ class MovieDetails extends React.Component {
   }
 
   deleteMoviex() {
-   deleteMovie(this.state.movie.id);
-   this.setState({delete:true});
-   if(this.state.delete) this.componentWillUnmount()
+    deleteMovie(this.state.movie.id);
+    this.setState({ delete: true });
+    if (this.state.delete) this.componentWillUnmount();
   }
 
   render() {
@@ -60,12 +60,7 @@ class MovieDetails extends React.Component {
           </div>
         </div>
         }
-        <div>
-        {
-        this.state.delete &&
-        <Redirect to="/" />
-        }
-        </div>
+        <div>{this.state.delete && <Redirect to="/" />}</div>
       </div>
     );
   }

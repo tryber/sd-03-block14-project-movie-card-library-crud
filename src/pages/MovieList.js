@@ -12,7 +12,7 @@ class MovieList extends React.Component {
     };
   }
 
-  UNSAFE_componentWillMount() {
+  componentWillMount() {
     getMovies()
     .then((movies) =>
     this.setState(() => (
