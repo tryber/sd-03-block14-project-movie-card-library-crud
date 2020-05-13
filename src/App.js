@@ -1,15 +1,17 @@
 import React from 'react';
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import * as index from './pages/index';
 
 function App() {
   return (
     <Router>
-      <div>Movie Card Library CRUD</div>
+      <div>Movie Card Library Crud</div>
       <Switch>
         <Route exact path="/movies/new" component={index.NewMovie} />
         <Route strict path="/movies/:id/edit" component={index.EditMovie} />
-        <Route strict path="movies/:id" component={index.MovieDetails} />
+        <Route strict path="/movies/:id" component={index.MovieDetails} />
+        <Route exact path="/" component={index.MovieList} />
         <Route component={index.NotFound} />
       </Switch>
     </Router>
