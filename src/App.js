@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <div>Movie Card Library Crud</div>
-      <MovieList movies={ movies }/>
+      <MovieList movies={movies} />
     </Router>
   );
 }
