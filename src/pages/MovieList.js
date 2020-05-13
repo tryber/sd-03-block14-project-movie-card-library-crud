@@ -14,14 +14,14 @@ class MovieList extends Component {
 
   componentDidMount() {
     movieAPI.getMovies()
-      .then(movies => this.setState({ movies }))
+      .then((movies) => this.setState({ movies }));
   }
-  
+
   render() {
     const { movies } = this.state;
 
     // Render Loading here if the request is still happening
-    if (movies === undefined) return <Loading />
+    if (movies === undefined) return <Loading />;
 
     return (
 
