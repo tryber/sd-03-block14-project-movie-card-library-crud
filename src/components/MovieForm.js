@@ -62,7 +62,9 @@ class MovieForm extends React.Component {
           id="movie_image"
           type="text"
           value={imagePath}
-          onChange={(event) => this.updateMovie('imagePath', event.target.value)}
+          onChange={(event) =>
+            this.updateMovie('imagePath', event.target.value)
+          }
         />
         <label htmlFor="movie_image">Imagem</label>
       </div>
@@ -77,7 +79,10 @@ class MovieForm extends React.Component {
         <textarea
           id="movie_storyline"
           value={storyline}
-          onChange={(event) => this.updateMovie('storyline', event.target.value)}
+          className="materialize-textarea"
+          onChange={(event) =>
+            this.updateMovie('storyline', event.target.value)
+          }
         />
         <label htmlFor="movie_storyline">Sinopse</label>
       </div>
@@ -93,6 +98,7 @@ class MovieForm extends React.Component {
         <select
           id="movie_genre"
           value={genre}
+          className="browser-default"
           onChange={(event) => this.updateMovie('genre', event.target.value)}
         >
           <option value="action">Ação</option>
@@ -127,7 +133,11 @@ class MovieForm extends React.Component {
   renderSubmitButton() {
     return (
       <div>
-        <button type="button" onClick={this.handleSubmit}>
+        <button
+          type="button"
+          onClick={this.handleSubmit}
+          className="btn waves-effect waves-light"
+        >
           Submit
         </button>
       </div>
@@ -136,33 +146,46 @@ class MovieForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <form>
-          {this.renderTitleInput()}
-          {this.renderSubtitleInput()}
-          {this.renderImagePathInput()}
-          {this.renderStorylineInput()}
-          {this.renderGenreSelection()}
-          {this.renderRatingInput()}
-          {this.renderSubmitButton()}
+      <div className="row">
+        <form className="col s12">
+          <div className="row">
+            <div className="input-field col s6">{this.renderTitleInput()}</div>
+            <div className="input-field col s6">
+              {this.renderSubtitleInput()}
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s6">
+              {this.renderImagePathInput()}
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s10">
+              {this.renderStorylineInput()}
+            </div>
+            <div className="input-field col s2">
+              {this.renderGenreSelection()}
+            </div>
+          </div>
+          <div className="row">
+            <div className="col s2">{this.renderRatingInput()}</div>
+            <div className="col s2 offset-s8">{this.renderSubmitButton()}</div>
+          </div>
         </form>
       </div>
     );
   }
 }
 
-MovieForm.defaultProps = {
-  movie: {},
-};
-
 MovieForm.propTypes = {
   movie: PropTypes.shape({
-    id: PropTypes.number,
+    rating: PropTypes.number,
     title: PropTypes.string,
+    subtitle: PropTypes.string,
     imagePath: PropTypes.string,
     storyline: PropTypes.string,
-    rating: PropTypes.number,
-  }),
+    genre: PropTypes.string,
+  }).isRequired,
   onSubmit: PropTypes.func.isRequired,
 };
 
