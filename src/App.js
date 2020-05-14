@@ -7,7 +7,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={Index.MovieList} />
-        <Route path="/movies/:id" component={Index.MovieDetails} />
+        <Route exact path="/movies/:id" component={Index.MovieDetails} />
         <Route path="/movies/new" component={Index.NewMovie} />
         <Route path="/movies/:id/edit" component={Index.EditMovie} />
         <Route path="/" component={Index.NotFound} />
