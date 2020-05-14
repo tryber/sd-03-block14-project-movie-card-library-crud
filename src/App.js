@@ -9,7 +9,7 @@ function App() {
       <main>
         <Switch>
           <Route
-            exact path="/" render={ (props) => <MovieList { ...props } data-testid="movie-list"/> }
+            exact path="/" render={(props) => <MovieList {...props} data-testid="movie-list" />}
           />
           <Route path="/NewMovie" component={NewMovie} />
           <Route path="/EditMovie" component={EditMovie} />
