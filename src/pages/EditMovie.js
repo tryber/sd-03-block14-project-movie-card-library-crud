@@ -1,34 +1,62 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
+import { getMovie, updateMovie } from '../services/movieAPI';
+import { MovieForm, Loading } from '../components/index';
 
-import { MovieForm } from '../components';
-import * as movieAPI from '../services/movieAPI';
-
-class EditMovie extends Component {
+class EditMovie extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      movie: {},
+      done: false,
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(updatedMovie) {
+  componentWillMount() {
+    const { id } = this.props.match.params;
+
+    getMovie(id)
+    .then((movie) =>
+    this.setState(() => (
+        { movie }
+      )),
+    );
+  }
+
+  handleSubmit(movieChanges) {
+    updateMovie(movieChanges)
+    .then(() =>
+      this.setState({ done: true }),
+    );
   }
 
   render() {
-    const { status, shouldRedirect, movie } = this.state;
-    if (shouldRedirect) {
-      // Redirect
-    }
-
-    if (status === 'loading') {
-      // render Loading
-    }
-
     return (
-      <div data-testid="edit-movie">
-        <MovieForm movie={movie} onSubmit={this.handleSubmit} />
+      <div data-testid="edit-movie" className="movie-card-body">
+        <div>
+          { !this.state.movie.id && <Loading /> }
+        </div>
+        {
+        this.state.done &&
+        <Redirect to="/" />
+        }
+        {
+        this.state.movie.id &&
+        <MovieForm movie={this.state.movie} onSubmit={this.handleSubmit} />
+        }
       </div>
     );
   }
 }
+
+EditMovie.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string,
+    }),
+  }).isRequired,
+};
 
 export default EditMovie;
