@@ -12,11 +12,6 @@ class NewMovie extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // componentDidMount() {
-  //   movieAPI.getMovie(this.props.march.params.id)
-  //     .then((movie) => ({ movie }))
-  // }
-
   handleSubmit(newMovie) {
     movieAPI.createMovie(newMovie);
     this.setState(() => ({ create: true }));
@@ -25,16 +20,17 @@ class NewMovie extends Component {
   render() {
     const { create } = this.state;
 
-    if (!create) {
-      return (
-        <BrowserRouter>
-          <Redirect to="/" />
-        </BrowserRouter>
-      );
-    }
+    // if (!create) {
+    //   return (
+    //     <BrowserRouter>
+    //       <Redirect to="/" />
+    //     </BrowserRouter>
+    //   );
+    // }
 
     return (
       <div data-testid="new-movie">
+        deu certo
         <MovieForm onSubmit={this.handleSubmit} />
       </div>
     );

@@ -26,8 +26,13 @@ class MovieCard extends Component {
   }
 }
 
-export default MovieCard;
-
 MovieCard.propTypes = {
-  movie: PropType.any.isRequerid,
-}
+  movie: PropType.shape({
+    title: PropType.string,
+    imagePath: PropType.string,
+    storyline: PropType.string,
+    id: PropType.number,
+  }).isRequerid,
+};
+
+export default MovieCard;

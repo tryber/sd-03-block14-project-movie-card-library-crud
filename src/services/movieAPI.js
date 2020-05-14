@@ -67,17 +67,3 @@ export const deleteMovie = (movieId) => {
     }, 1000);
   });
 };
-
-// movieAPI.propTypes = {
-//   handleSubmit: PropTypes.func.isRequired,
-//   movie: PropTypes.shape({
-//     id: PropTypes.number,
-//     title: PropTypes.number,
-//     subtitle: PropTypes.string,
-//     storyline: PropTypes.string,
-//     rating: PropTypes.number,
-//     imagePath: PropTypes.string,
-//     bookmarked: PropTypes.string,
-//     genre: PropTypes.string,
-//   })
-// }

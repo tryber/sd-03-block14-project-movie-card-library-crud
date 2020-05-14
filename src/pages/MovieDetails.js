@@ -43,12 +43,18 @@ class MovieDetails extends Component {
   }
 }
 
-export default MovieDetails;
-
 MovieDetails.propType = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.number,
+      title: PropTypes.string,
+      subtitle: PropTypes.string,
+      storyline: PropTypes.string,
+      imagePath: PropTypes.string,
+      genre: PropTypes.string,
+      rating: PropTypes.number,
+      id: PropTypes.string,
     }),
   }).isRequired,
 };
+
+export default MovieDetails;
