@@ -11,9 +11,16 @@ function App() {
           <Route
             exact path="/" render={(props) => <MovieList {...props} data-testid="movie-list" />}
           />
-          <Route path="/NewMovie" component={NewMovie} />
-          <Route path="/EditMovie" component={EditMovie} />
-          <Route path="/MovieDetails" component={MovieDetails} />
+          <Route
+            path="/newmovie" render={(props) => <NewMovie {...props} data-testid="new-movie" />}
+          />
+          <Route
+            path="/editmovie" render={(props) => <EditMovie {...props} data-testid="edit-movie" />}
+          />
+          <Route
+            path="/moviedetails" 
+            render={(props) => <MovieDetails {...props} data-testid="movie-details" />}
+          />
           <Route path="/" component={NotFound} />
         </Switch>
       </main>
