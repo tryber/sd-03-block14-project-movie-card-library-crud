@@ -23,7 +23,7 @@ class MovieCard extends React.Component {
 }
 
 MovieCard.propTypes = {
-  movie: PropTypes.objectOf(PropTypes.object()).isRequired,
+  movie: PropTypes.objectOf(PropTypes.object).isRequired,
   rating: PropTypes.number.isRequired,
 };
 

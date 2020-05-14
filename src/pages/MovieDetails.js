@@ -11,7 +11,7 @@ class MovieDetails extends Component {
     const movieId = this.props.match.params.id;
     const movie = movieAPI.getMovie(movieId);
     const { title, storyline, imagePath, genre, rating, subtitle } = movie;
-
+    console.log(rating);
     return (
       <div data-testid="movie-details">
         <img alt="Movie Cover" src={`../${imagePath}`} />
@@ -26,9 +26,9 @@ class MovieDetails extends Component {
 }
 
 MovieDetails.propTypes = {
-  match: PropTypes.objectOf(PropTypes.object()).isRequired,
-  id: PropTypes.objectOf(PropTypes.object()).isRequired,
-  params: PropTypes.objectOf(PropTypes.object()).isRequired,
-}
+  match: PropTypes.objectOf(PropTypes.object).isRequired,
+  id: PropTypes.objectOf(PropTypes.object).isRequired,
+  params: PropTypes.objectOf(PropTypes.object).isRequired,
+};
 
 export default MovieDetails;
