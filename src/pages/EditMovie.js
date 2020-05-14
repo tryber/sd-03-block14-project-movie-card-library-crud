@@ -34,7 +34,7 @@ class EditMovie extends React.Component {
 
   render() {
     return (
-      <div data-testid="edit-movie">
+      <div data-testid="edit-movie" className="movie-card-body">
         <div>
           { !this.state.movie.id && <Loading /> }
         </div>
