@@ -30,9 +30,9 @@ class NewMovie extends Component {
         <BrowserRouter>
           <Redirect to="/" />
         </BrowserRouter>
-      )
+      );
     }
-  
+
     return (
       <div data-testid="new-movie">
         <MovieForm onSubmit={this.handleSubmit} />

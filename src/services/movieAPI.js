@@ -1,5 +1,5 @@
+// import PropTypes from 'prop-types';
 import data from './movieData';
-import PropTypes from 'prop-types';
 
 localStorage.setItem('movies', JSON.stringify(data));
 
@@ -68,7 +68,7 @@ export const deleteMovie = (movieId) => {
   });
 };
 
-// movieApi.propTypes = {
+// movieAPI.propTypes = {
 //   handleSubmit: PropTypes.func.isRequired,
 //   movie: PropTypes.shape({
 //     id: PropTypes.number,

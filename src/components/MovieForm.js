@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import PropType from 'prop-types';
 
 class MovieForm extends Component {
   constructor(props) {
@@ -157,5 +157,5 @@ class MovieForm extends Component {
 export default MovieForm;
 
 MovieForm.propTypes = {
-  MovieForm: PropTypes.element.isRequired,
+  MovieForm: PropType.element.isRequired,
 };

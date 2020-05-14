@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../App.css';
+import PropType from 'prop-types';
 
 class MovieCard extends Component {
   render() {
@@ -27,6 +28,6 @@ class MovieCard extends Component {
 
 export default MovieCard;
 
-// MovieCard.propTypes = {
-//   imagePath: PropTypes.any.isRequerid,
-// }
+MovieCard.propTypes = {
+  movie: PropType.any.isRequerid,
+}
