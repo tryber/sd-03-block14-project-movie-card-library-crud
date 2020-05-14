@@ -8,7 +8,9 @@ function App() {
       <h2>Movie Card Library Crud!!</h2>
       <main>
         <Switch>
-          <Route exact path="/" render={(props) => <MovieList {...props} data-testid="movie-list"/>} />
+          <Route
+            exact path="/" render={ (props) => <MovieList { ...props } data-testid="movie-list"/> }
+          />
           <Route path="/NewMovie" component={NewMovie} />
           <Route path="/EditMovie" component={EditMovie} />
           <Route path="/MovieDetails" component={MovieDetails} />

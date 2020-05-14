@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 // import movie from '../services/movieData';
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
@@ -22,6 +23,12 @@ class MovieDetails extends Component {
       </div>
     );
   }
+}
+
+MovieDetails.propTypes = {
+  match: PropTypes.objectOf(PropTypes.object()).isRequired,
+  id: PropTypes.objectOf(PropTypes.object()).isRequired,
+  params: PropTypes.objectOf(PropTypes.object()).isRequired,
 }
 
 export default MovieDetails;
