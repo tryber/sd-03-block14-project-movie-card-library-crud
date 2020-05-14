@@ -5,7 +5,9 @@ import { EditMovie, MovieDetails, MovieList, NewMovie, NotFound } from './pages/
 function App() {
   return (
     <div>
-      <h2>Movie Card Library Crud!!</h2>
+      <div className="movie-card-header">
+        <h2 className="movie-title">Movie Card Library Crud!!</h2>
+      </div>
       <main>
         <Switch>
           <Route

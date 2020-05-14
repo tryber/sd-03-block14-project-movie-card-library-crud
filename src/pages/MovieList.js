@@ -30,8 +30,9 @@ class MovieList extends Component {
     // Render Loading here if the request is still happening
     return (
       <div data-testid="movie-list">
-        {movies.map((movie) => <MovieCard key={movie.title} 
-        movie={movie} className="movie-card-header" />)}
+        {movies.map((movie) => <MovieCard
+          key={movie.title} movie={movie} className="movie-card-header" 
+          />)}
       </div>
     );
   }
