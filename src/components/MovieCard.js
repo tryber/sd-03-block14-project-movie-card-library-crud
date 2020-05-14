@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropType from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import '../App.css';
 
@@ -27,11 +27,11 @@ class MovieCard extends Component {
 }
 
 MovieCard.propTypes = {
-  movie: PropType.shape({
-    title: PropType.string,
-    imagePath: PropType.string,
-    storyline: PropType.string,
-    id: PropType.number,
+  movie: PropTypes.shape({
+    title: PropTypes.string,
+    imagePath: PropTypes.string,
+    storyline: PropTypes.string,
+    id: PropTypes.number,
   }).isRequerid,
 };
 

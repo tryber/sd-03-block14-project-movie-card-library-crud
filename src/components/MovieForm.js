@@ -176,7 +176,7 @@ MovieForm.defaultProps = {
     genre: '',
     rating: 0,
     bookmarked: false,
-  }
+  },
 };
 
 export default MovieForm;
