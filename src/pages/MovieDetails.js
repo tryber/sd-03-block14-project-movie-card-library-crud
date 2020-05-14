@@ -23,13 +23,10 @@ export default class MovieDetails extends Component {
 
   render() {
     const { movie, loading } = this.state;
-
     const {
       imagePath, title, storyline, genre, rating, subtitle, id,
     } = movie;
-
     if (loading || !movie) return <Loading />;
-
     return (
       <div data-testid="movie-details">
       <div className="col s12 m6">
