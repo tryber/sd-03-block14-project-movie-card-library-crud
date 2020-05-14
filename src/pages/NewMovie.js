@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import Loading from '../components/Loading';
-
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
 
@@ -20,18 +18,10 @@ class NewMovie extends Component {
     .then((this.setState({ shouldRedirect: true })));
   }
 
-  componentDidMount() {
-    this.setState({ status: '' });
-  }
-
   render() {
     const { status, shouldRedirect } = this.state;
     if (shouldRedirect) {
       return <Redirect to="/" />;
-    }
-
-    if (status === 'loading') {
-      return <Loading />;
     }
 
     return (
