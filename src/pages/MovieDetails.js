@@ -20,9 +20,7 @@ class MovieDetails extends Component {
     // Change the condition to check the state
     const { loading, movie } = this.state;
     if (!loading) return <Loading />;
-
     const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
-
     return (
       <div data-testid="movie-details">
         <img alt="Movie Cover" src={`../${imagePath}`} />
