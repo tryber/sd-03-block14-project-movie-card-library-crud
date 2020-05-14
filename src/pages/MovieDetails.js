@@ -23,9 +23,7 @@ export default class MovieDetails extends Component {
 
   render() {
     const { movie, loading } = this.state;
-    const {
-      imagePath, title, storyline, genre, rating, subtitle, id,
-    } = movie;
+    const { title, subtitle, storyline, imagePath, genre, rating, id } = movie;
     if (loading || !movie) return <Loading />;
     return (
       <div data-testid="movie-details">
@@ -34,7 +32,6 @@ export default class MovieDetails extends Component {
           <div className="card-image">
             <img alt="Movie Cover" src={`../${imagePath}`} />
             <span className="card-title">{`Title: ${title}`}</span>
-
           </div>
           <div className="card-stacked">
             <div className="card-content">
