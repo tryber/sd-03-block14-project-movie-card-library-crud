@@ -27,31 +27,31 @@ export default class MovieDetails extends Component {
     if (loading || !movie) return <Loading />;
     return (
       <div data-testid="movie-details">
-      <div className="col s12 m6">
-        <div className="card horizontal">
-          <div className="card-image">
-            <img alt="Movie Cover" src={`../${imagePath}`} />
-            <span className="card-title">{`Title: ${title}`}</span>
-          </div>
-          <div className="card-stacked">
-            <div className="card-content">
-              <p>{`Title: ${title}`}</p>
-              <p>{`Subtitle: ${subtitle}`}</p>
-              <p>{`Storyline: ${storyline}`}</p>
-              <p>{`Genre: ${genre}`}</p>
-              <p>{`Rating: ${rating}`}</p>
+        <div className="col s12 m6">
+          <div className="card horizontal">
+            <div className="card-image">
+              <img alt="Movie Cover" src={`../${imagePath}`} />
+              <span className="card-title">{`Title: ${title}`}</span>
             </div>
-            <div className="card-action">
-              <Link to={`/movies/${id}/edit`}>EDITAR</Link>
-              <Link to="/">VOLTAR</Link>
-              <Link to="/" onClick={() => movieAPI.deleteMovie(id)}>DELETAR</Link>
+            <div className="card-stacked">
+              <div className="card-content">
+                <p>{`Title: ${title}`}</p>
+                <p>{`Subtitle: ${subtitle}`}</p>
+                <p>{`Storyline: ${storyline}`}</p>
+                <p>{`Genre: ${genre}`}</p>
+                <p>{`Rating: ${rating}`}</p>
+              </div>
+              <div className="card-action">
+                <Link to={`/movies/${id}/edit`}>EDITAR</Link>
+                <Link to="/">VOLTAR</Link>
+                <Link to="/" onClick={() => movieAPI.deleteMovie(id)}>DELETAR</Link>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 }
 
 MovieDetails.propTypes = {
