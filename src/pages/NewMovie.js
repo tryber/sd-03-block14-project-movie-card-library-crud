@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect, BrowserRouter } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
 
@@ -18,12 +18,11 @@ class NewMovie extends Component {
   }
 
   render() {
-    const { create } = this.state;
-
+    // const { create } = this.state;
     // if (!create) {
     //   return (
     //     <BrowserRouter>
-    //       <Redirect to="/" />
+    //       <Redirect to="/home" />
     //     </BrowserRouter>
     //   );
     // }

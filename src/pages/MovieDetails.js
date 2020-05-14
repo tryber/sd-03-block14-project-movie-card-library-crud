@@ -9,21 +9,21 @@ class MovieDetails extends Component {
     super(props);
     this.state = {
       movie: [],
-      status: true,
+      statusMovie: true,
     };
   }
 
   componentDidMount() {
     const { match } = this.props;
     movieAPI.getMovie(match.params.id)
-      .then((movie) => this.setState({ movie, status: false }));
+      .then((movie) => this.setState({ movie, statusMovie: false }));
   }
 
   render() {
-    const { movie, status } = this.state;
+    const { movie, statusMovie } = this.state;
     const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
 
-    if (status) return <Loading />;
+    if (statusMovie) return <Loading />;
 
     return (
       <div>
