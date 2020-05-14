@@ -127,7 +127,8 @@ export default class MovieForm extends React.Component {
         <button
           type="button"
           onClick={this.handleSubmit}
-          className="btn waves-effect waves-light" > Submit
+          className="btn waves-effect waves-light"
+        > Submit
         </button>
       </div>
     );
