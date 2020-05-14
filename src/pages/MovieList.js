@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { getMovies } from '../services/movieAPI';
 import { Loading, MovieCard } from '../components/index';
@@ -35,9 +34,5 @@ class MovieList extends React.Component {
     );
   }
 }
-
-// MovieList.propTypes = {
-//  movies: PropTypes.arrayOf(PropTypes.object).isRequired,
-// };
 
 export default MovieList;

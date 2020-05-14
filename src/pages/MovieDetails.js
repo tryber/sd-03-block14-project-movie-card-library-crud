@@ -45,11 +45,11 @@ class MovieDetails extends React.Component {
             <h5 className="movie-card-subtitle">{subtitle}</h5>
             <p className="movie-card-storyline">{storyline}</p>
             <div>
-            <p>Genero: {genre}</p>
-          </div>
-          <div>
-            <p>Rating: <span className="rating">{rating}</span></p>
-          </div>
+              <p>Genero: {genre}</p>
+            </div>
+            <div>
+              <p>Rating: <span className="rating">{rating}</span></p>
+            </div>
           </div>
           <div className="movie-details-links">
             <Link to={`/movies/${id}/edit`}>EDITAR</Link>
