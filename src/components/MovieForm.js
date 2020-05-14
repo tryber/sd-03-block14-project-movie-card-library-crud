@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-class MovieForm extends React.Component {
+export default class MovieForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = { ...props.movie };
@@ -19,7 +18,6 @@ class MovieForm extends React.Component {
 
   renderTitleInput() {
     const { title } = this.state;
-
     return (
       <div>
         <input
@@ -37,7 +35,6 @@ class MovieForm extends React.Component {
 
   renderSubtitleInput() {
     const { subtitle } = this.state;
-
     return (
       <div>
         <input
@@ -52,9 +49,22 @@ class MovieForm extends React.Component {
     );
   }
 
+  renderStorylineInput() {
+    const { storyline } = this.state;
+    return (
+      <div>
+        <textarea
+          id="movie_storyline"
+          value={storyline}
+          onChange={(event) => this.updateMovie('storyline', event.target.value)}
+        />
+        <label htmlFor="movie_storyline">Sinopse</label>
+      </div>
+    );
+  }
+
   renderImagePathInput() {
     const { imagePath } = this.state;
-
     return (
       <div className="row">
         <input
@@ -69,44 +79,31 @@ class MovieForm extends React.Component {
     );
   }
 
-  renderStorylineInput() {
-    const { storyline } = this.state;
-
-    return (
-      <div>
-        <textarea
-          id="movie_storyline"
-          value={storyline}
-          onChange={(event) => this.updateMovie('storyline', event.target.value)}
-        />
-        <label htmlFor="movie_storyline">Sinopse</label>
-      </div>
-    );
-  }
-
   renderGenreSelection() {
     const { genre } = this.state;
-
     return (
       <div>
-        <label htmlFor="movie_genre">Genre Select</label>
-        <select
-          id="movie_genre"
-          value={genre}
-          onChange={(event) => this.updateMovie('genre', event.target.value)}
-        >
-          <option value="action">Ação</option>
-          <option value="comedy">Comédia</option>
-          <option value="thriller">Suspense</option>
-          <option value="fantasy">Fantasia</option>
-        </select>
+
+        <div className="input-field col s14">
+          <select
+            className="browser-default"
+            id="movie_genre"
+            value={genre}
+            onChange={(event) => this.updateMovie('genre', event.target.value)}
+          >
+            <option value="action">Ação</option>
+            <option value="comedy">Comédia</option>
+            <option value="thriller">Suspense</option>
+            <option value="fantasy">Fantasia</option>
+          </select>
+        </div>
+        <label htmlFor="movie_genre">Gênero</label>
       </div>
     );
   }
 
   renderRatingInput() {
     const { rating } = this.state;
-
     return (
       <div>
         <input
@@ -114,7 +111,7 @@ class MovieForm extends React.Component {
           id="movie_rating"
           type="number"
           step={0.1}
-          min={0}
+          min={0.1}
           max={5}
           value={rating}
           onChange={(event) => this.updateMovie('rating', event.target.value)}
@@ -130,8 +127,7 @@ class MovieForm extends React.Component {
         <button
           type="button"
           onClick={this.handleSubmit}
-        >
-          Submit
+          className="btn waves-effect waves-light" > Submit
         </button>
       </div>
     );
@@ -139,14 +135,14 @@ class MovieForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container center-align white">
         <form>
           {this.renderTitleInput()}
           {this.renderSubtitleInput()}
-          {this.renderImagePathInput()}
           {this.renderStorylineInput()}
           {this.renderGenreSelection()}
           {this.renderRatingInput()}
+          {this.renderImagePathInput()}
           {this.renderSubmitButton()}
         </form>
       </div>
@@ -154,4 +150,14 @@ class MovieForm extends React.Component {
   }
 }
 
-export default MovieForm;
+MovieForm.defaultProps = {
+  movie: {
+    title: '',
+    subtitle: '',
+    storyline: '',
+    bookmarked: false,
+    genre: '',
+    rating: 0,
+    imagePath: '',
+  },
+};
