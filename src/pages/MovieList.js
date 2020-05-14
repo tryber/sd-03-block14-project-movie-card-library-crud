@@ -6,13 +6,18 @@ import * as movieAPI from '../services/movieAPI';
 class MovieList extends Component {
   constructor(props) {
     super(props);
-    const status = movieAPI.getMovies();
-    this.state = status;
-    console.log(status);
+    this.state = {
+      movies: [],
+    };
+  }
+
+  componentDidMount() {
+    movieAPI.getMovies()
+    .then((response) => this.setState({ movies: response }))
+    .catch((error) => console.log(error));
   }
 
   render() {
-    console.log(this);
     const { movies } = this.state;
     if (!this.componentDidMount) {
       return (
@@ -21,6 +26,7 @@ class MovieList extends Component {
         </div>
       );
     }
+    console.log(this.state);
     // Render Loading here if the request is still happening
     return (
       <div data-testid="movie-list">
