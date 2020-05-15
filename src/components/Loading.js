@@ -10,7 +10,3 @@ class Loading extends Component {
 }
 
 export default Loading;
-
-Loading.propType = {
-  Loading: PropType.element.isRequerid,
-};
