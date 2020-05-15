@@ -1,21 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './App.css';
-import MovieList from './pages/MovieList';
-import MovieDetails from './pages/MovieDetails';
-import NewMovie from './pages/NewMovie';
-import EditMovie from './pages/EditMovie';
-import NotFound from './pages/NotFound';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import * as Index from './pages/index';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={MovieList} />
-        <Route exact path="/movies/:id" component={MovieDetails} />
-        <Route path="/movies/new" component={NewMovie} />
-        <Route path="/movies/:id/edit" component={EditMovie} />
-        <Route component={NotFound} />
+        <Route exact path="/" component={Index.MovieList} />
+        <Route path="/movies/new" component={Index.NewMovie} />
+        <Route path="/movies/:id/edit" component={Index.EditMovie} />
+        <Route path="/movies/:id" component={Index.MovieDetails} />
+        <Route component={Index.NotFound} />
       </Switch>
     </Router>
   );
