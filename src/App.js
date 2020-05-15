@@ -18,7 +18,8 @@ function App() {
             path="/movies/new" render={(props) => <NewMovie {...props} data-testid="new-movie" />}
           />
           <Route
-           strict path="/movies/:id/edit" render={(props) => <EditMovie {...props} data-testid="edit-movie" />}
+            strict path="/movies/:id/edit"
+            render={(props) => <EditMovie {...props} data-testid="edit-movie" />}
           />
           <Route
             strict path="/movies/:id/"
