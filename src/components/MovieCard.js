@@ -9,10 +9,10 @@ class MovieCard extends React.Component {
     console.log(this.props.movie);
     return (
       <div className="movie-card-wrapper" data-testid="movie-card">
-            <h3>{title}</h3>
-            <img src={imagePath} alt={title} />
-            <p>{storyline}</p>
-            <Link to={`movies/${id}`}>VER DETALHES</Link>
+        <h3>{title}</h3>
+        <img src={imagePath} alt={title} />
+        <p>{storyline}</p>
+        <Link to={`movies/${id}`}>VER DETALHES</Link>
       </div>
     );
   }

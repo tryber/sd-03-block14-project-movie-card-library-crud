@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
-import { MovieForm, Loading } from '../components';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
+import { MovieForm, Loading } from '../components';
 import * as movieAPI from '../services/movieAPI';
 
 class EditMovie extends Component {
@@ -19,7 +19,7 @@ class EditMovie extends Component {
     movieAPI.getMovie(this.props.match.params.id)
       .then((movie) => this.setState({
         loading: false,
-        movie: movie,
+        movie,
       }),
     );
   }
@@ -39,7 +39,7 @@ class EditMovie extends Component {
     }
 
     if (loading) {
-      return <Loading />
+      return <Loading />;
     }
 
     return (
