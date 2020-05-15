@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 // import movie from '../services/movieData';
 import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
@@ -7,10 +8,11 @@ import { Loading } from '../components';
 class MovieDetails extends Component {
   render() {
     // Change the condition to check the state
-    if (!this.componentDidMount) return <Loading />;
+    
     const movieId = this.props.match.params.id;
     const movie = movieAPI.getMovie(movieId);
-    const { title, storyline, imagePath, genre, rating, subtitle } = movie;
+    if (!Object.keys(movie).length) { return <Loading />; }
+    const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
     console.log(rating);
     return (
       <div data-testid="movie-details">
@@ -20,6 +22,9 @@ class MovieDetails extends Component {
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
+        <Link to={`/movies/${id}/edit`}>EDITAR</Link>
+        <Link to="/">VOLTAR</Link>
+        <Link to="/" onClick={this.handleDelete}>DELETAR</Link>
       </div>
     );
   }
