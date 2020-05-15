@@ -8,7 +8,6 @@ import { Loading } from '../components';
 class MovieDetails extends Component {
   render() {
     // Change the condition to check the state
-    
     const movieId = this.props.match.params.id;
     const movie = movieAPI.getMovie(movieId);
     if (!Object.keys(movie).length) { return <Loading />; }
