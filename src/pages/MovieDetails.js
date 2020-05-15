@@ -16,7 +16,7 @@ class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    movieAPI.getMovie(this.props).then((movie) =>
+    movieAPI.getMovie(this.props.match.params.id).then((movie) =>
       this.setState({
         isLoading: true,
         movie,
@@ -25,7 +25,7 @@ class MovieDetails extends Component {
   }
 
   handleDelete() {
-    const movieid = this.props;
+    const movieid = this.props.match.params.id;
     movieAPI.deleteMovie(movieid);
   }
 
