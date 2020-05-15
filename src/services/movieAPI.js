@@ -1,3 +1,4 @@
+// import PropTypes from 'prop-types';
 import data from './movieData';
 
 localStorage.setItem('movies', JSON.stringify(data));
