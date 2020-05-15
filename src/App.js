@@ -22,7 +22,7 @@ function App() {
             render={(props) => <EditMovie {...props} data-testid="edit-movie" />}
           />
           <Route
-            strict path="/movies/:id/"
+            path="/movies/:id/"
             render={(props) => <MovieDetails {...props} />}
           />
           <Route path="/" component={NotFound} />
