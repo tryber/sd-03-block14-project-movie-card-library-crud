@@ -23,7 +23,7 @@ function App() {
           />
           <Route
             strict path="/movies/:id/"
-            render={(props) => <MovieDetails {...props} data-testid="movie-details" />}
+            render={(props) => <MovieDetails {...props} />}
           />
           <Route path="/" component={NotFound} />
         </Switch>

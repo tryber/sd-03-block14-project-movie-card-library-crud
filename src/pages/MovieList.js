@@ -27,7 +27,6 @@ class MovieList extends Component {
         </div>
       );
     }
-    console.log(this.state);
     // Render Loading here if the request is still happening
     return (
       <div>
