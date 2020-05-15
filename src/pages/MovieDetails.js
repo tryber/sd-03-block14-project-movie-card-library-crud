@@ -6,13 +6,35 @@ import * as movieAPI from '../services/movieAPI';
 import { Loading } from '../components';
 
 class MovieDetails extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: false,
+      movie: null,
+    };
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  componentDidMount() {
+    movieAPI.getMovie(this.props.match.params.id).then((movie) =>
+      this.setState({
+        isLoading: true,
+        movie,
+      }),
+    );
+  }
+
+  handleDelete() {
+    const movieId = this.props.match.params.id;
+    movieAPI.deleteMovie(movieId);
+  }
+
   render() {
     // Change the condition to check the state
-    const movieId = this.props.match.params.id;
-    const movie = movieAPI.getMovie(movieId);
-    if (!Object.keys(movie).length) { return <Loading />; }
-    const { id, title, storyline, imagePath, genre, rating, subtitle } = movie;
-    console.log(rating);
+    const { isLoading, movie } = this.state;
+    if (!isLoading) return <Loading />;
+
+    const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
     return (
       <div data-testid="movie-details">
         <img alt="Movie Cover" src={`../${imagePath}`} />
