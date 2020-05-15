@@ -21,7 +21,7 @@ class MovieList extends Component {
       movies,
     }));
   }
-  
+
   render() {
     const { movies, isLoading } = this.state;
 
