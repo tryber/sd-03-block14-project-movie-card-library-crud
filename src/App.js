@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import MovieList from './pages/MovieList';
+import * as Index from './pages/index';
 
-import movies from './services/movieData';
-
-class App extends Component() {
+class App extends Component {
   render() {
     return (
       <Router>
-        <div>Movie Card Library Crud</div>
-        <MovieList movies={movies} />
+        <Switch>
+          <Route exact path="/" component={Index.MovieList} />
+          <Route path="/movies/new" component={Index.NewMovie} />
+          <Route path="/movies/:id/edit" component={Index.EditMovie} />
+          <Route path="/movies/:id" component={Index.MovieDetails} />
+          <Route component={Index.NotFound} />
+        </Switch>
       </Router>
     );
   }
