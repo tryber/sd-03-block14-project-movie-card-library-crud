@@ -52,4 +52,4 @@ EditMovie.propTypes = {
   }).isRequired,
 };
 
-export default EditMovie; 
+export default EditMovie;
