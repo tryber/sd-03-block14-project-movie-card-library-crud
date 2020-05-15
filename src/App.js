@@ -15,13 +15,13 @@ function App() {
             exact path="/" render={(props) => <MovieList {...props} data-testid="movie-list" />}
           />
           <Route
-            path="/newmovie" render={(props) => <NewMovie {...props} data-testid="new-movie" />}
+            path="/movies/new" render={(props) => <NewMovie {...props} data-testid="new-movie" />}
           />
           <Route
-            path="/editmovie" render={(props) => <EditMovie {...props} data-testid="edit-movie" />}
+           strict path="/movies/:id/edit" render={(props) => <EditMovie {...props} data-testid="edit-movie" />}
           />
           <Route
-            path="/moviedetails"
+            strict path="/movies/:id/"
             render={(props) => <MovieDetails {...props} data-testid="movie-details" />}
           />
           <Route path="/" component={NotFound} />
