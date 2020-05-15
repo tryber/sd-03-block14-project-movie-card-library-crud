@@ -11,10 +11,14 @@ class MovieDetails extends Component {
       loading: false,
       movie: null,
     };
+    this.deleteMovie = this.deleteMovie.bind(this);
   }
   componentDidMount() {
     movieAPI.getMovie(this.props.match.params.id)
     .then((movie) => this.setState({ movie, loading: true }));
+  }
+  deleteMovie() {
+    movieAPI.deleteMovie(this.props.match.params.id);
   }
   render() {
     // Change the condition to check the state
@@ -31,6 +35,7 @@ class MovieDetails extends Component {
         <p>{`Rating: ${rating}`}</p>
         <Link to={`/movies/${id}/edit`}>EDITAR</Link>
         <Link to="/">VOLTAR</Link>
+        <Link onClick={this.deleteMovie} to="/">DELETAR</Link>
       </div>
     );
   }
