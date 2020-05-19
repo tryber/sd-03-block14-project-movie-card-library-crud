@@ -7,7 +7,7 @@ import * as movieAPI from '../services/movieAPI';
 class MovieList extends Component {
   constructor(props) {
     super(props);
-    this.state = { movies: [] }
+    this.state = { movies: [] };
   }
 
   componentDidMount() {
@@ -17,14 +17,13 @@ class MovieList extends Component {
   render() {
     const { movies } = this.state;
     if (movies.length === 0) {
-      return <Loading />
-    } else {
-      return (
-        <div data-testid="movie-list">
-          {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
-        </div>
-      )
+      return <Loading />;
     }
+    return (
+      <div data-testid="movie-list">
+        {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}
+      </div>
+    );
   }
 }
 

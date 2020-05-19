@@ -10,11 +10,11 @@ function App() {
   return (
     <Router>
       <Switch>
-          <Route exact path="/" component={Index} />
-          <Route exact path="/movies/:id" component={MovieDetails} />
-          {/* <Route path="/movies/new" component={AddMovie} /> */}
-          <Route path="/movies/:id/edit" component={EditMovie} /> 
-        </Switch>
+        <Route exact path="/" component={Index} />
+        <Route exact path="/movies/:id" component={MovieDetails} />
+        {/* <Route path="/movies/new" component={AddMovie} /> */}
+        <Route path="/movies/:id/edit" component={EditMovie} />
+      </Switch>
     </Router>
   );
 }
