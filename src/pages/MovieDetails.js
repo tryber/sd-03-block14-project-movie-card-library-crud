@@ -2,13 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import * as movieAPI from '../services/movieAPI';
 import Loading from '../components/Loading';
+import PropTypes from 'prop-types';
 
 class MovieDetails extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      movie: null,
-    }
+    this.state = { movie: null };
   }
 
   componentDidMount() {
@@ -32,11 +31,19 @@ class MovieDetails extends React.Component {
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
-        <Link to={`/movies/${id}/edit`} >Editar</Link>
-        <Link to={'/'} >Voltar</Link>
+        <Link to={`/movies/${id}/edit`} >EDITAR</Link>
+        <Link to={'/'} >VOLTAR</Link>
       </div>
     );
   }
 }
+
+MovieDetails.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default MovieDetails;
