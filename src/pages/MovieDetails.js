@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import * as movieAPI from '../services/movieAPI';
 import Loading from '../components/Loading';
-import PropTypes from 'prop-types';
 
 class MovieDetails extends React.Component {
   constructor(props) {
