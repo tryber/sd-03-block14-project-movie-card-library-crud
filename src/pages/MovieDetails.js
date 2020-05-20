@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import * as movieAPI from '../services/movieAPI';
 import Loading from '../components/Loading';
 
-class MovieDetails extends Component {
+class MovieDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +12,8 @@ class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    movieAPI.getMovie(this.props.match.params).then((movie) =>
+    const { id } = this.props.match.params;
+    movieAPI.getMovie(id).then((movie) =>
       this.setState({ movie }),
     );
   }
