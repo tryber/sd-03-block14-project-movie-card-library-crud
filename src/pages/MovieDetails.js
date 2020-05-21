@@ -8,6 +8,7 @@ class MovieDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = { movie: null };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -15,6 +16,11 @@ class MovieDetails extends React.Component {
     movieAPI.getMovie(id).then((movie) =>
       this.setState({ movie }),
     );
+  }
+
+  handleClick() {
+    const { id } = this.props.match.params;
+    movieAPI.deleteMovie(id);
   }
 
   render() {
@@ -33,6 +39,7 @@ class MovieDetails extends React.Component {
         <p>{`Rating: ${rating}`}</p>
         <Link to={`/movies/${id}/edit`} >EDITAR</Link>
         <Link to={'/'} >VOLTAR</Link>
+        <Link to={'/'} onClick={this.handleClick}>DELETAR</Link>
       </div>
     );
   }
