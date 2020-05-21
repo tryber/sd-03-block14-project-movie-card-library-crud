@@ -26,7 +26,7 @@ class EditMovie extends React.Component {
     movieAPI.updateMovie(updatedMovie).then((movie) =>
       this.setState({
         movie: updatedMovie,
-        shouldRedirect: true, 
+        shouldRedirect: true,
       }),
     );
   }
