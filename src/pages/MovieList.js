@@ -22,7 +22,7 @@ class MovieList extends React.Component {
     }
     return (
       <div data-testid="movie-list">
-       <div>
+        <div>
           <Link to="/movies/new">ADICIONAR CARTÃO</Link>
         </div>
         {movies.map((movie) => <MovieCard key={movie.title} movie={movie} />)}

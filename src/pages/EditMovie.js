@@ -1,14 +1,14 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import { MovieForm } from '../components';
 import PropTypes from 'prop-types';
+import { MovieForm } from '../components';
 import * as movieAPI from '../services/movieAPI';
 import Loading from '../components/Loading';
 
 class EditMovie extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       movie: null,
       shouldRedirect: false,
     };
@@ -17,8 +17,8 @@ class EditMovie extends React.Component {
 
   componentDidMount() {
     const { id } = this.props.match.params;
-    movieAPI.getMovie(id).then((movie) =>
-      this.setState({ movie }),
+    movieAPI.getMovie(id).then((edited) =>
+      this.setState({ movie: edited }),
     );
   }
 
@@ -26,14 +26,14 @@ class EditMovie extends React.Component {
     movieAPI.updateMovie(updatedMovie).then((movie) =>
       this.setState({
         movie: updatedMovie,
-        shouldRedirect: true, })
+        shouldRedirect: true, }),
     );
   }
 
   render() {
     const { shouldRedirect, movie } = this.state;
     if (shouldRedirect) {
-      return <Redirect to='/' />
+      return <Redirect to="/" />;
     }
 
     if (movie === null) return <Loading />;
