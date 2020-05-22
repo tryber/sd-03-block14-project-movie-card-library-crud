@@ -22,7 +22,7 @@ class MovieDetails extends Component {
 
   onChangeRedirect() {
     const { id } = this.state.movie;
-    movieAPI.deleteMovie(id);3
+    movieAPI.deleteMovie(id);
     this.setState({
       isShouldRedirect: true,
     });
