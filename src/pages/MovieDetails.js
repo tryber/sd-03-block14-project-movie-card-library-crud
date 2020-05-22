@@ -22,7 +22,7 @@ class MovieDetails extends Component {
 
   onChangeRedirect() {
     const { id } = this.state.movie;
-    movieAPI.deleteMovie(id);
+    movieAPI.deleteMovie(id);3
     this.setState({
       isShouldRedirect: true,
     });
@@ -55,7 +55,7 @@ class MovieDetails extends Component {
             <div className="card-action">
               <Link to={`/movies/${id}/edit`}>EDITAR</Link>
               <Link to="/">VOLTAR</Link>
-              <button type="button" onClick={this.onChangeRedirect}>APAGAR</button>
+              <button type="button" onClick={this.onChangeRedirect}>DELETAR</button>
             </div>
           </div>
         </div>
