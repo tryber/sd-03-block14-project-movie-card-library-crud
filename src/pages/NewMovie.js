@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MovieForm from '../components/MovieForm';
+import PropTypes from 'prop-types';
 import * as movieAPI from '../services/movieAPI';
 
 class NewMovie extends Component {
@@ -16,7 +17,7 @@ class NewMovie extends Component {
 
   render() {
     const { shouldRedirect } = this.state;
-    const { history } = this.props
+    const { history } = this.props;
     if (shouldRedirect) {
       history.push('/');
     }
@@ -30,7 +31,7 @@ class NewMovie extends Component {
 
 NewMovie.propTypes = {
   history: PropTypes.shape({
-    push: PropTypes.func.isRequired
+    push: PropTypes.func.isRequired,
   }).isRequired,
 };
 
