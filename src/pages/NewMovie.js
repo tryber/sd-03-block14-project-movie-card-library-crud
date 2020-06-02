@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
 
@@ -8,17 +7,26 @@ class NewMovie extends Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      shouldRedirect: false,
+    };
   }
 
   handleSubmit(newMovie) {
-    const { history } = this.props;
-    movieAPI.createMovie(newMovie);
-    history.push('/');
+    movieAPI.createMovie(newMovie).then(() =>
+      this.setState({
+        shouldRedirect: true,
+      }),
+    );
   }
 
   render() {
     const { shouldRedirect } = this.state;
-    if (shouldRedirect) return <Redirect to="/" />;
+    const { history } = this.props;
+
+    if (shouldRedirect) {
+      history.push('/');
+    }
     return (
       <div data-testid="new-movie">
         <MovieForm onSubmit={this.handleSubmit} />
@@ -26,7 +34,6 @@ class NewMovie extends Component {
     );
   }
 }
-export default NewMovie;
 
 NewMovie.propTypes = {
   history: PropTypes.shape({
@@ -34,3 +41,4 @@ NewMovie.propTypes = {
   }).isRequired,
 };
 
+export default NewMovie;
