@@ -20,8 +20,14 @@ class MovieDetails extends Component {
         loading: true,
       }),
     );
+    this.deleteMovie = this.deleteMovie.bind(this);
   }
 
+  deleteMovie(id) {
+    const { history } = this.props;
+    movieAPI.deleteMovie(id).then(() => history.push('/'));
+  }
+  
   render() {
     const { loading, movie } = this.state;
     if (!loading) return <Loading />;
@@ -40,6 +46,7 @@ class MovieDetails extends Component {
           EDITAR
         </Link>
         <Link to="/">VOLTAR</Link>
+        <a href="/" onClick={this.deleteMovie}>DELETAR</a>
       </div>
     );
   }
