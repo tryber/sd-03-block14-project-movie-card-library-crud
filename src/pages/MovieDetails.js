@@ -27,7 +27,7 @@ class MovieDetails extends Component {
     const { history } = this.props;
     movieAPI.deleteMovie(id).then(() => history.push('/'));
   }
-  
+
   render() {
     const { loading, movie } = this.state;
     if (!loading) return <Loading />;
