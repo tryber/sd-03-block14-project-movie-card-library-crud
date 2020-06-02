@@ -43,3 +43,12 @@ class EditMovie extends Component {
 }
 
 export default EditMovie;
+
+EditMovie.defaultProps = {
+  match: {
+    params: {
+      id: '',
+    },
+  },
+};
+
