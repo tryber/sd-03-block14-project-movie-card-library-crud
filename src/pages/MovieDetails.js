@@ -11,6 +11,7 @@ class MovieDetails extends Component {
       movie: {},
       loading: false,
     };
+    this.deleteMovie = this.deleteMovie.bind(this);
   }
 
   componentDidMount() {
@@ -20,7 +21,6 @@ class MovieDetails extends Component {
         loading: true,
       }),
     );
-    this.deleteMovie = this.deleteMovie.bind(this);
   }
 
   deleteMovie(id) {
@@ -60,4 +60,5 @@ MovieDetails.propTypes = {
       id: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
+  history: PropTypes.instanceOf(Object).isRequired,
 };
