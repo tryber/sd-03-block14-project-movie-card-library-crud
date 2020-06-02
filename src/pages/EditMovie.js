@@ -3,12 +3,13 @@ import { Redirect } from 'react-router-dom';
 import { MovieForm } from '../components';
 import { Loading } from '../components';
 import * as movieAPI from '../services/movieAPI';
+import PropTypes from 'prop-types';
 
 class EditMovie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: {},
+      movie: null,
       status: 'loading',
       shouldRedirect: false,
     };
@@ -44,11 +45,8 @@ class EditMovie extends Component {
 
 export default EditMovie;
 
-EditMovie.defaultProps = {
-  match: {
-    params: {
-      id: '',
-    },
-  },
+EditMovie.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({ id: PropTypes.number }),
+  }).isRequired,
 };
-
