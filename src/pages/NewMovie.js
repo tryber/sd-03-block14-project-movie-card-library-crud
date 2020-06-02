@@ -6,16 +6,21 @@ import * as movieAPI from '../services/movieAPI';
 class NewMovie extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      shouldRedirect: false,
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(NewMovie) {
-    const { history } = this.props;
-    movieAPI.createMovie(NewMovie);
-    history.push('/');
+  handleSubmit(newMovie) {
+    movieAPI.createMovie(newMovie).then(() => this.setState({
+      shouldRedirect: true,
+    }));
   }
 
   render() {
+    const { shouldRedirect } = this.state;
+    if (shouldRedirect) return <Redirect to="/" />;
     return (
       <div data-testid="new-movie">
         <MovieForm onSubmit={this.handleSubmit} />
