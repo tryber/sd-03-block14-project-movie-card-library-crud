@@ -23,9 +23,8 @@ class MovieDetails extends Component {
     );
   }
 
-  deleteMovie(id) {
-    const { history } = this.props;
-    movieAPI.deleteMovie(id).then(() => history.push('/'));
+  deleteMovie() {
+    movieAPI.deleteMovie(this.props.match.params.id);
   }
 
   render() {
@@ -60,5 +59,4 @@ MovieDetails.propTypes = {
       id: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
-  history: PropTypes.instanceOf(Object).isRequired,
 };
