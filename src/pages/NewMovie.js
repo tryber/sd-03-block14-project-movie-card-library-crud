@@ -9,7 +9,10 @@ class NewMovie extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(newMovie) {
+  handleSubmit(NewMovie) {
+    const { history } = this.props;
+    movieAPI.createMovie(NewMovie);
+    history.push('/');
   }
 
   render() {
