@@ -23,7 +23,7 @@ class MovieDetails extends Component {
     this.setState({ movie: getMovieById });
   }
 
-  deleteMovieCard(){
+  deleteMovieCard() {
     const { id } = this.props.match.params;
     movieAPI.deleteMovie(id);
   }
