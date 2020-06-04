@@ -9,8 +9,8 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route path="/movies/:id" component={index.MovieDetails} />
-          {/* <Route path="/movies/:id/edit" component={index.EditMovie} /> */}
-          {/* <Route path="/movies/new" component={index.NewMovie} /> */}
+          <Route path="/movies/:id/edit" component={index.EditMovie} />
+          <Route path="/movies/new" component={index.NewMovie} />
           <Route exact path="/" component={index.MovieList} />
           <Route component={index.NotFound} />
         </Switch>

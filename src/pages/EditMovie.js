@@ -6,7 +6,11 @@ import * as movieAPI from '../services/movieAPI';
 class EditMovie extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      status: 'loading',
+      shouldRedirect: false,
+      movie: {},
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -26,6 +30,7 @@ class EditMovie extends Component {
     return (
       <div data-testid="edit-movie">
         <MovieForm movie={movie} onSubmit={this.handleSubmit} />
+
       </div>
     );
   }
