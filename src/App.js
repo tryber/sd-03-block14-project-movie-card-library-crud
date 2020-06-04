@@ -12,7 +12,7 @@ function App() {
           {/* <Route path="/movies/:id/edit" component={index.EditMovie} /> */}
           {/* <Route path="/movies/new" component={index.NewMovie} /> */}
           <Route exact path="/" component={index.MovieList} />
-          {/* <Route component={index.NotFound} /> */}
+          <Route component={index.NotFound} />
         </Switch>
       </BrowserRouter>
     </div>
