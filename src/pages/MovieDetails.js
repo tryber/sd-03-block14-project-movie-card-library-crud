@@ -14,7 +14,7 @@ class MovieDetails extends Component {
   }
 
   componentDidMount() {
-    this.fetchMovieById()
+    this.fetchMovieById();
   }
 
   async fetchMovieById() {
@@ -37,7 +37,7 @@ class MovieDetails extends Component {
         <p>{`Rating: ${rating}`}</p>
         <div>
           <Link to={`/movies/${id}/edit`}>EDITAR</Link>
-          <Link to='/'>VOLTAR</Link>
+          <Link to="/">VOLTAR</Link>
         </div>
       </div>
     );
@@ -47,5 +47,5 @@ class MovieDetails extends Component {
 export default MovieDetails;
 
 MovieDetails.propTypes = {
-  match: PropTypes.object.isRequired,
+  match: PropTypes.isRequired,
 };
