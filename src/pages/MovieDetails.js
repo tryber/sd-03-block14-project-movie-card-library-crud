@@ -28,22 +28,26 @@ class MovieDetails extends Component {
     const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
     if (!Object.keys(movie).length) return <Loading />;
     return (
-      <div data-testid="movie-details">
-        <img alt="Movie Cover" src={`../${imagePath}`} />
-        <h3>{`Title: ${title}`}</h3>
-        <p>{`Subtitle: ${subtitle}`}</p>
-        <p>{`Storyline: ${storyline}`}</p>
-        <p>{`Genre: ${genre}`}</p>
-        <p>{`Rating: ${rating}`}</p>
-        <div>
-          <Link to={`/movies/${id}/edit`}>EDITAR</Link>
-          <Link to="/">VOLTAR</Link>
+      <div data-testid="movie-details" className="details-card">
+        <img alt="Movie Cover" src={`../${imagePath}`} className="details-image" />
+        <div className="details-container">
+          <h3 className="details-title">{`Título: ${title}`}</h3>
+          <p className="details-rating">{`Avaliação: ${rating}`}</p>
         </div>
-        <button>
-          <Link className="" to="/" onClick={() => movieAPI.deleteMovie(id)}>
+        <p className="details-subtitle">{`Subtítulo: ${subtitle}`}</p>
+        <p className="details-storyline">{`Sinopse: ${storyline}`}</p>
+        <p className="details-genre">{`Gênero: ${genre}`}</p>
+        <div className="details-buttons">
+          <Link to={`/movies/${id}/edit`} className="details-button">EDITAR</Link>
+          <Link to="/" className="details-button">VOLTAR</Link>
+          <Link
+            className="details-button"
+            to="/"
+            onClick={() => movieAPI.deleteMovie(id)}
+          >
             DELETAR
           </Link>
-        </button>
+        </div>
       </div>
     );
   }
