@@ -20,7 +20,6 @@ class MovieList extends React.Component {
     if (movies.length === 0) {
       return <Loading />;
     }
-
     return (
       <div data-testid="movie-list">
         <div>

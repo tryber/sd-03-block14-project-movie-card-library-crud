@@ -13,7 +13,9 @@ class MovieDetails extends React.Component {
 
   componentDidMount() {
     const { id } = this.props.match.params;
-    movieAPI.getMovie(id).then((movie) => this.setState({ movie }));
+    movieAPI.getMovie(id).then((movie) =>
+      this.setState({ movie }),
+    );
   }
 
   handleClick() {
@@ -24,6 +26,7 @@ class MovieDetails extends React.Component {
   render() {
     const { movie } = this.state;
     if (movie === null) return <Loading />;
+
     const { title, storyline, imagePath, genre, rating, subtitle, id } = movie;
 
     return (
@@ -34,15 +37,14 @@ class MovieDetails extends React.Component {
         <p>{`Storyline: ${storyline}`}</p>
         <p>{`Genre: ${genre}`}</p>
         <p>{`Rating: ${rating}`}</p>
-        <Link to={`/movies/${id}/edit`}>EDITAR</Link>
-        <Link to={'/'}>VOLTAR</Link>
-        <Link to={'/'} onClick={this.handleClick}>
-          DELETAR
-        </Link>
+        <Link to={`/movies/${id}/edit`} >EDITAR</Link>
+        <Link to={'/'} >VOLTAR</Link>
+        <Link to={'/'} onClick={this.handleClick}>DELETAR</Link>
       </div>
     );
   }
 }
+
 MovieDetails.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({

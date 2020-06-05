@@ -17,7 +17,9 @@ class EditMovie extends React.Component {
 
   componentDidMount() {
     const { id } = this.props.match.params;
-    movieAPI.getMovie(id).then((edited) => this.setState({ movie: edited }));
+    movieAPI.getMovie(id).then((edited) =>
+      this.setState({ movie: edited }),
+    );
   }
 
   handleSubmit(updatedMovie) {
@@ -25,7 +27,7 @@ class EditMovie extends React.Component {
       this.setState({
         movie: updatedMovie,
         shouldRedirect: true,
-      })
+      }),
     );
   }
 
