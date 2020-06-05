@@ -89,7 +89,7 @@ class MovieForm extends React.Component {
 
     return (
       <div>
-        <label htmlFor="movie_genre">Genre Select</label>
+        <label htmlFor="movie_genre">Gênero</label>
         <select
           id="movie_genre"
           value={genre}
@@ -130,6 +130,7 @@ class MovieForm extends React.Component {
         <button
           type="button"
           onClick={this.handleSubmit}
+          className="submit-button"
         >
           Submit
         </button>
@@ -140,7 +141,7 @@ class MovieForm extends React.Component {
   render() {
     return (
       <div>
-        <form>
+        <form className="form">
           {this.renderTitleInput()}
           {this.renderSubtitleInput()}
           {this.renderImagePathInput()}
@@ -155,3 +156,7 @@ class MovieForm extends React.Component {
 }
 
 export default MovieForm;
+
+MovieForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
