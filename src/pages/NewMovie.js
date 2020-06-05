@@ -18,7 +18,7 @@ class NewMovie extends Component {
       this.setState({
         shouldRedirect: true,
         movie,
-      }, )
+      })
     );
   }
 
