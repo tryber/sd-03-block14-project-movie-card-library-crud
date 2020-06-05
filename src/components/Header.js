@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class Header extends Component {
   render() {
-    return(
+    return (
       <Link to="/">
         <header className="movie-card-header">
           <h1 className="page-title">Movie Card Library Crud</h1>

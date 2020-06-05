@@ -31,7 +31,7 @@ body {
 
 .footer-text {
   color: #f8f9fa;
-  font-family: Courier New, Courier, monospace;
+  font-family: Courier New , Courier , monospace;
   font-size: 15px;
   margin: 0;
   text-align: center;
@@ -50,16 +50,18 @@ body {
 }
 
 .loader {
+  animation: spin 2s linear infinite;
   border: 16px solid #f3f3f3;
   border-top: 16px solid #3498db;
   border-radius: 50%;
-  width: 100px;
   height: 100px;
-  animation: spin 2s linear infinite;
+  width: 100px;
 }
 
 @keyframes spin {
+
   0% { transform: rotate(0deg); }
+
   100% { transform: rotate(360deg); }
 }
 
@@ -114,7 +116,7 @@ body {
 
 .movie-card-storyline {
   color: #6c757d;
-  font-size: 16px;
+  font-size: 14px;
   margin: 0 0 8px;
 }
 
@@ -129,43 +131,38 @@ body {
   color: whitesmoke;
 }
 
-.movie-card-storyline {
-  font-size: 14px;
-  text-align: justify;
-}
-
-.details-card{
+.details-card {
   margin: 50px auto;
   width: 90%;
 }
 
-.details-image{
+.details-image {
   display: flex;
   justify-content: center;
   margin: auto;
   width: 100%;
 }
 
-.details-title{
+.details-title {
   color: #039be5;
   font-size: 26px;
   font-weight: 500;
 }
 
-.details-subtitle{
+.details-subtitle {
   font-size: 20px;
   margin: 0;
 }
 
-.details-storyline{
+.details-storyline {
   font-size: 16px;
 }
 
-.details-genre{
+.details-genre {
   font-size: 16px;
 }
 
-.details-rating{
+.details-rating {
   background-color: #039be5;
   border-radius: 2px;
   color: white;
@@ -184,7 +181,7 @@ body {
 
 .details-buttons {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .details-button {
@@ -211,7 +208,7 @@ body {
 .submit-button {
   background-color: #039be5;
   color: whitesmoke;
+  cursor: pointer;
   margin-top: 20px;
   padding: 5px 20px;
-  cursor: pointer;
 }

@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 
 class Footer extends Component {
   render() {
-    return(
+    return (
       <footer className="movie-card-footer">
-        <p className="footer-text">Desenvolvido por Luma Arruda para o curso de desenvolvimento de software da Trybe</p>
+        <p className="footer-text">
+          Desenvolvido por Luma Arruda para o curso de desenvolvimento de software da Trybe
+        </p>
       </footer>
     );
   }
