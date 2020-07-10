@@ -49,6 +49,16 @@ const movies = [
     bookmarked: true,
     genre: 'fantasy',
   },
+  {
+    id: 6,
+    title: 'The Towering Inferno',
+    subtitle: '1973',
+    storyline: 'At the opening party of a colossal, but poorly constructed, office building, a massive fire breaks out that threatens to destroy the tower and everyone in it.',
+    rating: 7.0,
+    imagePath: 'images/ToweringInferno.jpg',
+    bookmarked: true,
+    genre: 'action',
+  },
 ];
 
 export default movies;

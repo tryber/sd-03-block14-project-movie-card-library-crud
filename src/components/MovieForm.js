@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes, { number } from 'prop-types';
 
 class MovieForm extends React.Component {
   constructor(props) {
@@ -8,11 +8,13 @@ class MovieForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // É executada ao clicar no bot de salvar.
   handleSubmit() {
     const { onSubmit } = this.props;
     onSubmit(this.state);
   }
 
+  // É executada ao digitar nos campos
   updateMovie(field, newValue) {
     this.setState({ [field]: newValue });
   }
@@ -89,8 +91,9 @@ class MovieForm extends React.Component {
 
     return (
       <div>
-        <label htmlFor="movie_genre">Genre Select</label>
+        <label htmlFor="movie_genre">Gênero</label>
         <select
+          className="browser-default"
           id="movie_genre"
           value={genre}
           onChange={(event) => this.updateMovie('genre', event.target.value)}
@@ -131,7 +134,7 @@ class MovieForm extends React.Component {
           type="button"
           onClick={this.handleSubmit}
         >
-          Submit
+          Salvar
         </button>
       </div>
     );
@@ -153,5 +156,25 @@ class MovieForm extends React.Component {
     );
   }
 }
+
+MovieForm.defaultProps = {
+  movie: {
+    id: '',
+    title: '',
+    storyline: '',
+    imagePath: '',
+    genre: 'comedy',
+    rating: 0,
+  },
+};
+
+/* MovieForm.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  storyline: PropTypes.string.isRequired,
+  imagePath: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired
+};*/
 
 export default MovieForm;
